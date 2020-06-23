@@ -60,7 +60,7 @@ public class NewsDao extends NewsDBUtils{
 		String sql = "select * from news";
 		// 执行sql语句
 		ResultSet rs = doQuery(sql, null);
-		//存放学生的list集合
+
 		ArrayList<News> list = null;
 		
 		try {
@@ -70,7 +70,7 @@ public class NewsDao extends NewsDBUtils{
 				
 				//将学生存放在list集合中
 				while (rs.next()) {
-					//将每一个学生记录保存在list集合中
+				
 					News news = new News();
 							news.setId(rs.getInt(1));
 							news.setName(rs.getString(2));
