@@ -10,7 +10,7 @@ import com.entity.News;
 import com.utils.NewsDBUtils;
 
 public class NewsDao extends NewsDBUtils{
-	public int insert(News news) {
+	public int insert(News news) {//插入新的news到数据库，News共11个属性，其中10个需要赋值，具体要求在News中
 		
 		//给占位符赋予的值
 		Object params [] 
@@ -25,7 +25,7 @@ public class NewsDao extends NewsDBUtils{
 		getClose();
 		return  i;
 	}
-	public int delete(News news) {
+	public int delete(News news) { //删除数据库中news_id与news的id相同的纪录
 		// 给占位符赋予的值
 		Object params[] = {news.getId()};
 		// 要执行的sql语句
@@ -39,7 +39,7 @@ public class NewsDao extends NewsDBUtils{
 		return i;
 	}
 	
-	public int update(News news) {
+	public int update(News news) {//输入新的news，将news_id与news对象的id相同的数据库中的纪录的其他属性改为news对象中的属性
 		// 给占位符赋予的值
 		Object params [] 
 				= {news.getName(),news.getTime(),news.getSource(),news.getContent(),news.getCommentNum(),news.getStars(),news.getPictureURL(),news.getSimple(),news.getAuthor(),news.getType(),news.getId()};
@@ -53,7 +53,7 @@ public class NewsDao extends NewsDBUtils{
 		return i;
 	}
 	
-	public ArrayList<News> selectAll() {
+	public ArrayList<News> selectAll() {//返回数据库中所有的纪录，以arraylist<News>的形式返回
 		// 给占位符赋予的值
 		//Object params[] = null;
 		// 要执行的sql语句
