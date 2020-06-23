@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="Magz is a HTML5 & CSS3 magazine template is based on Bootstrap 3.">
+		
+		
+		<title>Magz &mdash; Responsive HTML5 &amp; CSS3 Magazine Template</title>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
+		<!-- IonIcons -->
+		<link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
+		<!-- Toast -->
+		<link rel="stylesheet" href="scripts/toast/jquery.toast.min.css">
+		<!-- OwlCarousel -->
+		<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="scripts/magnific-popup/dist/magnific-popup.css">
+		<link rel="stylesheet" href="scripts/sweetalert/dist/sweetalert.css">
+		<!-- iCheck -->
+		<link rel="stylesheet" href="scripts/icheck/skins/all.css">
+		<!-- Custom style -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/skins/all.css">
+		<link rel="stylesheet" href="css/demo.css">
+	</head>
+
+	<body class="skin-orange">
+		<header class="primary">
+			<div class="firstbar">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-12">
+							<div class="brand">
+								<a href="index.html">
+									<img src="images/logo.png" alt="Magz Logo">
+								</a>
+							</div>						
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<form class="search" autocomplete="off">
+								<div class="form-group">
+									<div class="input-group">
+										<input type="text" name="q" class="form-control" placeholder="输入文字">									
+										<div class="input-group-btn">
+											<button class="btn btn-primary"><i class="ion-search"></i></button>
+										</div>
+									</div>
+								</div>
+								<div class="help-block">
+									<div>热点标签：</div>
+									<ul>
+										<li><a href="#">标签1</a></li>
+										<li><a href="#">标签2</a></li>
+										<li><a href="#">标签3</a></li>
+										<li><a href="#">标签4</a></li>
+										<li><a href="#">标签5</a></li>
+									</ul>
+								</div>
+							</form>								
+						</div>
+						<div class="col-md-3 col-sm-12 text-right">
+							<ul class="nav-icons">
+								<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
+								<li><a href="login.html"><i class="ion-person"></i><div>登录</div></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Start nav -->
+			<nav class="menu">
+				<div class="container">
+					<div class="brand">
+						<a href="#">
+							<img src="images/logo.png" alt="Magz Logo">
+						</a>
+					</div>
+					<div class="mobile-toggle">
+						<a href="#" data-toggle="menu" data-target="#menu-list"><i class="ion-navicon-round"></i></a>
+					</div>
+					<div class="mobile-toggle">
+						<a href="#" data-toggle="sidebar" data-target="#sidebar"><i class="ion-ios-arrow-left"></i></a>
+					</div>
+					<!-- 修改tab栏 -->
+					<div id="menu-list">
+						<ul class="nav-list">
+							<li><a href="index.html">主页</a></li>
+							<li><a href="category.html">分类1</a></li>
+							<li><a href="category.html">分类2</a></li>
+							<li><a href="category.html">分类3</a></li>
+							<li><a href="category.html">分类4</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- End nav -->
+		</header>
+
+		<section class="search">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<aside>
+							<h2 class="aside-title">搜索</h2>
+							<div class="aside-body">
+								<p>用其他关键词或者过滤器来获得更精准的结果</p>
+								<form>
+									<div class="form-group">
+										<div class="input-group">
+											<input type="text" name="q" class="form-control" placeholder="输入关键词" value="">
+											<div class="input-group-btn">
+												<button class="btn btn-primary">
+													<i class="ion-search"></i>
+												</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</aside>
+						<aside>
+							<h2 class="aside-title">过滤器</h2>
+							<div class="aside-body">
+								<form class="checkbox-group">
+									<div class="group-title">时间</div>
+									<div class="form-group">
+										<label><input type="radio" name="date" checked> 任何时候</label>
+									</div>
+									<div class="form-group">
+										<label><input type="radio" name="date"> 今日</label>
+									</div>
+									<div class="form-group">
+										<label><input type="radio" name="date"> 上周</label>
+									</div>
+									<div class="form-group">
+										<label><input type="radio" name="date"> 上月</label>
+									</div>
+									<br>
+									<div class="group-title">分类</div>
+									<div class="form-group">
+										<label><input type="checkbox" name="category" checked> 所有类别</label>
+									</div>
+									<div class="form-group">
+										<label><input type="checkbox" name="category"> 生活方式</label>
+									</div>
+									<div class="form-group">
+										<label><input type="checkbox" name="category"> 旅行</label>
+									</div>
+									<div class="form-group">
+										<label><input type="checkbox" name="category"> 计算机</label>
+									</div>
+									<div class="form-group">
+										<label><input type="checkbox" name="category"> 电影</label>
+									</div>
+									<div class="form-group">
+										<label><input type="checkbox" name="category"> 运动</label>
+									</div>
+								</form>
+							</div>
+						</aside>
+					</div>
+					<div class="col-md-9">
+						<div class="nav-tabs-group">
+							<ul class="nav-tabs-list">
+								<li class="active"><a href="#">所有</a></li>
+								<li><a href="#">最近</a></li>
+								<li><a href="#">最热</a></li>
+								<li><a href="#">潮流</a></li>
+								<li><a href="#">影视</a></li>
+							</ul>
+							<div class="nav-tabs-right">
+								<select class="form-control">
+									<option>每页个数</option>
+									<option>10</option>
+									<option>20</option>
+									<option>50</option>
+									<option>100</option>
+								</select>
+							</div>
+						</div>
+						<div class="search-result">
+						</div>
+						<div class="row">
+							<article class="col-md-12 article-list">
+								<div class="inner">
+									<figure>
+										<a href="single.html">
+											<img src="images/news/img11.jpg">
+										</a>
+									</figure>
+									<div class="details">
+										<div class="detail">
+											<div class="category">
+												<a href="#">电影</a>
+											</div>
+											<time>12月 19, 2016</time>
+										</div>
+										<h1><a href="single.html">新闻标题（待填充）</a></h1>
+										<p>
+										新闻内容简述（带填充）
+										</p>
+										<footer>
+											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>273</div></a>
+											<a class="btn btn-primary more" href="single.html">
+												<div>更多</div>
+												<div><i class="ion-ios-arrow-thin-right"></i></div>
+											</a>
+										</footer>
+									</div>
+								</div>
+							</article>
+							<article class="col-md-12 article-list">
+								<div class="inner">
+									<div class="badge">
+										赞助
+									</div>
+									<figure>
+										<a href="single.html">
+											<img src="images/news/img02.jpg">
+										</a>
+									</figure>
+									<div class="details">
+										<div class="detail">
+											<div class="category">
+												<a href="#">Travel</a>
+											</div>
+											<time>December 18, 2016</time>
+										</div>
+										<h1><a href="single.html">Maecenas accumsan tortor ut velit pharetra mollis</a></h1>
+										<p>
+											Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat sollicitudin ut est. In fringilla dui.
+										</p>
+										<footer>
+											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>4209</div></a>
+											<a class="btn btn-primary more" href="single.html">
+												<div>More</div>
+												<div><i class="ion-ios-arrow-thin-right"></i></div>
+											</a>
+										</footer>
+									</div>
+								</div>
+							</article>
+							<article class="col-md-12 article-list">
+								<div class="inner">
+									<figure>
+										<a href="single.html">
+											<img src="images/news/img03.jpg">
+										</a>
+									</figure>
+									<div class="details">
+										<div class="detail">
+											<div class="category">
+											<a href="#">Travel</a>
+											</div>
+											<time>December 16, 2016</time>
+										</div>
+										<h1><a href="single.html">Nulla facilisis odio quis gravida vestibulum Proin venenatis pellentesque arcu</a></h1>
+										<p>
+											Nulla facilisis odio quis gravida vestibulum. Proin venenatis pellentesque arcu, ut mattis nulla placerat et.
+										</p>
+										<footer>
+											<a href="#" class="love active"><i class="ion-android-favorite"></i> <div>302</div></a>
+											<a class="btn btn-primary more" href="single.html">
+												<div>More</div>
+												<div><i class="ion-ios-arrow-thin-right"></i></div>
+											</a>
+										</footer>
+									</div>
+								</div>
+							</article>
+							<article class="col-md-12 article-list">
+								<div class="inner">
+									<figure>
+										<a href="single.html">
+											<img src="images/news/img09.jpg">
+										</a>
+									</figure>
+									<div class="details">
+										<div class="detail">
+											<div class="category">
+												<a href="#">Healthy</a>
+											</div>
+											<time>December 16, 2016</time>
+										</div>
+										<h1><a href="single.html">Maecenas blandit ultricies lorem id tempor enim pulvinar at</a></h1>
+										<p>
+											Maecenas blandit ultricies lorem, id tempor enim pulvinar at. Curabitur sit amet tortor eu ipsum lacinia malesuada. Etiam sed vulputate magna.
+										</p>
+										<footer>
+											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>783</div></a>
+											<a class="btn btn-primary more" href="single.html">
+												<div>More</div>
+												<div><i class="ion-ios-arrow-thin-right"></i></div>
+											</a>
+										</footer>
+									</div>
+								</div>
+							</article>
+		          <div class="col-md-12 text-center">
+		            <ul class="pagination">
+		              <li class="prev"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
+		              <li class="active"><a href="#">1</a></li>
+		              <li><a href="#">2</a></li>
+		              <li><a href="#">3</a></li>
+		              <li><a href="#">...</a></li>
+		              <li><a href="#">97</a></li>
+		              <li class="next"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
+		            </ul>
+		          </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Footer -->
+
+		<!-- JS -->
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.migrate.js"></script>
+		<script src="scripts/bootstrap/bootstrap.min.js"></script>
+		<script>var $target_end=$(".best-of-the-week");</script>
+		<script src="scripts/jquery-number/jquery.number.min.js"></script>
+		<script src="scripts/owlcarousel/dist/owl.carousel.min.js"></script>
+		<script src="scripts/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+		<script src="scripts/easescroll/jquery.easeScroll.js"></script>
+		<script src="scripts/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="scripts/icheck/icheck.min.js"></script>
+		<script src="scripts/toast/jquery.toast.min.js"></script>
+		<script src="js/demo.js"></script>
+		<script>$("input").iCheck({
+      checkboxClass: 'icheckbox_square-red',
+      radioClass: 'iradio_square-red',
+      cursor: true
+		});</script>
+		<script src="js/e-magz.js"></script>
+	</body>
+</html>
