@@ -43,144 +43,108 @@
 </head>
 <body>
 	<header class="primary">
-			<div class="firstbar">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3 col-sm-12">
-							<div class="brand">
-								<a href="index.html">
-									<img src="images/logo.png" alt="Magz Logo">
-								</a>
-							</div>						
-						</div>
-						<div class="col-md-6 col-sm-12">
-							<form class="search" autocomplete="off">
-								<div class="form-group">
-									<div class="input-group">
-										<input type="text" name="q" class="form-control" placeholder="输入文字">									
-										<div class="input-group-btn">
-											<button class="btn btn-primary"><i class="ion-search"></i></button>
-										</div>
+		<div class="firstbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-12">
+						<div class="brand">
+							<a href="index.html">
+								<img src="images/logo.png" alt="Magz Logo">
+							</a>
+						</div>						
+					</div>
+					<div class="col-md-6 col-sm-12">
+						<form class="search" autocomplete="off">
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" name="q" class="form-control" placeholder="输入文字">									
+									<div class="input-group-btn">
+										<button class="btn btn-primary"><i class="ion-search"></i></button>
 									</div>
 								</div>
-								<div class="help-block">
-									<div>热点标签：</div>
-									<ul>
-										<li><a href="#">标签1</a></li>
-										<li><a href="#">标签2</a></li>
-										<li><a href="#">标签3</a></li>
-										<li><a href="#">标签4</a></li>
-										<li><a href="#">标签5</a></li>
-									</ul>
-								</div>
-							</form>								
-						</div>
-						<div class="col-md-3 col-sm-12 text-right">
-							<ul class="nav-icons">
-								<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
-								<li><a href="login.html"><i class="ion-person"></i><div>登录</div></a></li>
-							</ul>
-						</div>
+							</div>
+							<div class="help-block">
+								<div>热点标签：</div>
+								<ul>
+									<li><a href="#">标签1</a></li>
+									<li><a href="#">标签2</a></li>
+									<li><a href="#">标签3</a></li>
+									<li><a href="#">标签4</a></li>
+									<li><a href="#">标签5</a></li>
+								</ul>
+							</div>
+						</form>								
 					</div>
-				</div>
-			</div>
-
-			<!-- Start nav -->
-			<nav class="menu">
-				<div class="container">
-					<div class="brand">
-						<a href="#">
-							<img src="images/logo.png" alt="Magz Logo">
-						</a>
-					</div>
-					<div class="mobile-toggle">
-						<a href="#" data-toggle="menu" data-target="#menu-list"><i class="ion-navicon-round"></i></a>
-					</div>
-					<div class="mobile-toggle">
-						<a href="#" data-toggle="sidebar" data-target="#sidebar"><i class="ion-ios-arrow-left"></i></a>
-					</div>
-					<div id="menu-list">
-						<ul class="nav-list">
-							<li><a href="index.html">主页</a></li>
-							<li><a href="category.html">分类1</a></li>
-							<li><a href="category.html">分类2</a></li>
-							<li><a href="category.html">分类3</a></li>
-							<li><a href="category.html">分类4</a></li>
+					<div class="col-md-3 col-sm-12 text-right">
+						<ul class="nav-icons">
+							<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
+							<li><a href="login.html"><i class="ion-person"></i><div>登录</div></a></li>
 						</ul>
 					</div>
 				</div>
-			</nav>
-			<!-- End nav -->
-		</header>
-
-							
-		<!-- 主要展示部分 -->
-		<section class="login first grey">
-			<div class="container">
-				<h4>添加新闻</h4>
-				<form>
-					<div class="box box-border">
-						<div class="box-body">
-							<h6>标题</h6>
-							<input type="text" name="username" class="form-control">
-							<h6>来源</h6>
-							<input type="text" name="username" class="form-control">
-							<h6>作者</h6>
-							<input type="text" name="username" class="form-control">
-							<h6>新闻类别</h6>
-							<span><input type="radio" name="category" checked>类别1</span>
-							<span><input type="radio" name="category" >类别2</span>
-							<span><input type="radio" name="category" >类别3</span>
-							<h6>缩略图(url)</h6>
-							<input type="text" name="username" class="form-control">
-						</div>
-					</div>
-					
-					<div class="box-body">
-						<textarea id="editor1" name="editor1"></textarea>						
-						<script type="text/javascript">CKEDITOR.replace('editor1',{height:460});</script>
-						<button class="btn btn-primary btn-block">上传</button>
-					</div>
-				</form>
 			</div>
-		</section>
-		
-		<!-- 
-		<section class="login first grey">
+		</div>
+
+		<!-- Start nav -->
+		<nav class="menu">
 			<div class="container">
-				<div class="box-wrapper">				
-					<div class="box box-border">
-						<div class="box-body">
-							<h4>注册</h4>
-							<form>
-							
-								<div class="form-group">
-									<label>用户名</label>
-									<input type="text" name="username" class="form-control">
-								</div>
-								<div class="form-group">
-								<textarea id="editor1" name="editor1"></textarea>
-									<script type="text/javascript">
-										CKEDITOR.replace( 'editor1' );
-									</script>
-								</div>
-								<div class="form-group">
-									<label class="fw">密码</label>
-									<input type="password" name="password" class="form-control">
-								</div>
-								<div class="form-group text-right">
-									<button class="btn btn-primary btn-block">点击注册</button>
-								</div>
-								<div class="form-group text-center">
-									<span class="text-muted">已有账号?</span> <a href="login.html">Login</a>
-								</div>
-							</form>
-						</div>
-					</div>
+				<div class="brand">
+					<a href="#">
+						<img src="images/logo.png" alt="Magz Logo">
+					</a>
+				</div>
+				<div class="mobile-toggle">
+					<a href="#" data-toggle="menu" data-target="#menu-list"><i class="ion-navicon-round"></i></a>
+				</div>
+				<div class="mobile-toggle">
+					<a href="#" data-toggle="sidebar" data-target="#sidebar"><i class="ion-ios-arrow-left"></i></a>
+				</div>
+				<div id="menu-list">
+					<ul class="nav-list">
+						<li><a href="index.html">主页</a></li>
+						<li><a href="category.html">分类1</a></li>
+						<li><a href="category.html">分类2</a></li>
+						<li><a href="category.html">分类3</a></li>
+						<li><a href="category.html">分类4</a></li>
+					</ul>
 				</div>
 			</div>
-		</section>
-		 -->
+		</nav>
+		<!-- End nav -->
+	</header>
 
+							
+	<!-- 主要展示部分 -->
+	<section class="login first grey">
+		<div class="container">
+			<h4>添加新闻</h4>
+			<form>
+				<div class="box box-border">
+					<div class="box-body">
+						<h6>标题</h6>
+						<input type="text" name="title" class="form-control">
+						<h6>来源</h6>
+						<input type="text" name="source" class="form-control">
+						<h6>作者</h6>
+						<input type="text" name="author" class="form-control">
+						<h6>新闻类别</h6>
+						<span><input type="radio" name="category" checked>类别1</span>
+						<span><input type="radio" name="category" >类别2</span>
+						<span><input type="radio" name="category" >类别3</span>
+						<h6>缩略图(url)</h6>
+						<input type="text" name="newsimage" class="form-control">
+						<h6>新闻简介</h6>
+						<textarea class="form-control" name="simple" style="resize:none"></textarea>
+					</div>
+				</div>
+				
+				<div class="box-body">
+					<textarea id="content" name="editor"></textarea>						
+					<script type="text/javascript">CKEDITOR.replace('editor',{height:460});</script>
+					<button class="btn btn-primary btn-block">上传</button>
+				</div>
+			</form>
+		</div>
+	</section>
 </body>
 </html>
