@@ -72,7 +72,7 @@ public class AddNewsServlet extends HttpServlet{
 		
 		news.setId(id);
 		String filename=new String();
-		filename=id+"";
+		filename="../storedNews/"+id+"";
 		
 		System.out.println("content:"+content+"\tfilename:"+filename);
 		
@@ -88,6 +88,8 @@ public class AddNewsServlet extends HttpServlet{
 
 		//将准备好的news类放入数据库
 		
+		
+		response.sendRedirect("sources/index.html");
 		
 
 	/**
@@ -106,8 +108,7 @@ public class AddNewsServlet extends HttpServlet{
 
         try (FileOutputStream fop = new FileOutputStream(file)) {
         	
-        	
-			
+
 			  if (!file.exists()) { 
 				  file.createNewFile(); System.out.println("文件已创造成功！！");
 			  }
