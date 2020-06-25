@@ -34,7 +34,7 @@ public void InsertTest() {
 	assertEquals(1, i);
 }
 
-@Test
+//@Test
 public void deleteTest() {
 	   News n=new News();
 	   n.setId(1);
@@ -42,7 +42,7 @@ public void deleteTest() {
 	   assertEquals(1, i);
 }
 
-@Test
+//@Test
 public void updateTest() {
 	News n=new News();
 	n.setAuthor("a");
@@ -59,7 +59,7 @@ public void updateTest() {
 	assertEquals(1,i);
 }
 
-@Test 
+//@Test 
 public void TestselectAll() {
 	ArrayList<News> n=a.selectAll();
 	News n1=new News();
@@ -69,7 +69,7 @@ public void TestselectAll() {
     assertEquals(3,i);
 }
 
-@Test
+//@Test
 public void Testclassified() {
 	ArrayList<News> n=a.classified("science");
 	show(n);
@@ -93,9 +93,15 @@ public void show(ArrayList<News> n) {
 		}
 }
 
-@Test
+//@Test
 public void TestcheckId() {
 	boolean flag=a.checkID(1);
 	System.out.println(flag);
+}
+
+@Test
+public void Testsearch() {
+	ArrayList<News> n=a.search("sdkfjslf");
+	show(n);
 }
 }
