@@ -314,7 +314,7 @@
 							<form>
 								<div class="form-group">
 									<label>用户名</label>
-									<input type="text" name="username" class="form-control">
+									<input type="text" name="username" class="form-control" oninput="value=value.replace(/[^\d]/g,'')">
 								</div>
 								<div class="form-group">
 									<label class="fw">密码</label>
