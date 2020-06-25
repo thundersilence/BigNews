@@ -35,11 +35,12 @@ public class LoginServlet extends HttpServlet {
 		int id = Integer.parseInt(userid);
 		user=UD.search(id);
 		//以id搜索唯一用户
-		if(user.getPassword()!=password) {					//登录失败
+		System.out.println(user.getPassword());
+		if((user.getPassword()).equals(password)) {
 			System.out.println("登陆成功");
-			request.getRequestDispatcher("index.jsp");
+			response.sendRedirect("sources/index.html");
 		}
-		else {												//登录成功
+		else {
 			System.out.println("登陆失败");
 			response.sendRedirect("sources/index.html");
 		}
