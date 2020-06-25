@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 		String password= request.getParameter("password");
 		
 		//读取用户名和密码
-		
+		//更正：应当是分配的id
 		User user=new User();
 		UserDao UD=new UserDao();
 		
