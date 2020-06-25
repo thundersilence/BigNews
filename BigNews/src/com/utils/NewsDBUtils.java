@@ -7,10 +7,6 @@ public class NewsDBUtils {
 	  private String url =
 	  "jdbc:mysql://localhost:3306/bignews?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC";
 	 
-	/*
-	 * private String url =
-	 * "jdbc:mysql://localhost:3306/bignews?serverTimezone=UTC";
-	 */
 	// 使用时修改为本地数据库位置
 	private String user = "root";
 	// 用户密码 你的数据库密码
@@ -127,6 +123,5 @@ public class NewsDBUtils {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 }

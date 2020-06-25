@@ -73,7 +73,7 @@ public class ClassifiedServlet extends HttpServlet {
 		req.getSession().setAttribute("category", category);
 		
 		//跳转到指定的页面
-		resp.sendRedirect("quar_5_magz/category.jsp");
+		resp.sendRedirect("sources/category.jsp");
 	}
 
 }

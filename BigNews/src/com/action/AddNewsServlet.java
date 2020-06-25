@@ -14,17 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.NewsDao;
 import com.entity.News;
-import com.tools.tool;
 
 @WebServlet("/AddNewsServlet")
 public class AddNewsServlet extends HttpServlet{
-
-	
-	/*
-	 * public static void main(String[] args) { new
-	 * AddNewsServlet().fileout("<p>111</p>\n", "793911869"); }
-	 */
-	
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -72,48 +64,36 @@ public class AddNewsServlet extends HttpServlet{
 		
 		news.setId(id);
 		String filename=new String();
-		filename="../storedNews/"+id+"";
 		
+		//得到tomcat项目根文件绝对路径
+		filename=request.getSession().getServletContext().getRealPath("/newstore/")+id;
 		System.out.println("content:"+content+"\tfilename:"+filename);
 		
 		fileout(content,filename);
 		news.setContent(filename);
 		
 		//利用id生成文件名
-		
-		
 		System.out.println("-------News对象已创建");
-		
 		ND.insert(news);
 
 		//将准备好的news类放入数据库
 		
 		
 		response.sendRedirect("sources/index.html");
-		
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-		}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		tool.rm(response);
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 	
 	void fileout(String s,String filename) {
-
         File file = new File(filename);
-
         try (FileOutputStream fop = new FileOutputStream(file)) {
-        	
-
-			  if (!file.exists()) { 
-				  file.createNewFile(); System.out.println("文件已创造成功！！");
-			  }
-			 
-            System.out.println("=====================");
+    	
+        	if (!file.exists()) { 
+        		file.createNewFile();
+        	}
             byte[] contentInBytes = s.getBytes();
             fop.write(contentInBytes);
             fop.flush();
