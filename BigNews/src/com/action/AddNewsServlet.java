@@ -19,16 +19,16 @@ import com.tools.tool;
 @WebServlet("/AddNewsServlet")
 public class AddNewsServlet extends HttpServlet{
 
-	/**
-	 * 
+	
+	/*
+	 * public static void main(String[] args) { new
+	 * AddNewsServlet().fileout("<p>111</p>\n", "793911869"); }
 	 */
+	
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("hhhhhhhhhhhhhhhhhhhhhhhh");
+		System.out.println("-------已访问AddNewsServlet");
 		
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
@@ -59,25 +59,36 @@ public class AddNewsServlet extends HttpServlet{
 		news.setType(category);
 		//无需修改的内容
 		
+		System.out.println("开始随机生成id");
+		
 		Random rand=new Random();
 		int id;
 		while(true) {
 		id=rand.nextInt(2147483640);
-		if (ND.checkID(id)==false)break;
+		if (ND.checkID(id))break;
 		}//随机生成id
+		
+		System.out.println("----成功随机生成id:" + id);
 		
 		news.setId(id);
 		String filename=new String();
 		filename=id+"";
+		
+		System.out.println("content:"+content+"\tfilename:"+filename);
+		
 		fileout(content,filename);
 		news.setContent(filename);
 		
 		//利用id生成文件名
 		
 		
+		System.out.println("-------News对象已创建");
+		
 		ND.insert(news);
 
 		//将准备好的news类放入数据库
+		
+		
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -88,15 +99,20 @@ public class AddNewsServlet extends HttpServlet{
 		tool.rm(response);
 		doGet(request, response);
 	}
+	
 	void fileout(String s,String filename) {
 
         File file = new File(filename);
 
         try (FileOutputStream fop = new FileOutputStream(file)) {
- 
-            if (!file.exists()) {
-                file.createNewFile();
-            }
+        	
+        	
+			
+			  if (!file.exists()) { 
+				  file.createNewFile(); System.out.println("文件已创造成功！！");
+			  }
+			 
+            System.out.println("=====================");
             byte[] contentInBytes = s.getBytes();
             fop.write(contentInBytes);
             fop.flush();

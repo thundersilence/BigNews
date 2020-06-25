@@ -22,6 +22,8 @@ public class NewsDao extends NewsDBUtils{
 		//执行sql语句
 		int i = doUpdate(sql,params);
 		
+		System.out.println("-------sql语句已执行完毕");
+		
 		//释放资源
 		getClose();
 		return  i;
