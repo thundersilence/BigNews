@@ -50,4 +50,13 @@ public void show(ArrayList<User> user) {
 		System.out.println(user.get(i).getPassword());
 	}
 }
+
+@Test
+public void Testsearch() {
+	User user=d.search(2);
+	System.out.println(user.getId());
+	System.out.println(user.getImg());
+	System.out.println(user.getName());
+	System.out.println(user.getPassword());
+}
 }

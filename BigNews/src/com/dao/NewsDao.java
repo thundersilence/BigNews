@@ -69,8 +69,6 @@ public class NewsDao extends NewsDBUtils{
 			if (rs.next()) {//判断是否至少存在一条数据记录
 				rs.beforeFirst();//将光标移动到第一行数据之前
 				list = new ArrayList<News>();
-				
-				//将学生存放在list集合中
 				while (rs.next()) {
 				
 					News news = new News();
@@ -109,9 +107,6 @@ public class NewsDao extends NewsDBUtils{
 		try {
 			if (rs.next()) {//判断是否至少存在一条数据记录
 				rs.beforeFirst();//将光标移动到第一行数据之前
-				list = new ArrayList<News>();
-				
-				//将学生存放在list集合中
 				while (rs.next()) {
 				
 					News news = new News();
@@ -165,8 +160,6 @@ public class NewsDao extends NewsDBUtils{
 			if (rs.next()) {//判断是否至少存在一条数据记录
 				rs.beforeFirst();//将光标移动到第一行数据之前
 				list = new ArrayList<News>();
-				
-				//将学生存放在list集合中
 				while (rs.next()) {
 				
 					News news = new News();

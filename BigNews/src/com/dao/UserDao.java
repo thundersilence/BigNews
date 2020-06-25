@@ -67,8 +67,6 @@ public class UserDao extends UserDBUtils{
 			if (rs.next()) {//判断是否至少存在一条数据记录
 				rs.beforeFirst();//将光标移动到第一行数据之前
 				list = new ArrayList<User>();
-				
-				//将学生存放在list集合中
 				while (rs.next()) {
 				
 					User user = new User();
@@ -88,5 +86,36 @@ public class UserDao extends UserDBUtils{
 		// 释放资源
 		getClose();
 		return list;
+	}
+	
+	public User search(int id) {//通过id搜索用户，因为id为主键，返回值为User
+		Object params[] = {id};
+		// 要执行的sql语句
+		String sql = "select * from user where user_id=?";
+		// 执行sql语句
+		ResultSet rs = doQuery(sql, params);
+
+		User user=new User();
+		
+		try {
+			if (rs.next()) {//判断是否至少存在一条数据记录
+				rs.beforeFirst();//将光标移动到第一行数据之前
+				rs.next();
+				user = new User();
+							user.setId(rs.getInt(1));
+							user.setName(rs.getString(2));
+							user.setPassword(rs.getString(3));
+							user.setImg(rs.getString(4));
+					
+		
+			}
+			 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// 释放资源
+		getClose();
+		return user;
 	}
 }
