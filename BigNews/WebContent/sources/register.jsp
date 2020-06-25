@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -104,7 +109,7 @@
 					<div class="box box-border">
 						<div class="box-body">
 							<h4>注册</h4>
-							<form>
+							<form action="../RegisterServlet" method="post">
 								<div class="form-group">
 									<label>用户名</label>
 									<input type="text" name="username" class="form-control">
@@ -117,7 +122,7 @@
 									<button class="btn btn-primary btn-block">点击注册</button>
 								</div>
 								<div class="form-group text-center">
-									<span class="text-muted">已有账号?</span> <a href="login.html">Login</a>
+									<span class="text-muted">已有账号?</span> <a href="login.jsp">Login</a>
 								</div>
 							</form>
 						</div>
