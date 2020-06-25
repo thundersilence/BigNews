@@ -16,7 +16,6 @@ import com.entity.News;
 public class newsDaoTest {
 NewsDao a=new NewsDao();
 
-
 //@Test
 public void InsertTest() {
 	News n=new News();

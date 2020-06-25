@@ -10,7 +10,7 @@ public class NewsDBUtils {
 	// 使用时修改为本地数据库位置
 	private String user = "root";
 	// 用户密码 你的数据库密码
-	private String password = "389237";
+	private String password = "123";
 	private Connection conn = null;
 	
 	private PreparedStatement stmt = null;
