@@ -10,60 +10,38 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.UserDao;
 import com.entity.User;
 
-/**
- * Servlet implementation class LoginServlet
- */
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html");
 		//编码标准UTF-8
-		String username= request.getParameter("username");
+		String userid= request.getParameter("userid");
 		String password= request.getParameter("password");
 		
-		//读取用户名和密码
-		//更正：应当是分配的id
+		//读取用户id和密码
 		User user=new User();
 		UserDao UD=new UserDao();
 		
-		
-		
-		int id = Integer.parseInt(username);
+		int id = Integer.parseInt(userid);
 		user=UD.search(id);
 		//以id搜索唯一用户
 		if(user.getPassword()!=password) {					//登录失败
 			System.out.println("登陆成功");
-			request.getRequestDispatcher("index.html");
+			request.getRequestDispatcher("index.jsp");
 		}
 		else {												//登录成功
 			System.out.println("登陆失败");
-			request.getRequestDispatcher("login.html");
+			response.sendRedirect("sources/index.html");
 		}
-		
-		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

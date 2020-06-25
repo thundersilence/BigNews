@@ -112,7 +112,7 @@
 							<form action="../LoginServlet" method="post">
 								<div class="form-group">
 									<label>账号</label>
-									<input type="text" name="username" class="form-control">
+									<input type="text" name="userid" class="form-control">
 								</div>
 								<div class="form-group">
 									<label class="fw">密码</label>
