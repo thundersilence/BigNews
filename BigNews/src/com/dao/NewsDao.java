@@ -154,4 +154,44 @@ public class NewsDao extends NewsDBUtils{
 		return true;
 		
 	}
+	
+	public ArrayList<News> search(String keyWord) {  //输入需要搜索的词语，将简介和姓名中包含此词语的所有新闻以Arraylist<News>的形式返回
+		Object params[] = {"%"+keyWord+"%","%"+keyWord+"%"};
+		String sql = "select * from news where news_name LIKE ? OR news_simple LIKE ?";
+		ResultSet rs = doQuery(sql, params);
+		ArrayList<News> list = null;
+		
+		try {
+			if (rs.next()) {//判断是否至少存在一条数据记录
+				rs.beforeFirst();//将光标移动到第一行数据之前
+				list = new ArrayList<News>();
+				
+				//将学生存放在list集合中
+				while (rs.next()) {
+				
+					News news = new News();
+							news.setId(rs.getInt(1));
+							news.setName(rs.getString(2));
+							news.setTime(rs.getString(3));
+							news.setSource(rs.getString(4));
+							news.setContent(rs.getString(5));
+							news.setCommentNum(rs.getInt(6));
+							news.setStars(rs.getInt(7));
+							news.setPictureURL(rs.getString(8));
+							news.setSimple(rs.getString(9));
+							news.setAuthor(rs.getString(10));
+							news.setType(rs.getString(11));
+					
+					list.add(news);
+				}
+			}
+			 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// 释放资源
+		getClose();
+		return list;
+	}
 }
