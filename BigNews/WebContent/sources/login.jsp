@@ -68,7 +68,9 @@
 						<div class="col-md-3 col-sm-12 text-right">
 							<ul class="nav-icons">
 								<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
-								<li><a href="login.html"><i class="ion-person"></i><div>登录</div></a></li>
+								<li><a href="login.html"><i class="ion-person"></i><div>
+									<c:out value="${sessionScope.user.name}" default="登录"></c:out>
+								</div></a></li>
 							</ul>
 						</div>
 					</div>

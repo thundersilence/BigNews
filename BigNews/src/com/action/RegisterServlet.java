@@ -37,14 +37,16 @@ public class RegisterServlet extends HttpServlet {
 		Random rand=new Random();
 		int id;
 		while(true) {
-		id=rand.nextInt(2147483640);
-		if (UD.search(id).getId()==0)break;				//搜索不到已有id时返回一个id为0的user类
+			id=rand.nextInt(2147483640);
+			if (UD.search(id).getId()==0)break;				//搜索不到已有id时返回一个id为0的user类
 		}//随机生成id
 		
 		user.setId(id);
 		user.setName(username);
 		user.setPassword(password);
 		user.setImg(null);
+		
+		UD.insert(user);
 		
 		System.out.println("注册成功");					//给测试人员看的东西
 		response.sendRedirect("sources/index.html");		//跳转到登录界面
