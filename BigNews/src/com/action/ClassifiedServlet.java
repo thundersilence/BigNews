@@ -59,9 +59,9 @@ public class ClassifiedServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//取到请求的中的分类信息
 		String category = req.getParameter("category");
+		int currentpage = 1;
 		//调用dao方法返回分类的newslist
 		ArrayList<News> newsList = dao.classified(category);
-		
 		//测试dao
 //		TestCategory test = new TestCategory();
 //		ArrayList<News> newsList= test.creatnewslist();
@@ -69,6 +69,7 @@ public class ClassifiedServlet extends HttpServlet {
 		//System.out.println("----->"+newsList);
 		//将查询到的news添加到web容器中
 		req.getSession().setAttribute("newsList", newsList);
+		req.getSession().setAttribute("currentpage", currentpage);
 		//把当前的分类存到web容器中
 		req.getSession().setAttribute("category", category);
 		
