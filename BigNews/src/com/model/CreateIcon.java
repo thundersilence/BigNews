@@ -37,7 +37,8 @@ public class CreateIcon {
     
     
     
-	public void createIcon(String url) throws FileNotFoundException, IOException {
+	public static void create(String dir, String url) 
+			throws FileNotFoundException, IOException {
         BufferedImage bi = new BufferedImage
                 (IMG_WIDTH, IMG_HEIGHT, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2 = (Graphics2D) bi.getGraphics();
@@ -47,7 +48,7 @@ public class CreateIcon {
         List<Point> pointList = getRandomPointList(RADIO);
         fillGraph(g2, pointList, mainColor);
 
-        File file = new File(url);
+        File file = new File(dir);
         if (!file.exists()) {
             file.mkdirs();
         }
