@@ -21,9 +21,7 @@ public void testInsert() {
 }
 //@Test
 public void testDelete() {
-	User user=new User();
-	user.setId(1);
-	d.delete(user);
+	d.delete(1);
 }
 
 @Test

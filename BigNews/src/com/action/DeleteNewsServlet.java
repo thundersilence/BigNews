@@ -1,5 +1,6 @@
 package com.action;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.NewsDao;
 import com.dao.UserDao;
+import com.entity.News;
 
 @WebServlet("/deleteNews")
 public class DeleteNewsServlet extends HttpServlet {

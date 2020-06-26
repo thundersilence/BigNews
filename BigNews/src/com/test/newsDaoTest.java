@@ -35,9 +35,8 @@ public void InsertTest() {
 
 //@Test
 public void deleteTest() {
-	   News n=new News();
-	   n.setId(1);
-	   int i=a.delete(n);
+
+	   int i=a.delete(1);
 	   assertEquals(1, i);
 }
 
