@@ -149,6 +149,34 @@ public class NewsDao extends NewsDBUtils{
 		
 	}
 	
+	public News searchNews(int id) {
+		Object params[] = {id};
+		String sql = "select * from news where news_id=?";
+		ResultSet rs = doQuery(sql, params);
+		News news=new News();
+		try {
+			if (rs.next()) {
+			rs.beforeFirst();
+			rs.next();
+			news.setId(rs.getInt(1));
+			news.setName(rs.getString(2));
+			news.setTime(rs.getString(3));
+			news.setSource(rs.getString(4));
+			news.setContent(rs.getString(5));
+			news.setCommentNum(rs.getInt(6));
+			news.setStars(rs.getInt(7));
+			news.setPictureURL(rs.getString(8));
+			news.setSimple(rs.getString(9));
+			news.setAuthor(rs.getString(10));
+			news.setType(rs.getString(11));}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return news;
+		
+	}
+	
 	public ArrayList<News> search(String keyWord) {  //输入需要搜索的词语，将简介和姓名中包含此词语的所有新闻以Arraylist<News>的形式返回
 		Object params[] = {"%"+keyWord+"%","%"+keyWord+"%"};
 		String sql = "select * from news where news_name LIKE ? OR news_simple LIKE ?";
