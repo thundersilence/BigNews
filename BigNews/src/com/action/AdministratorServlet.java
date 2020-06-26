@@ -25,10 +25,6 @@ public class AdministratorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		if(request.getParameter("action") != null) {
-			doPost(request, response);
-		}
-		
 		HttpSession session = request.getSession();
 		List<News> newsList = null;
 		List<User> userList = null;
@@ -59,7 +55,7 @@ public class AdministratorServlet extends HttpServlet {
 		
 		session.setAttribute("newsList", newsList);
 		session.setAttribute("userList", userList);
-		System.out.println("======session属性已设置");
+		System.out.println("======新闻与用户列表已设置");
 		
 		request.getRequestDispatcher("sources/administrator.jsp").forward(request, response);
 	}
@@ -67,11 +63,6 @@ public class AdministratorServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		String action = request.getParameter("action");
-		System.out.println("======已截取action：" + action);
-		
-		if(action.equals("delete")) {
-			
-		}
+		doGet(request, response);
 	}
 }

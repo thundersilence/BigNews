@@ -184,7 +184,7 @@
 											<div>编辑</div>
 											<div><i class="ion-ios-arrow-thin-right"></i></div>
 										</a>
-										<a class="btn btn-primary more" href="../secret?action=delete&id=${news.id}">
+										<a class="btn btn-primary more" href="../deleteNews?id=${news.id}">
 											<div>删除</div>
 											<div><i class="ion-ios-arrow-thin-right"></i></div>
 										</a>
@@ -222,7 +222,7 @@
 										<div id="titlefont">${user.id}</div>
 									</a>
 									<span id="rightdiv" style="bottom:0; right:0;position:absolute;">
-										<a class="btn btn-primary more" href="#">
+										<a class="btn btn-primary more" href="../deleteUser?id=${user.id}">
 											<div>删除</div>
 											<div><i class="ion-ios-arrow-thin-right"></i></div>
 										</a>

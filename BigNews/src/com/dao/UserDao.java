@@ -24,9 +24,9 @@ public class UserDao extends UserDBUtils{
 		return  i;
 	}
 	
-	public int delete(User user) { //删除数据库中user_id与user的id相同的纪录
+	public int delete(int id) { //删除数据库中user_id与user的id相同的纪录
 		// 给占位符赋予的值
-		Object params[] = {user.getId()};
+		Object params[] = {id};
 		// 要执行的sql语句
 		String sql = "delete from user where user_id=?";
 
