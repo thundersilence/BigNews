@@ -41,7 +41,7 @@ public class UserDao extends UserDBUtils{
 	public int update(User user) {//输入新的user，将user_id与user对象的id相同的数据库中的纪录的其他属性改为user对象中的属性
 		// 给占位符赋予的值
 		Object params [] 
-				= {user.getName(),user.getName(),user.getPassword(),user.getId()};
+				= {user.getName(),user.getPassword(),user.getPassword(),user.getId()};
 		// 要执行的sql语句
 		String sql = "update user set user_name=?,user_password=?,user_headimg=? where user_id=?";
 		// 执行sql语句

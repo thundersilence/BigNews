@@ -42,11 +42,12 @@ public class LoginServlet extends HttpServlet {
 		}else if((user.getPassword()).equals(password)){
 			System.out.println("登陆成功");
 			request.getSession().setAttribute("user", user);
+			request.getSession().setAttribute("id", id);			//session 添加名称和id
 			//response.sendRedirect("sources/index.html");
-			response.sendRedirect("sources/login.jsp");
+			response.sendRedirect("sources/index.html");
 		}else {
 			System.out.println("登陆失败");
-			response.sendRedirect("sources/index.html");
+			response.sendRedirect("sources/login.jsp");
 		}
 	}
 }
