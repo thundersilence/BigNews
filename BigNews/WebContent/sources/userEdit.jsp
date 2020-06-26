@@ -119,10 +119,12 @@
 								<div class="form-group text-right">
 									<button class="btn btn-primary btn-block">修改个人信息</button>
 								</div>
-								<div class="form-group text-right" href="userDisplay.jsp">
-									<button class="btn btn-primary btn-block">返回</button>
-								</div>
+								
 							</form>
+							
+							<a class="form-group text-right" href="userDisplay.jsp">
+									<button class="btn btn-primary btn-block">返回</button>
+							</a>
 						</div>
 					</div>
 				</div>
