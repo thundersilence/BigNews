@@ -25,9 +25,9 @@ public class NewsDao extends NewsDBUtils{
 		getClose();
 		return  i;
 	}
-	public int delete(News news) { //删除数据库中news_id与news的id相同的纪录
+	public int delete(int newsid) { //删除数据库中news_id与news的id相同的纪录
 		// 给占位符赋予的值
-		Object params[] = {news.getId()};
+		Object params[] = {newsid};
 		// 要执行的sql语句
 		String sql = "delete from news where news_id=?";
 
