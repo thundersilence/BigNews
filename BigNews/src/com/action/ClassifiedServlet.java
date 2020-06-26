@@ -66,7 +66,7 @@ public class ClassifiedServlet extends HttpServlet {
 //		TestCategory test = new TestCategory();
 //		ArrayList<News> newsList= test.creatnewslist();
 		
-		System.out.println("----->"+newsList);
+		//System.out.println("----->"+newsList);
 		//将查询到的news添加到web容器中
 		req.getSession().setAttribute("newsList", newsList);
 		//把当前的分类存到web容器中
