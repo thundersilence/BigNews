@@ -53,7 +53,7 @@ public void show(ArrayList<User> user) {
 
 @Test
 public void Testsearch() {
-	User user=d.search(2);
+	User user=d.search(5);
 	System.out.println(user.getId());
 	System.out.println(user.getImg());
 	System.out.println(user.getName());
