@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.UserDao;
 import com.entity.User;
+import com.model.AddRecord;
 import com.model.CreateIcon;
 
 @WebServlet("/RegisterServlet")
@@ -53,7 +54,8 @@ public class RegisterServlet extends HttpServlet {
 		
 		UD.insert(user);
 		
-		System.out.println("注册成功");					//给测试人员看的东西
-		response.sendRedirect("sources/index.html");		//跳转到登录界面
+		AddRecord.print("添加用户记录：" + id);
+		System.out.println("注册成功");
+		response.sendRedirect("sources/index.html");
 	}
 }

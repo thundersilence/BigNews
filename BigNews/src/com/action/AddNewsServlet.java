@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.NewsDao;
 import com.entity.News;
+import com.model.AddRecord;
 
 @WebServlet("/AddNewsServlet")
 public class AddNewsServlet extends HttpServlet{
@@ -67,18 +68,15 @@ public class AddNewsServlet extends HttpServlet{
 		
 		//得到tomcat项目根文件绝对路径
 		filename="D://BigNews/contentStore/"+id;
-		System.out.println("content:"+content+"\tfilename:"+filename);
+		System.out.println("filename:"+filename);
 		
 		fileout(content,filename);
 		news.setContent(filename);
 		
-		//利用id生成文件名
 		System.out.println("-------News对象已创建");
 		ND.insert(news);
-
-		//将准备好的news类放入数据库
-		
-		
+		AddRecord.print("添加新闻记录：" + id);
+	
 		response.sendRedirect("sources/index.html");
 	}
 	
@@ -98,6 +96,7 @@ public class AddNewsServlet extends HttpServlet{
             fop.write(contentInBytes);
             fop.flush();
             fop.close();
+            AddRecord.print("创建新闻文件：" + filename);
             System.out.println("Done");
         } catch (IOException e) {
             e.printStackTrace();

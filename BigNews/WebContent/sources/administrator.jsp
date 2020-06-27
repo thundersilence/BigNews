@@ -133,7 +133,7 @@
 				<!-- 侧边栏start -->
 				<div class="col-md-3">
 					<aside>
-						<h1><a href="addNews.html" class="titlefont">>增加新闻</a></h1>
+						<h1><a href="addNews.html" class="titlefont">>添加新闻</a></h1>
 					</aside>
 					<aside>
 						<h1><a href="#" class="titlefont">>查看日志</a></h1>

@@ -52,8 +52,10 @@ public class CreateIcon {
         if (!file.exists()) {
             file.mkdirs();
         }
-        ImageIO.write(bi,"JPG",
-                new FileOutputStream(url));
+        FileOutputStream fos = new FileOutputStream(url);
+        ImageIO.write(bi,"JPG", fos);
+        fos.close();
+        AddRecord.print("创建用户文件：" + url);
     }
 	
 	

@@ -46,7 +46,7 @@ public class NewsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("utf-8");
 		String news_id = req.getParameter("news_id");
-		News news = newsdao.searchNews(news_id);
+		News news = newsdao.searchNews(Integer.valueOf(news_id));
 		//存新闻对象
 		req.getSession().setAttribute("news", news);
 		//拼接路径
