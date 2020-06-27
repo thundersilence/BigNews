@@ -80,6 +80,7 @@ public class UpdateNewsServlet extends HttpServlet {
 		news.setPictureURL(request.getParameter("newsimage"));
 		news.setSimple(request.getParameter("simple"));
 		fileout(request.getParameter("content"), news.getContent());
+		AddRecord.print("修改新闻文件：" + news.getId());
 		
 		newsdao.update(news);
 		

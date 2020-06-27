@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.entity.Comment;
 
-public class CommentDao {
+public class ReplyDao {
 
 	public ArrayList<Comment> search(String string) {
 		// TODO Auto-generated method stub

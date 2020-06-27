@@ -62,7 +62,7 @@ public class NewsDao extends NewsDBUtils{
 		// 执行sql语句
 		ResultSet rs = doQuery(sql, null);
 
-		ArrayList<News> list = null;
+		ArrayList<News> list = new ArrayList<News>();
 		
 		try {
 			if (rs.next()) {//判断是否至少存在一条数据记录
@@ -101,7 +101,7 @@ public class NewsDao extends NewsDBUtils{
 		String sql = "select * from news where news_type=?";
 		ResultSet rs = doQuery(sql, params);
 
-		ArrayList<News> list = null;
+		ArrayList<News> list = new ArrayList<News>();
 		
 		try {
 			if (rs.next()) {//判断是否至少存在一条数据记录
