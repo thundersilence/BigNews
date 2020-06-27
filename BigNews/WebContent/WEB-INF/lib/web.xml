@@ -10,14 +10,4 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 
-	<!--<servlet>
-		<servlet-name>addNews</servlet-name>
-		<servlet-class>com.action.AddNewsServlet</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>addNews</servlet-name>
-		<url-pattern>/addNews111</url-pattern>
-	</servlet-mapping>-->
-
 </web-app>

@@ -103,4 +103,10 @@ public void Testsearch() {
 	ArrayList<News> n=a.search("sdkfjslf");
 	show(n);
 }
+
+@Test
+public void TestsearchNews() {
+	News news=a.searchNews(1);
+	System.out.println(news.getName());
+}
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.UserDao;
 import com.entity.User;
+import com.model.CreateIcon;
 
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
@@ -41,10 +42,14 @@ public class RegisterServlet extends HttpServlet {
 			if (UD.search(id).getId()==0)break;				//搜索不到已有id时返回一个id为0的user类
 		}//随机生成id
 		
+		String imagedir = "D://BigNews/imageStore/";
+		String imageurl = imagedir + id + ".jpg";
+		CreateIcon.create(imagedir, imageurl);//生成头像并保存
+		
 		user.setId(id);
 		user.setName(username);
 		user.setPassword(password);
-		user.setImg(null);
+		user.setImg(imageurl);
 		
 		UD.insert(user);
 		
