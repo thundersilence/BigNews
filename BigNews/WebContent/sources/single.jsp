@@ -1,6 +1,15 @@
 <%@ page language="java" import = "java.util.*" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+//取评论列表
+//ArrayList<Comment> commentList = (ArrayList<Comment>)session.getAttribute("commentList");
+//取若干个回复列表
+//ArrayList<Reply> replyList = (ArrayList<Reply>)session.getAttribute("replyList");
+
+%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -139,14 +148,26 @@
 						<!-- 评论开始-->
 						<div class="comments">
 							<h2 class="title">3 评论 <a href="#">书写评论</a></h2>
+							<!-- 评论列表-->
 							<div class="comment-list">
+							<!-- 单个评论-->
+							<c:forEach items="${sessionScope.commentlist}" var="comment">
+							<%-- 根据${comment.user_id}找user
+							
+							--%>
+							<%
+							User user = commentdao.searchUser(${comment.user_id});
+							String user_name = user.name;
+							String comment_content = comment.content;
+							%>
 								<div class="item">
 									<div class="user">                                
 										<figure>
+										<%--根据user来找headimg --%>
 											<img src="images/img01.jpg">
 										</figure>
 										<div class="details">
-											<h5 class="name">用户名</h5>
+											<h5 class="name"><%=user_name %></h5>
 											<div class="description">
 											大理石扩大快乐到家啊是假的啦空间的拉开阿喀琉斯达拉斯看到蓝色的蓝阿里山扩大阿拉山口你打了看到阿拉山口你打卢克。
 											</div>
@@ -156,60 +177,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="item">
-									<div class="user">                                
-										<figure>
-											<img src="images/img01.jpg">
-										</figure>
-										<div class="details">
-											<h5 class="name">用户名</h5>
-											<div class="time">24 Hours</div>
-											<div class="description">
-											大理石扩大快乐到家啊是假的啦空间的拉开阿喀琉斯达拉斯看到蓝色的蓝阿里山扩大阿拉山口你打了看到阿拉山口你打卢克。
-											</div>
-											<footer>
-												<a href="#">回复</a>
-											</footer>
-										</div>
-									</div>
-									<div class="回复-list">
-										<div class="item">
-											<div class="user">                                
-												<figure>
-													<img src="images/img01.jpg">
-												</figure>
-												<div class="details">
-													<h5 class="name">用户名</h5>
-													<div class="time">24 Hours</div>
-													<div class="description">
-											大理石扩大快乐到家啊是假的啦空间的拉开阿喀琉斯达拉斯看到蓝色的蓝阿里山扩大阿拉山口你打了看到阿拉山口你打卢克。
-													</div>
-													<footer>
-														<a href="#">回复</a>
-													</footer>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="user">                                
-										<figure>
-											<img src="images/img01.jpg">
-										</figure>
-										<div class="details">
-											<h5 class="name">用户名</h5>
-											<div class="time">24 Hours</div>
-											<div class="description">
-											大理石扩大快乐到家啊是假的啦空间的拉开阿喀琉斯达拉斯看到蓝色的蓝阿里山扩大阿拉山口你打了看到阿拉山口你打卢克。
-											</div>
-											<footer>
-												<a href="#">回复</a>
-											</footer>
-										</div>
-									</div>
-								</div>
+								</c:forEach>
 							</div>
+							
 							<form class="row">
 								<div class="col-md-12">
 									<h3 class="title">留下你的评论</h3>
