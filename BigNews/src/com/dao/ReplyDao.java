@@ -7,7 +7,7 @@ import com.entity.Reply;
 public class ReplyDao {
 
 	//参数为回复id，返回所有该回复的回复
-	public ArrayList<Reply> selectReplyListByCommentId(String string) {
+	public ArrayList<Reply> selectReplyListByReplyId(String string) {
 		// TODO Auto-generated method stub
 		return null;
 	}
