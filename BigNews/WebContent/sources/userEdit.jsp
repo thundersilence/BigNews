@@ -111,7 +111,7 @@
 						<div class="box-body">
 							<h4>个人信息</h4>
 							<form action="../UserServlet" method="post">
-								<img alt="用户头像" src="userimage">
+								<img alt="用户头像" src="${sessionScope.user.img}">
 								<div class="form-group">
 									<label>用户名</label>
 									<input type="text" name="username" class="form-control" placeholder="${sessionScope.user.name}">

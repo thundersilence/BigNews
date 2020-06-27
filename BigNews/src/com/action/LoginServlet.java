@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 		
 		int id = Integer.parseInt(userid);
 		user=UD.search(id);
+		String image=user.getImg();
 		//以id搜索唯一用户
 		System.out.println(user.getName());
 		if(user.getPassword()==null) {
@@ -43,6 +44,7 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("登陆成功");
 			request.getSession().setAttribute("user", user);
 			request.getSession().setAttribute("id", id);			//session 添加名称和id
+			request.getSession().setAttribute("image", image);
 			//response.sendRedirect("sources/index.html");
 			response.sendRedirect("sources/index.html");
 		}else {
