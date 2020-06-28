@@ -118,4 +118,37 @@ public class UserDao extends UserDBUtils{
 		getClose();
 		return user;
 	}
+	
+	public ArrayList<User> searchUser(String name){
+		Object params[] = {name};
+		// 要执行的sql语句
+		String sql = "select * from user where user_name=?";
+		// 执行sql语句
+		ResultSet rs = doQuery(sql, params);
+ArrayList<User> list = null;
+		
+		try {
+			if (rs.next()) {//判断是否至少存在一条数据记录
+				rs.beforeFirst();//将光标移动到第一行数据之前
+				list = new ArrayList<User>();
+				while (rs.next()) {
+				
+					User user = new User();
+							user.setId(rs.getInt(1));
+							user.setName(rs.getString(2));
+							user.setPassword(rs.getString(3));
+							user.setImg(rs.getString(4));
+					
+					list.add(user);
+				}
+			}
+			 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// 释放资源
+		getClose();
+		return list;
+	}
 }
