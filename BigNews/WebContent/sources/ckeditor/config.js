@@ -35,4 +35,7 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+	
+	//去掉图片预览框的文字
+	config.image_previewText=' ';
 };

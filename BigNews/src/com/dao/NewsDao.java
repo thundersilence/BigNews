@@ -2,10 +2,7 @@ package com.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import com.entity.News;
 
@@ -22,13 +19,15 @@ public class NewsDao extends NewsDBUtils{
 		//执行sql语句
 		int i = doUpdate(sql,params);
 		
+		System.out.println("-------sql语句已执行完毕");
+		
 		//释放资源
 		getClose();
 		return  i;
 	}
-	public int delete(News news) { //删除数据库中news_id与news的id相同的纪录
+	public int delete(int newsid) { //删除数据库中news_id与news的id相同的纪录
 		// 给占位符赋予的值
-		Object params[] = {news.getId()};
+		Object params[] = {newsid};
 		// 要执行的sql语句
 		String sql = "delete from news where news_id=?";
 
@@ -69,8 +68,6 @@ public class NewsDao extends NewsDBUtils{
 			if (rs.next()) {//判断是否至少存在一条数据记录
 				rs.beforeFirst();//将光标移动到第一行数据之前
 				list = new ArrayList<News>();
-				
-				//将学生存放在list集合中
 				while (rs.next()) {
 				
 					News news = new News();
@@ -109,9 +106,6 @@ public class NewsDao extends NewsDBUtils{
 		try {
 			if (rs.next()) {//判断是否至少存在一条数据记录
 				rs.beforeFirst();//将光标移动到第一行数据之前
-				list = new ArrayList<News>();
-				
-				//将学生存放在list集合中
 				while (rs.next()) {
 				
 					News news = new News();
@@ -153,5 +147,71 @@ public class NewsDao extends NewsDBUtils{
 		}
 		return true;
 		
+	}
+	
+	public News searchNews(int id) {
+		Object params[] = {id};
+		String sql = "select * from news where news_id=?";
+		ResultSet rs = doQuery(sql, params);
+		News news=new News();
+		try {
+			if (rs.next()) {
+			rs.beforeFirst();
+			rs.next();
+			news.setId(rs.getInt(1));
+			news.setName(rs.getString(2));
+			news.setTime(rs.getString(3));
+			news.setSource(rs.getString(4));
+			news.setContent(rs.getString(5));
+			news.setCommentNum(rs.getInt(6));
+			news.setStars(rs.getInt(7));
+			news.setPictureURL(rs.getString(8));
+			news.setSimple(rs.getString(9));
+			news.setAuthor(rs.getString(10));
+			news.setType(rs.getString(11));}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return news;
+		
+	}
+	
+	public ArrayList<News> search(String keyWord) {  //输入需要搜索的词语，将简介和姓名中包含此词语的所有新闻以Arraylist<News>的形式返回
+		Object params[] = {"%"+keyWord+"%","%"+keyWord+"%"};
+		String sql = "select * from news where news_name LIKE ? OR news_simple LIKE ?";
+		ResultSet rs = doQuery(sql, params);
+		ArrayList<News> list = null;
+		
+		try {
+			if (rs.next()) {//判断是否至少存在一条数据记录
+				rs.beforeFirst();//将光标移动到第一行数据之前
+				list = new ArrayList<News>();
+				while (rs.next()) {
+				
+					News news = new News();
+							news.setId(rs.getInt(1));
+							news.setName(rs.getString(2));
+							news.setTime(rs.getString(3));
+							news.setSource(rs.getString(4));
+							news.setContent(rs.getString(5));
+							news.setCommentNum(rs.getInt(6));
+							news.setStars(rs.getInt(7));
+							news.setPictureURL(rs.getString(8));
+							news.setSimple(rs.getString(9));
+							news.setAuthor(rs.getString(10));
+							news.setType(rs.getString(11));
+					
+					list.add(news);
+				}
+			}
+			 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// 释放资源
+		getClose();
+		return list;
 	}
 }

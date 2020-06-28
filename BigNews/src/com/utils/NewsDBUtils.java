@@ -2,11 +2,11 @@ package com.utils;
 
 import java.sql.*;      //引入sql全包
 
-
-
-
 public class NewsDBUtils {
-	private String url = "jdbc:mysql://localhost:3306/bignews?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC";
+	
+	  private String url =
+	  "jdbc:mysql://localhost:3306/bignews?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC";
+	 
 	// 使用时修改为本地数据库位置
 	private String user = "root";
 	// 用户密码 你的数据库密码
@@ -87,19 +87,6 @@ public class NewsDBUtils {
 			// 执行sql语句，并处理执行状态结果
 			rs = stmt.executeQuery();
 			
-			/*//处理结果集对象
-			if (rs.next()) {//至少有一条数据记录
-				//将光标移到第一行数据之前
-				rs.beforeFirst();
-				while (rs.next()) {
-					System.out.println(rs.getString("stu_id")+"  "
-							+rs.getString("stu_name")+" "
-							+rs.getString("stu_password")+"  "
-							+rs.getString("stu_age")+" "
-							+rs.getString("stu_sex")+" "
-							+rs.getString("stu_address"));
-				}
-			}*/
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -123,6 +110,5 @@ public class NewsDBUtils {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 }
