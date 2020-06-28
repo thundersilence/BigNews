@@ -14,9 +14,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="Magz is a HTML5 & CSS3 magazine template is based on Bootstrap 3.">
+	
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires"  content="0">
 
 	<title>Big-News 后台</title>
-
 	<title>Magz &mdash; Responsive HTML5 &amp; CSS3 Magazine Template</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
@@ -51,9 +54,21 @@
 	<script src="js/demo.js"></script>
 	<script src="js/e-magz.js"></script>
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+	
+	<!-- js消去noticeBar空间 -->
+	<script type="text/javascript">
+		window.onload=function(){
+			if("${applicationScope.notice}" == ""){
+				document.getElementById("noticeBar").style.display="none";
+			}
+		}
+	</script>
 </head>
 <body>
 	<header class="primary">
+		<marquee id="noticeBar" behavior="scroll" direction="right" bgcolor="#FFD700" scrollamount="10">
+			${applicationScope.notice}
+		</marquee>
 		<div class="firstbar">
 			<div class="container">
 				<div class="row">
@@ -136,11 +151,11 @@
 						<h1><a href="addNews.html" class="titlefont">>添加新闻</a></h1>
 					</aside>
 					<aside>
-						<h1><a href="#" class="titlefont">>查看日志</a></h1>
+						<h1><a href="../record" class="titlefont">>查看日志</a></h1>
 					</aside>
 					<aside>
 						<div class="aside-body">
-							<form action="#">
+							<form action="../addNotice" method="post">
 								<textarea name="notice" style="height:100px; width:100%;resize:none;"></textarea>
 								<button class="btn btn-primary" style="margin-top:-4px">发布公告</button>
 							</form>
