@@ -169,15 +169,15 @@
 					<div class="row">
 						<!-- news搜索框 -->
 						<article class="col-md-12 article-list">
-							<form action="../secret">
-								<input type="text" name="newskey" value="${param.newskey}" class="form-control" 
+							<form action="../secret" method="post">
+								<input type="text" name="newskey" value="${requestScope.newskey}" class="form-control" 
 									style="width:75%;display:inline">
 								<button class="btn btn-primary buttom"><i class="ion-search"></i></button>
 							</form>
 						</article>
 						
 						<!-- news列表循环start -->
-						<c:forEach items="${sessionScope.newsList}" var="news">
+						<c:forEach items="${sessionScope.cNewsList}" var="news">
 						<article class="col-md-12 article-list">
 							<div class="inner">
 								<figure id="simplefigure">
@@ -210,6 +210,87 @@
 						</article>
 						</c:forEach>
 						<!-- 循环end -->
+						
+						
+						<div class="col-md-12 text-center">
+							<ul class="pagination" id="pages">
+							
+								<!--上一页-->
+								<c:if test="${requestScope.newsPage >= 2}">
+									<li class="prev">
+										<a href="../secret?newspage=${requestScope.newsPage - 1}"><i class="ion-ios-arrow-left"></i></a>
+									</li>
+								</c:if>
+								<c:if test="${requestScope.newsPage == 1}">
+									<li class="prev">
+										<a href="../secret?newspage=${requestScope.newsPage}"><i class="ion-ios-arrow-left"></i></a>
+									</li>
+								</c:if>
+	
+								<!-- 当前页 -->
+								<c:if test="${requestScope.newsTotal <= 9}">
+									<c:forEach var="x" begin="1" end="${requestScope.newsTotal-1}">
+										<li><a href="../secret?newspage=${x}">${x}</a></li>
+									</c:forEach>
+								</c:if>
+								<c:if test="${requestScope.newsTotal >= 10}">
+									<li><a href="../secret?newspage=1">1</a></li>
+
+									<c:if test="${requestScope.newsPage <=4}">
+										<li><a href=""../secret?newspage=2">2</a></li>
+										<li><a href=""../secret?newspage=3">3</a></li>
+										<li><a href=""../secret?newspage=4">4</a></li>
+										<li><a href=""../secret?newspage=5">5</a></li>
+										<li><a href=""../secret?newspage=6">6</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsPage}">...</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsPage}">...</a></li>
+									</c:if>
+
+									<c:if
+										test="${(requestScope.newsPage>=5)&&(requestScope.newsPage<=requestScope.newsTotal-6)}">
+										<li><a href="../secret?newspage=${requestScope.newsPage}">...</a></li>
+										<li><a
+											href="category.jsp?currentpage=${requestScope.newsPage-2}">${requestScope.newsPage-2}</a></li>
+										<li><a
+											href="category.jsp?currentpage=${requestScope.newsPage-1}">${requestScope.newsPage-1}</a></li>
+										<li><a href="category.jsp?currentpage=${requestScope.newsPage}">${requestScope.newsPage}</a></li>
+										<li><a
+											href="category.jsp?currentpage=${requestScope.newsPage+1}">${requestScope.newsPage+1}</a></li>
+										<li><a
+											href="category.jsp?currentpage=${requestScope.newsPage+2}">${requestScope.newsPage+2}</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsPage}">...</a></li>
+									</c:if>
+
+									<c:if test="${requestScope.newsPage >= requestScope.newsTotal-3}">
+										<li><a href="../secret?newspage=${requestScope.newsPage}">...</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsPage}">...</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsTotal-5}">${requestScope.newsTotal-6}</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsTotal-4}">${requestScope.newsTotal-5}</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsTotal-3}">${requestScope.newsTotal-4}</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsTotal-2}">${requestScope.newsTotal-3}</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsTotal-1}">${requestScope.newsTotal-2}</a></li>
+									</c:if>
+
+									<li><a href="category.jsp?currentpage=${requestScope.newsTotal}">${requestScope.newsTotal}</a></li>
+								</c:if>
+								
+								<!--下一页-->
+								<c:if test="${requestScope.newsPage < requestScope.newsTotal-1}">
+									<li class="next">
+										<a href="../secret?newspage=${requestScope.newsPage + 1}"><i class="ion-ios-arrow-right"></i></a>
+									</li>
+								</c:if>
+								<c:if test="${requestScope.newsPage == requestScope.newsTotal-1}">
+									<li class="next">
+										<a href="../secret?newspage=${requestScope.newsPage}"><i class="ion-ios-arrow-right"></i></a>
+									</li>
+								</c:if>
+							
+							</ul>
+						</div>
+
+
+
 
 					</div>
 				</div>
@@ -222,14 +303,14 @@
 						
 						<!-- user搜索框 -->
 						<article class="col-md-12 article-list">
-							<form action="../secret">
-								<input type="text" name="userkey" value="${param.userkey}" class="form-control" style="width:75%;display:inline">
+							<form action="../secret" method="post">
+								<input type="text" name="userkey" value="${requestScope.userkey}" class="form-control" style="width:75%;display:inline">
 								<button class="btn btn-primary buttom"><i class="ion-search"></i></button>
 							</form>
 						</article>
 						
 						<!-- user列表循环start -->
-						<c:forEach items="${sessionScope.userList}" var="user">
+						<c:forEach items="${sessionScope.cUserList}" var="user">
 						<article class="col-md-12 article-list">
 							<div class="inner">
 								<div class="details" id="user">

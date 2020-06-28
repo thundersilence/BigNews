@@ -22,18 +22,19 @@ public class AdministratorServlet extends HttpServlet {
 	NewsDao newsdao = new NewsDao();
 	UserDao userdao = new UserDao();
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
 		
 		HttpSession session = request.getSession();
 		List<News> newsList = null;
 		List<User> userList = null;
 		
 		//得到新闻排序关键字和用户排序关键字
-		/*
-		 * String newskey = (String)session.getAttribute("newskey"); String userkey =
-		 * (String)session.getAttribute("userkey");
-		 */
 		String newskey = request.getParameter("newskey");
 		String userkey = request.getParameter("userkey");
 		
@@ -59,14 +60,16 @@ public class AdministratorServlet extends HttpServlet {
 		
 		session.setAttribute("newsList", newsList);
 		session.setAttribute("userList", userList);
+		request.setAttribute("newskey", newskey);
+		request.setAttribute("userkey", userkey);
 		System.out.println("======新闻与用户列表已设置");
 		
-		request.getRequestDispatcher("sources/administrator.jsp").forward(request, response);
+		request.getRequestDispatcher("AdministratorPages").forward(request, response);
 	}
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		doGet(request, response);
+		doPost(request, response);
 	}
 }

@@ -129,7 +129,6 @@
 				<div id="menu-list">
 					<ul class="nav-list">
 						<li><a href="index.html">主页</a></li>
-						<!-- 新闻类别的参数category 	..为上一级目录		-->
 						<li><a href="../ClassifiedServlet?category=science">Science</a></li>
 						<li><a href="../ClassifiedServlet?category=economics">Economics</a></li>
 						<li><a href="../ClassifiedServlet?category=politics">Politics</a></li>
@@ -148,12 +147,9 @@
 					<div class="row">
 						<div class="col-md-12">
 							<ol class="breadcrumb">
-								<!-- 跳回主页，登录状态会用session属性 -->
 								<li><a href="index.html">主页</a></li>
-								<!-- 分类名，news属性填充 -->
 								<li class="active">${sessionScope.category}</li>
 							</ol>
-							<!-- 分类名，news属性填充 -->
 							<h1 class="page-title">分类: ${sessionScope.category}</h1>
 							<p class="page-subtitle">
 								展示所有的 <i>${sessionScope.category}</i> 新闻
@@ -162,9 +158,9 @@
 					</div>
 					<div class="line"></div>
 					<div class="row">
-
+					
+						<!-- 循环start -->
 						<c:forEach items="${sessionScope.currentlist}" var="news">
-							<!-- 每个简要新闻的展示在一个artical中 news为单个新闻对象-->
 							<article class="col-md-12 article-list">
 								<div class="inner">
 									<figure>
@@ -207,11 +203,11 @@
 									</div>
 								</div>
 							</article>
-							<!--一个新闻列表项完毕 -->
 						</c:forEach>
+						<!-- 循环end -->
+						
 						<!--分页开始-->
 						<div class="col-md-12 text-center">
-							<!--分页开始-->
 							<ul class="pagination" id="pages">
 
 								<!--上一页-->
