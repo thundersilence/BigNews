@@ -1,19 +1,4 @@
-<<<<<<< HEAD
-package com.dao;
 
-import java.util.ArrayList;
-
-import com.entity.Comment;
-
-public class ReplyDao {
-
-	public ArrayList<Comment> search(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-}
-=======
 package com.dao;
 
 import java.sql.ResultSet;
@@ -79,8 +64,3 @@ public class ReplyDao extends NewsDBUtils {
 	}
 
 }
-<<<<<<< HEAD
->>>>>>> 575b217ad7aace29c3c34d4474f0e2cbc9bd8809
-=======
-
->>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5

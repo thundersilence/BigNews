@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<%@ page language="java" import = "java.util.*" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<%
-//取评论列表
-//ArrayList<Comment> commentList = (ArrayList<Comment>)session.getAttribute("commentList");
-//取若干个回复列表
-//ArrayList<Reply> replyList = (ArrayList<Reply>)session.getAttribute("replyList");
-
-=======
 <%@ page language="java" import="java.util.*" import="com.dao.*"
 	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -19,7 +7,6 @@
 //ArrayList<Comment> commentList = (ArrayList<Comment>)session.getAttribute("commentList");
 //取若干个回复列表
 //ArrayList<Reply> replyList = (ArrayList<Reply>)session.getAttribute("replyList");
->>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
 %>
 
 <!DOCTYPE html>
@@ -167,26 +154,6 @@
 									<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1220</div></a>
 								</div>
 								-->
-<<<<<<< HEAD
-							</footer>
-						</article>
-						<div class="line thin"></div>
-						<!-- 评论开始-->
-						<div class="comments">
-							<h2 class="title">3 评论 <a href="#">书写评论</a></h2>
-							<!-- 评论列表-->
-							<div class="comment-list">
-							<!-- 单个评论-->
-							<c:forEach items="${sessionScope.commentlist}" var="comment">
-							<%-- 根据${comment.user_id}找user
-							
-							--%>
-							<%
-							User user = commentdao.searchUser(${comment.user_id});
-							String user_name = user.name;
-							String comment_content = comment.content;
-							%>
-=======
 						</footer>
 					</article>
 					<div class="line thin"></div>
@@ -200,24 +167,9 @@
 							<!-- 单个评论 items="${sessionScope.commentList}"begin="1" end="3"-->
 							<c:forEach items="${sessionScope.commentList}" var="comment">
 								<%--单个评论开始 --%>
->>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
 								<div class="item">
 									<div class="user">
 										<figure>
-<<<<<<< HEAD
-										<%--根据user来找headimg --%>
-											<img src="images/img01.jpg">
-										</figure>
-										<div class="details">
-											<h5 class="name"><%=user_name %></h5>
-											<div class="description">
-											大理石扩大快乐到家啊是假的啦空间的拉开阿喀琉斯达拉斯看到蓝色的蓝阿里山扩大阿拉山口你打了看到阿拉山口你打卢克。
-											</div>
-											<footer>
-												<a href="#">回复</a>
-											</footer>
-										</div>
-=======
 											<%--根据user来找headimg ${comment.user.img}--%>
 											<img src="images/img01.jpg">
 										</figure>
@@ -277,23 +229,15 @@
 												</div>
 											</c:if>
 										</c:forEach>
->>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
 									</div>
 
 								</div>
-<<<<<<< HEAD
-								</c:forEach>
-							</div>
-							
-							<form class="row">
-=======
 								<%--单个评论结束 --%>
 							</c:forEach>
 						</div>
 						<!-- 用户登录时显示 -->
 						<c:if test="true">
 							<form class="row" >
->>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
 								<div class="col-md-12">
 									<h3 class="title">留下你的评论</h3>
 								</div>

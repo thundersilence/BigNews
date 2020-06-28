@@ -15,10 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.CommentDao;
 import com.dao.NewsDao;
 import com.dao.ReplyDao;
-<<<<<<< HEAD
-=======
 import com.dao.UserDao;
->>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
 import com.entity.Comment;
 import com.entity.News;
 import com.entity.Reply;
@@ -30,26 +27,12 @@ import com.entity.User;
 @WebServlet("/NewsServlet")
 public class NewsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-<<<<<<< HEAD
-	NewsDao newsdao =new NewsDao();
-	CommentDao commentdao =new CommentDao();
-	ReplyDao replydao =new ReplyDao();
-	//指定绝对路径
-	//String contentbasepath = "D:/BigNews/contentStore";
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public NewsServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-=======
+
 	// dao
 	NewsDao newsdao = new NewsDao();
 	UserDao userdao = new UserDao();
 	CommentDao commentdao = new CommentDao();
 	ReplyDao replydao = new ReplyDao();
->>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
 
 	// 指定绝对路径
 	// String contentbasepath = "D:/BigNews/contentStore";
@@ -82,19 +65,6 @@ public class NewsServlet extends HttpServlet {
 		News news = newsdao.searchNews(news_id);
 		// 存news对象
 		req.getSession().setAttribute("news", news);
-<<<<<<< HEAD
-		//存评论列表
-		ArrayList<Comment> commentList = commentdao.search("news_id");
-		req.getSession().setAttribute("commentList", commentList);
-		//存若干个回复列表
-		for(int i=0;i<commentList.size();i++) {
-			Comment comment = commentList.get(i);
-			int comment_id = comment.getId();
-			ArrayList<Comment> replyList = replydao.search("comment_id");
-			req.getSession().setAttribute("replyList|"+comment_id, replyList);
-		}
-		//拼接路径
-=======
 		// 取评论列表
 		ArrayList<Comment> commentList = commentdao.search(news_id);
 		// 填充对象属性
@@ -123,7 +93,6 @@ public class NewsServlet extends HttpServlet {
 		// 存评论列表
 		req.getSession().setAttribute("commentList", commentList);
 		// 拼接路径
->>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
 		String contentpath = news.getContent();
 		StringBuffer news_content = new StringBuffer();
 		news_content = getSB(contentpath);
