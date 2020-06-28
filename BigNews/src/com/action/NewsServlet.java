@@ -15,8 +15,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.CommentDao;
 import com.dao.NewsDao;
 import com.dao.ReplyDao;
+<<<<<<< HEAD
+=======
+import com.dao.UserDao;
+>>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
 import com.entity.Comment;
 import com.entity.News;
+import com.entity.Reply;
+import com.entity.User;
 
 /**
  * Servlet implementation class NewsServlet
@@ -24,6 +30,7 @@ import com.entity.News;
 @WebServlet("/NewsServlet")
 public class NewsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
 	NewsDao newsdao =new NewsDao();
 	CommentDao commentdao =new CommentDao();
 	ReplyDao replydao =new ReplyDao();
@@ -36,9 +43,27 @@ public class NewsServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+=======
+	// dao
+	NewsDao newsdao = new NewsDao();
+	UserDao userdao = new UserDao();
+	CommentDao commentdao = new CommentDao();
+	ReplyDao replydao = new ReplyDao();
+>>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
+
+	// 指定绝对路径
+	// String contentbasepath = "D:/BigNews/contentStore";
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public NewsServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -46,15 +71,18 @@ public class NewsServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("utf-8");
-		String news_id = req.getParameter("news_id");
-		News news = newsdao.searchNews(Integer.valueOf(news_id));
-		//存新闻对象
+		int news_id = Integer.parseInt(req.getParameter("news_id"));
+		// 取news对象
+		News news = newsdao.searchNews(news_id);
+		// 存news对象
 		req.getSession().setAttribute("news", news);
+<<<<<<< HEAD
 		//存评论列表
 		ArrayList<Comment> commentList = commentdao.search("news_id");
 		req.getSession().setAttribute("commentList", commentList);
@@ -66,16 +94,46 @@ public class NewsServlet extends HttpServlet {
 			req.getSession().setAttribute("replyList|"+comment_id, replyList);
 		}
 		//拼接路径
+=======
+		// 取评论列表
+		ArrayList<Comment> commentList = commentdao.search(news_id);
+		// 填充对象属性
+		for (int i = 0; i < commentList.size(); i++) {
+			Comment comment = commentList.get(i);
+			// 取产生评论的user
+			User user = userdao.search(comment.getUser_id());
+			// 填产生评论的user
+			comment.setUser(user);
+			// 取replyList
+			ArrayList<Reply> replyList = replydao.selectReplyListByCommentId(comment.getId());
+			for (int j = 0; j < replyList.size(); j++) {
+				Reply reply = replyList.get(j);
+				// 取产生回复的user
+				User auser = userdao.search(reply.getUser_id());
+				// 填产生回复的user
+				reply.setUser(auser);
+				// 取回复的目标user
+				User buser = userdao.search(reply.getTarget_reply_id());
+				// 填回复的目标user
+				reply.setTarget_user(buser);
+			}
+			// 填replyList
+			comment.setReplyList(replyList);
+		}
+		// 存评论列表
+		req.getSession().setAttribute("commentList", commentList);
+		// 拼接路径
+>>>>>>> 6016d550701b942afb9938f62df9dbb8536c6ea5
 		String contentpath = news.getContent();
 		StringBuffer news_content = new StringBuffer();
 		news_content = getSB(contentpath);
-		//存新闻文本
+		// 存新闻文本
 		req.getSession().setAttribute("news_content", news_content);
-		//跳转到指定的页面
+		// 跳转到指定的页面
 		resp.sendRedirect("sources/single.jsp");
 	}
-	
-	//读取文件
+
+	// 读取文件
 	public StringBuffer getSB(String filePath) {
 		StringBuffer sb = new StringBuffer();
 		Reader reader = null;
@@ -100,4 +158,5 @@ public class NewsServlet extends HttpServlet {
 		return sb;
 	}
 }
+
 
