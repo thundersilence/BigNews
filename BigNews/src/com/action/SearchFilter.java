@@ -41,25 +41,42 @@ public class SearchFilter extends HttpServlet {
 		}else {
 			newsList = newsdao.search(key.trim());
 			System.out.println("已按搜索关键字查找");
-			
-			
 		}
 		
+		
 		if(categories != null) {
-			for(int i=0;i<newsList.size();i++) {
-				if(!involve(categories, newsList.get(i).getType())) {
-					newsList.remove(i);
-					i--;
+			if(newsList != null) {
+				for(int i=0;i<newsList.size();i++) {
+					if(!involve(categories, newsList.get(i).getType())) {
+						newsList.remove(i);
+						i--;
+					}
 				}
 			}
 		}
 		
+		int num;
+		if(newsList == null) {
+			num=0;
+		}else {
+			num = newsList.size();
+		}
 		
-		request.setAttribute("newsList", newsList);
-		request.setAttribute("categories", categories);
+		int pageNum = num/6 +1;
+		
+		List<News> newsList2 = null;
+		if(pageNum>1) {
+			newsList2 = newsList.subList(0, 5);
+		}else {
+			newsList2 = newsList;
+		}
+		
+		request.setAttribute("page", 1);
+		request.setAttribute("pageNum", pageNum);
+		session.setAttribute("newsList", newsList2);
+		session.setAttribute("categories", categories);
 		request.getRequestDispatcher("search").forward(request, response); 
 
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 

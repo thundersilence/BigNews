@@ -41,10 +41,6 @@
 		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	</head>
 	
-	<%
-		String[] categories = (String[])request.getAttribute("categories");
-	%>
-
 	<body class="skin-orange" onload="init()">
 		<header class="primary">
 			<div class="firstbar">
@@ -171,16 +167,16 @@
 									
 									<div class="group-title">分类</div>
 									<div class="form-group">
-										<label><input type="checkbox" name="category" value="science" id="science"> 科技</label>
+										<label><input type="checkbox" name="category" value="science"> 科技</label>
 									</div>
 									<div class="form-group">
-										<label><input type="checkbox" name="category" value="politics" id="politics"> 时政</label>
+										<label><input type="checkbox" name="category" value="politics"> 时政</label>
 									</div>
 									<div class="form-group">
-										<label><input type="checkbox" name="category" value="economics" id="economics"> 财经</label>
+										<label><input type="checkbox" name="category" value="economics"> 财经</label>
 									</div>
 									<div class="form-group">
-										<label><input type="checkbox" name="category" value="sports" id="sports"> 体育</label>
+										<label><input type="checkbox" name="category" value="sports"> 体育</label>
 									</div>
 									
 									<br>
@@ -193,25 +189,32 @@
 					<div class="col-md-9">
 						<div class="nav-tabs-group">
 							<h4>
-								搜索结果：${sessionScope.key}
-								<c:if test="${categories != null}">
-									<c:forEach items="${categories}" var="x">
-										<span style="font-size:18px">[${x }]</span>
+								查询：${sessionScope.key}
+								<c:if test="${sessionScope.key == \"\"}">所有</c:if>
+								<c:if test="${sessionScope.categories != null}">
+									<c:forEach items="${sessionScope.categories}" var="x">
+										<span style="font-size:16px">[${x }]</span>
 									</c:forEach>
 								</c:if>
-								<c:if test="${categories == null}">
-									<span style="font-size:18px">[All]</span>
+								<c:if test="${sessionScope.categories == null}">
+									<span style="font-size:16px">[All]</span>
 								</c:if>
+								<span style="font-size:16px">#${requestScope.page}</span>
 							</h4>
+							<form action="../SearchPager">
+							<button style="float: right;font-size: 20px;margin-left: 5px;">跳转</button>
 							<div class="nav-tabs-right">
-								<select class="form-control">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+								<select class="form-control" id="selectbox"  name="select">
+									
+									<!-- 目录 -->
+									<c:forEach begin="1" end="${requestScope.pageNum}" var="ep">
+										<option value="${ep}">${ep}</option>
+									</c:forEach>
+									
+									
 								</select>
 							</div>
+							</form>
 						</div>
 						<div class="search-result">
 						</div>
@@ -219,7 +222,7 @@
 						
 						
 							<!-- 新闻列表循环 -->
-							<c:forEach items="${ requestScope.newsList}" var="news">
+							<c:forEach items="${ sessionScope.newsList}" var="news">
 							<article class="col-md-12 article-list">
 								<div class="inner">
 									<figure>
@@ -262,6 +265,13 @@
 		<!-- JS -->
 		<script type="text/javascript">
 			function init(){
+				$("#selectbox").children("option").each(function(){
+					if($(this).text() == ${requestScope.page}){
+						this.selected = "selected";
+					}
+				})
+			}
+			function bbb(){
 				
 			}
 		</script>

@@ -16,6 +16,7 @@ import com.entity.News;
 @WebServlet("/search")
 public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final int pageSize = 5;
 	
 	NewsDao newsdao = new NewsDao();
     
@@ -48,8 +49,29 @@ public class SearchServlet extends HttpServlet {
 			System.out.println("已按搜索关键字查找");
 		}
 		
-		request.setAttribute("newsList", newsList);
+		int num;
+		if(newsList == null) {
+			num=0;
+		}else {
+			num = newsList.size();
+		}
+		
+		int pageNum = num/6 +1;
+		
+		List<News> newsList2 = null;
+		if(pageNum>1) {
+			newsList2 = newsList.subList(0, 5);
+		}else {
+			newsList2 = newsList;
+		}
+		
+		System.out.println("pageNum:"+pageNum+"  page:1"+"  num:"+num);
+		
+		request.setAttribute("pageNum", pageNum);
+		request.setAttribute("page", 1);
+		session.setAttribute("newsList", newsList2);
 		session.setAttribute("key", key);
+		session.removeAttribute("categories");
 		request.getRequestDispatcher("sources/search.jsp").forward(request, response);
 		
 	}
