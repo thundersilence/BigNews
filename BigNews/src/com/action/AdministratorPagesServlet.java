@@ -17,8 +17,8 @@ import com.entity.User;
 @WebServlet("/AdministratorPages")
 public class AdministratorPagesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final int newsPageSize = 3;
-	private static final int userPageSize = 5;
+	private static final int newsPageSize = 4;
+	private static final int userPageSize = 7;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -52,12 +52,20 @@ public class AdministratorPagesServlet extends HttpServlet {
 	}
 	
 	private int getTotalPages(List list, int pagesize) {
+		if(list == null) {
+			return 1;
+		}
+		
 		int totalnum = list.size();
 		int totalpage = totalnum % pagesize == 0 ?(totalnum/pagesize):(totalnum/pagesize+1);
 		return totalpage;
 	}
 
 	private List getCurrentList(List list, int pagesize, int currentpage){
+		if(list == null) {
+			return list;
+		}
+		
 		int totalnum = list.size();
 		List currentlist = new ArrayList();
 

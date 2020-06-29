@@ -170,7 +170,7 @@
 						<!-- news搜索框 -->
 						<article class="col-md-12 article-list">
 							<form action="../secret" method="post">
-								<input type="text" name="newskey" value="${requestScope.newskey}" class="form-control" 
+								<input type="text" name="newskey" value="${sessionScope.newskey}" class="form-control" 
 									style="width:75%;display:inline">
 								<button class="btn btn-primary buttom"><i class="ion-search"></i></button>
 							</form>
@@ -250,14 +250,14 @@
 										test="${(requestScope.newsPage>=5)&&(requestScope.newsPage<=requestScope.newsTotal-6)}">
 										<li><a href="../secret?newspage=${requestScope.newsPage}">...</a></li>
 										<li><a
-											href="category.jsp?currentpage=${requestScope.newsPage-2}">${requestScope.newsPage-2}</a></li>
+											href="../secret?newspage=${requestScope.newsPage-2}">${requestScope.newsPage-2}</a></li>
 										<li><a
-											href="category.jsp?currentpage=${requestScope.newsPage-1}">${requestScope.newsPage-1}</a></li>
-										<li><a href="category.jsp?currentpage=${requestScope.newsPage}">${requestScope.newsPage}</a></li>
+											href="../secret?newspage=${requestScope.newsPage-1}">${requestScope.newsPage-1}</a></li>
+										<li><a href="../secret?newspage=${requestScope.newsPage}">${requestScope.newsPage}</a></li>
 										<li><a
-											href="category.jsp?currentpage=${requestScope.newsPage+1}">${requestScope.newsPage+1}</a></li>
+											href="../secret?newspage=${requestScope.newsPage+1}">${requestScope.newsPage+1}</a></li>
 										<li><a
-											href="category.jsp?currentpage=${requestScope.newsPage+2}">${requestScope.newsPage+2}</a></li>
+											href="../secret?newspage=${requestScope.newsPage+2}">${requestScope.newsPage+2}</a></li>
 										<li><a href="../secret?newspage=${requestScope.newsPage}">...</a></li>
 									</c:if>
 
@@ -271,7 +271,7 @@
 										<li><a href="../secret?newspage=${requestScope.newsTotal-1}">${requestScope.newsTotal-2}</a></li>
 									</c:if>
 
-									<li><a href="category.jsp?currentpage=${requestScope.newsTotal}">${requestScope.newsTotal}</a></li>
+									<li><a href="../secret?newspage=${requestScope.newsTotal}">${requestScope.newsTotal}</a></li>
 								</c:if>
 								
 								<!--下一页-->
@@ -304,7 +304,7 @@
 						<!-- user搜索框 -->
 						<article class="col-md-12 article-list">
 							<form action="../secret" method="post">
-								<input type="text" name="userkey" value="${requestScope.userkey}" class="form-control" style="width:75%;display:inline">
+								<input type="text" name="userkey" value="${sessionScope.userkey}" class="form-control" style="width:75%;display:inline">
 								<button class="btn btn-primary buttom"><i class="ion-search"></i></button>
 							</form>
 						</article>
@@ -329,6 +329,94 @@
 						</article>
 						</c:forEach>
 						<!-- 循环end -->
+						
+						
+						
+						<div class="col-md-12 text-center">
+							<ul class="pagination" id="pages">
+							
+								<!--上一页-->
+								<c:if test="${requestScope.userPage >= 2}">
+									<li class="prev">
+										<a href="../secret?userpage=${requestScope.userPage - 1}"><i class="ion-ios-arrow-left"></i></a>
+									</li>
+								</c:if>
+								<c:if test="${requestScope.userPage == 1}">
+									<li class="prev">
+										<a href="../secret?userpage=${requestScope.userPage}"><i class="ion-ios-arrow-left"></i></a>
+									</li>
+								</c:if>
+	
+								<!-- 当前页 -->
+								<c:if test="${requestScope.userTotal <= 9}">
+									<c:forEach var="x" begin="1" end="${requestScope.userTotal-1}">
+										<li><a href="../secret?userpage=${x}">${x}</a></li>
+									</c:forEach>
+								</c:if>
+								<c:if test="${requestScope.userTotal >= 10}">
+									<li><a href="../secret?userpage=1">1</a></li>
+
+									<c:if test="${requestScope.userPage <=4}">
+										<li><a href=""../secret?userpage=2">2</a></li>
+										<li><a href=""../secret?userpage=3">3</a></li>
+										<li><a href=""../secret?userpage=4">4</a></li>
+										<li><a href=""../secret?userpage=5">5</a></li>
+										<li><a href=""../secret?userpage=6">6</a></li>
+										<li><a href="../secret?userpage=${requestScope.userPage}">...</a></li>
+										<li><a href="../secret?userpage=${requestScope.userPage}">...</a></li>
+									</c:if>
+
+									<c:if
+										test="${(requestScope.userPage>=5)&&(requestScope.userPage<=requestScope.userTotal-6)}">
+										<li><a href="../secret?userpage=${requestScope.userPage}">...</a></li>
+										<li><a
+											href="../secret?userpage=${requestScope.userPage-2}">${requestScope.userPage-2}</a></li>
+										<li><a
+											href="../secret?userpage=${requestScope.userPage-1}">${requestScope.userPage-1}</a></li>
+										<li><a href="../secret?userpage=${requestScope.userPage}">${requestScope.userPage}</a></li>
+										<li><a
+											href="../secret?userpage=${requestScope.userPage+1}">${requestScope.userPage+1}</a></li>
+										<li><a
+											href="../secret?userpage=${requestScope.userPage+2}">${requestScope.userPage+2}</a></li>
+										<li><a href="../secret?userpage=${requestScope.userPage}">...</a></li>
+									</c:if>
+
+									<c:if test="${requestScope.userPage >= requestScope.userTotal-3}">
+										<li><a href="../secret?userpage=${requestScope.userPage}">...</a></li>
+										<li><a href="../secret?userpage=${requestScope.userPage}">...</a></li>
+										<li><a href="../secret?userpage=${requestScope.userTotal-5}">${requestScope.userTotal-6}</a></li>
+										<li><a href="../secret?userpage=${requestScope.userTotal-4}">${requestScope.userTotal-5}</a></li>
+										<li><a href="../secret?userpage=${requestScope.userTotal-3}">${requestScope.userTotal-4}</a></li>
+										<li><a href="../secret?userpage=${requestScope.userTotal-2}">${requestScope.userTotal-3}</a></li>
+										<li><a href="../secret?userpage=${requestScope.userTotal-1}">${requestScope.userTotal-2}</a></li>
+									</c:if>
+
+									<li><a href="../secret?userpage=${requestScope.userTotal}">${requestScope.userTotal}</a></li>
+								</c:if>
+								
+								<!--下一页-->
+								<c:if test="${requestScope.userPage < requestScope.userTotal-1}">
+									<li class="next">
+										<a href="../secret?userpage=${requestScope.userPage + 1}"><i class="ion-ios-arrow-right"></i></a>
+									</li>
+								</c:if>
+								<c:if test="${requestScope.userPage == requestScope.userTotal-1}">
+									<li class="next">
+										<a href="../secret?userpage=${requestScope.userPage}"><i class="ion-ios-arrow-right"></i></a>
+									</li>
+								</c:if>
+							
+							</ul>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						
 					</div>
 				</div>
