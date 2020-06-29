@@ -1,11 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import = "com.dao.NewsDao" %>
+<%@ page import = "com.entity.*" %>
+<%@ page import = "java.util.*" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="<%=request.getContextPath()%>/sources/">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="description" content="Magz is a HTML5 & CSS3 magazine template is based on Bootstrap 3.">
 		
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires"  content="0">
 		
 		<title>Magz &mdash; Responsive HTML5 &amp; CSS3 Magazine Template</title>
 		<!-- Bootstrap -->
@@ -26,9 +37,15 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/skins/all.css">
 		<link rel="stylesheet" href="css/demo.css">
+		
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	</head>
+	
+	<%
+		String[] categories = (String[])request.getAttribute("categories");
+	%>
 
-	<body class="skin-orange">
+	<body class="skin-orange" onload="init()">
 		<header class="primary">
 			<div class="firstbar">
 				<div class="container">
@@ -41,10 +58,10 @@
 							</div>						
 						</div>
 						<div class="col-md-6 col-sm-12">
-							<form class="search" autocomplete="off">
+							<form class="search" autocomplete="off" action="../search" method="post">
 								<div class="form-group">
 									<div class="input-group">
-										<input type="text" name="q" class="form-control" placeholder="输入文字">									
+										<input type="text" name="key" class="form-control" placeholder="输入文字">									
 										<div class="input-group-btn">
 											<button class="btn btn-primary"><i class="ion-search"></i></button>
 										</div>
@@ -105,7 +122,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3">
-						<aside>
+					
+					
+					
+						<!-- 在已搜索出的列表中再选取关键词筛选，此功能作为候选功能，暂未实现 -->
+						<!-- <aside>
 							<h2 class="aside-title">搜索</h2>
 							<div class="aside-body">
 								<p>用其他关键词或者过滤器来获得更精准的结果</p>
@@ -122,17 +143,22 @@
 									</div>
 								</form>
 							</div>
-						</aside>
+						</aside> -->
+						
+						
+						
 						<aside>
 							<h2 class="aside-title">过滤器</h2>
 							<div class="aside-body">
-								<form class="checkbox-group">
-									<div class="group-title">时间</div>
+								<form class="checkbox-group" action="../SearchFilter" method="get">
+								
+									<!-- 按照时间过滤，暂未实现 -->
+									<!-- <div class="group-title">时间</div>
 									<div class="form-group">
 										<label><input type="radio" name="date" checked> 任何时候</label>
 									</div>
 									<div class="form-group">
-										<label><input type="radio" name="date"> 今日</label>
+										<label onclick="click1()"><input type="radio" name="date"> 今日</label>
 									</div>
 									<div class="form-group">
 										<label><input type="radio" name="date"> 上周</label>
@@ -140,72 +166,80 @@
 									<div class="form-group">
 										<label><input type="radio" name="date"> 上月</label>
 									</div>
-									<br>
+									<br> -->
+									
+									
 									<div class="group-title">分类</div>
 									<div class="form-group">
-										<label><input type="checkbox" name="category" checked> 所有类别</label>
+										<label><input type="checkbox" name="category" value="science" id="science"> 科技</label>
 									</div>
 									<div class="form-group">
-										<label><input type="checkbox" name="category"> 生活方式</label>
+										<label><input type="checkbox" name="category" value="politics" id="politics"> 时政</label>
 									</div>
 									<div class="form-group">
-										<label><input type="checkbox" name="category"> 旅行</label>
+										<label><input type="checkbox" name="category" value="economics" id="economics"> 财经</label>
 									</div>
 									<div class="form-group">
-										<label><input type="checkbox" name="category"> 计算机</label>
+										<label><input type="checkbox" name="category" value="sports" id="sports"> 体育</label>
 									</div>
-									<div class="form-group">
-										<label><input type="checkbox" name="category"> 电影</label>
-									</div>
-									<div class="form-group">
-										<label><input type="checkbox" name="category"> 运动</label>
-									</div>
+									
+									<br>
+									<button class="ion-refresh">确定</button>
+
 								</form>
 							</div>
 						</aside>
 					</div>
 					<div class="col-md-9">
 						<div class="nav-tabs-group">
-							<ul class="nav-tabs-list">
-								<li class="active"><a href="#">所有</a></li>
-								<li><a href="#">最近</a></li>
-								<li><a href="#">最热</a></li>
-								<li><a href="#">潮流</a></li>
-								<li><a href="#">影视</a></li>
-							</ul>
+							<h4>
+								搜索结果：${sessionScope.key}
+								<c:if test="${categories != null}">
+									<c:forEach items="${categories}" var="x">
+										<span style="font-size:18px">[${x }]</span>
+									</c:forEach>
+								</c:if>
+								<c:if test="${categories == null}">
+									<span style="font-size:18px">[All]</span>
+								</c:if>
+							</h4>
 							<div class="nav-tabs-right">
 								<select class="form-control">
-									<option>每页个数</option>
-									<option>10</option>
-									<option>20</option>
-									<option>50</option>
-									<option>100</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
 								</select>
 							</div>
 						</div>
 						<div class="search-result">
 						</div>
 						<div class="row">
+						
+						
+							<!-- 新闻列表循环 -->
+							<c:forEach items="${ requestScope.newsList}" var="news">
 							<article class="col-md-12 article-list">
 								<div class="inner">
 									<figure>
 										<a href="single.html">
-											<img src="images/news/img11.jpg">
+											<img src="${ news.pictureURL }">
 										</a>
 									</figure>
 									<div class="details">
 										<div class="detail">
 											<div class="category">
-												<a href="#">电影</a>
+												<a href="#">${ news.type }</a>
 											</div>
-											<time>12月 19, 2016</time>
+											<time>${ news.time }</time>
 										</div>
-										<h1><a href="single.html">新闻标题（待填充）</a></h1>
+										<h1><a href="single.html">${ news.name }</a></h1>
 										<p>
-										新闻内容简述（带填充）
+										${news.simple }
 										</p>
 										<footer>
-											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>273</div></a>
+											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>${ news.stars }</div></a>
 											<a class="btn btn-primary more" href="single.html">
 												<div>更多</div>
 												<div><i class="ion-ios-arrow-thin-right"></i></div>
@@ -214,104 +248,10 @@
 									</div>
 								</div>
 							</article>
-							<article class="col-md-12 article-list">
-								<div class="inner">
-									<div class="badge">
-										赞助
-									</div>
-									<figure>
-										<a href="single.html">
-											<img src="images/news/img02.jpg">
-										</a>
-									</figure>
-									<div class="details">
-										<div class="detail">
-											<div class="category">
-												<a href="#">Travel</a>
-											</div>
-											<time>December 18, 2016</time>
-										</div>
-										<h1><a href="single.html">Maecenas accumsan tortor ut velit pharetra mollis</a></h1>
-										<p>
-											Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat sollicitudin ut est. In fringilla dui.
-										</p>
-										<footer>
-											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>4209</div></a>
-											<a class="btn btn-primary more" href="single.html">
-												<div>More</div>
-												<div><i class="ion-ios-arrow-thin-right"></i></div>
-											</a>
-										</footer>
-									</div>
-								</div>
-							</article>
-							<article class="col-md-12 article-list">
-								<div class="inner">
-									<figure>
-										<a href="single.html">
-											<img src="images/news/img03.jpg">
-										</a>
-									</figure>
-									<div class="details">
-										<div class="detail">
-											<div class="category">
-											<a href="#">Travel</a>
-											</div>
-											<time>December 16, 2016</time>
-										</div>
-										<h1><a href="single.html">Nulla facilisis odio quis gravida vestibulum Proin venenatis pellentesque arcu</a></h1>
-										<p>
-											Nulla facilisis odio quis gravida vestibulum. Proin venenatis pellentesque arcu, ut mattis nulla placerat et.
-										</p>
-										<footer>
-											<a href="#" class="love active"><i class="ion-android-favorite"></i> <div>302</div></a>
-											<a class="btn btn-primary more" href="single.html">
-												<div>More</div>
-												<div><i class="ion-ios-arrow-thin-right"></i></div>
-											</a>
-										</footer>
-									</div>
-								</div>
-							</article>
-							<article class="col-md-12 article-list">
-								<div class="inner">
-									<figure>
-										<a href="single.html">
-											<img src="images/news/img09.jpg">
-										</a>
-									</figure>
-									<div class="details">
-										<div class="detail">
-											<div class="category">
-												<a href="#">Healthy</a>
-											</div>
-											<time>December 16, 2016</time>
-										</div>
-										<h1><a href="single.html">Maecenas blandit ultricies lorem id tempor enim pulvinar at</a></h1>
-										<p>
-											Maecenas blandit ultricies lorem, id tempor enim pulvinar at. Curabitur sit amet tortor eu ipsum lacinia malesuada. Etiam sed vulputate magna.
-										</p>
-										<footer>
-											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>783</div></a>
-											<a class="btn btn-primary more" href="single.html">
-												<div>More</div>
-												<div><i class="ion-ios-arrow-thin-right"></i></div>
-											</a>
-										</footer>
-									</div>
-								</div>
-							</article>
-		          <div class="col-md-12 text-center">
-		            <ul class="pagination">
-		              <li class="prev"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
-		              <li class="active"><a href="#">1</a></li>
-		              <li><a href="#">2</a></li>
-		              <li><a href="#">3</a></li>
-		              <li><a href="#">...</a></li>
-		              <li><a href="#">97</a></li>
-		              <li class="next"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
-		            </ul>
-		          </div>
+							</c:forEach>
+							
+
+							
 						</div>
 					</div>
 				</div>
@@ -320,6 +260,12 @@
 		<!-- End Footer -->
 
 		<!-- JS -->
+		<script type="text/javascript">
+			function init(){
+				
+			}
+		</script>
+		
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery.migrate.js"></script>
 		<script src="scripts/bootstrap/bootstrap.min.js"></script>
