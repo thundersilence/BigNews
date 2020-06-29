@@ -111,9 +111,12 @@
 						<div class="box-body">
 							<h4>个人信息</h4>
 							<form action="../UserServlet" method="get">
-								<img alt="用户头像" src="${sessionScope.user.img}">
+								<img alt="用户头像" src="${sessionScope.user.img}" style="width:100px;height:100px;">
 								<div class="form-group">
 									<label>用户名:</label><label>${sessionScope.user.name}</label>
+								</div>
+								<div class="form-group">
+									<label>用户ID:</label><label>${sessionScope.user.id}</label>
 								</div>
 								<div class="form-group text-right">
 									<button class="btn btn-primary btn-block">修改个人信息</button>

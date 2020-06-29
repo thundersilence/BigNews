@@ -6,6 +6,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,12 +15,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="Magz is a HTML5 & CSS3 magazine template is based on Bootstrap 3.">
-	
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Cache-Control" content="no-cache">
-	<meta http-equiv="Expires"  content="0">
 
-	<title>Big-News 后台</title>
+	<title>编辑新闻</title>
+
 	<title>Magz &mdash; Responsive HTML5 &amp; CSS3 Magazine Template</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
@@ -38,8 +36,6 @@
 	<link rel="stylesheet" href="css/skins/all.css">
 	<link rel="stylesheet" href="css/demo.css">
 	
-	<link rel="stylesheet" type="text/css" href="css/project.css">
-	
 	<!-- JS -->
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.migrate.js"></script>
@@ -54,21 +50,9 @@
 	<script src="js/demo.js"></script>
 	<script src="js/e-magz.js"></script>
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-	
-	<!-- js消去noticeBar空间 -->
-	<script type="text/javascript">
-		window.onload=function(){
-			if("${applicationScope.notice}" == ""){
-				document.getElementById("noticeBar").style.display="none";
-			}
-		}
-	</script>
 </head>
 <body>
 	<header class="primary">
-		<marquee id="noticeBar" behavior="scroll" direction="right" bgcolor="#FFD700" scrollamount="10">
-			${applicationScope.notice}
-		</marquee>
 		<div class="firstbar">
 			<div class="container">
 				<div class="row">
@@ -103,8 +87,8 @@
 					</div>
 					<div class="col-md-3 col-sm-12 text-right">
 						<ul class="nav-icons">
-							<li><a href="register.jsp"><i class="ion-person-add"></i><div>注册</div></a></li>
-							<li><a href="login.jsp"><i class="ion-person"></i><div>登录</div></a></li>
+							<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
+							<li><a href="login.html"><i class="ion-person"></i><div>登录</div></a></li>
 						</ul>
 					</div>
 				</div>
@@ -139,121 +123,41 @@
 		<!-- End nav -->
 	</header>
 
-		
+							
 	<!-- 主要展示部分 -->
-	<section class="search">
+	<section class="login first grey">
 		<div class="container">
-			<div class="row">
-			
-				<!-- 侧边栏start -->
-				<div class="col-md-3">
-					<aside>
-						<h1><a href="addNews.html" class="titlefont">>添加新闻</a></h1>
-					</aside>
-					<aside>
-						<h1><a href="../record" class="titlefont">>查看日志</a></h1>
-					</aside>
-					<aside>
-						<div class="aside-body">
-							<form action="../addNotice" method="post">
-								<textarea name="notice" style="height:100px; width:100%;resize:none;"></textarea>
-								<button class="btn btn-primary" style="margin-top:-4px">发布公告</button>
-							</form>
-						</div>
-					</aside>
+			<h4>编辑新闻</h4>
+			<form action="../updateNews?id=${param.id}" method="post">
+				<div class="box box-border">
+					<div class="box-body">
+						<h6>标题</h6>
+						<input type="text" name="title" class="form-control" value="${requestScope.news.name}">
+						<h6>来源</h6>
+						<input type="text" name="source" class="form-control" value="${requestScope.news.source}">
+						<h6>作者</h6>
+						<input type="text" name="author" class="form-control" value="${requestScope.news.author}">
+						<h6>新闻类别</h6>
+						<span><input type="radio" name="category" value="科技" checked>科技</span>
+						<span><input type="radio" name="category" value="体育">体育</span>
+						<span><input type="radio" name="category" value="财经">财经</span>
+						<h6>缩略图(url)</h6>
+						<input type="text" name="newsimage" class="form-control" value="${requestScope.news.pictureURL}">
+						<h6>新闻简介</h6>
+						<textarea class="form-control" name="simple" style="resize:none">${requestScope.news.simple}</textarea>
+					</div>
 				</div>
-				<!-- 侧边栏end -->
 				
-				<!-- 新闻列表start -->
-				<div class="col-md-6">
-					<div class="row">
-						<!-- news搜索框 -->
-						<article class="col-md-12 article-list">
-							<form action="../secret">
-								<input type="text" name="newskey" value="${param.newskey}" class="form-control" 
-									style="width:75%;display:inline">
-								<button class="btn btn-primary buttom"><i class="ion-search"></i></button>
-							</form>
-						</article>
-						
-						<!-- news列表循环start -->
-						<c:forEach items="${sessionScope.newsList}" var="news">
-						<article class="col-md-12 article-list">
-							<div class="inner">
-								<figure id="simplefigure">
-									<a href="single.html">
-										<img src="${news.pictureURL}" class="simpleimage">
-									</a>
-								</figure>
-								<div class="details" id="simcontent">
-									<div class="category">
-										<a href="#">${news.type}</a>
-									</div>
-									<time>${news.time}</time>
-									<h1><a href="single.html">${news.name}</a></h1>
-									<div id="bottom">
-										<a class="btn btn-primary more" href="single.html">
-											<div>查看</div>
-											<div><i class="ion-ios-arrow-thin-right"></i></div>
-										</a>
-										<a class="btn btn-primary more" href="../updateNews?id=${news.id}">
-											<div>编辑</div>
-											<div><i class="ion-ios-arrow-thin-right"></i></div>
-										</a>
-										<a class="btn btn-primary more" href="../deleteNews?id=${news.id}">
-											<div>删除</div>
-											<div><i class="ion-ios-arrow-thin-right"></i></div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</article>
-						</c:forEach>
-						<!-- 循环end -->
+				<div class="box-body">
+					<textarea id="content" name="content"></textarea>						
+					<script type="text/javascript">
+						var obj = CKEDITOR.replace('content',{height:460});
+						obj.setData("${requestScope.content}");
+					</script>
 
-					</div>
+					<button class="btn btn-primary btn-block">上传</button>
 				</div>
-				<!-- 新闻列表end -->
-				
-				
-				<!-- 用户列表start -->
-				<div class="col-md-3">
-					<div class="row">
-						
-						<!-- user搜索框 -->
-						<article class="col-md-12 article-list">
-							<form action="../secret">
-								<input type="text" name="userkey" value="${param.userkey}" class="form-control" style="width:75%;display:inline">
-								<button class="btn btn-primary buttom"><i class="ion-search"></i></button>
-							</form>
-						</article>
-						
-						<!-- user列表循环start -->
-						<c:forEach items="${sessionScope.userList}" var="user">
-						<article class="col-md-12 article-list">
-							<div class="inner">
-								<div class="details" id="user">
-									<a href="single.html" id="leftdiv">
-										<div id="titlefont">${user.name}</div>
-										<div id="titlefont">${user.id}</div>
-									</a>
-									<span id="rightdiv" style="bottom:0; right:0;position:absolute;">
-										<a class="btn btn-primary more" href="../deleteUser?id=${user.id}">
-											<div>删除</div>
-											<div><i class="ion-ios-arrow-thin-right"></i></div>
-										</a>
-									<span>
-								</div>
-							</div>
-						</article>
-						</c:forEach>
-						<!-- 循环end -->
-						
-					</div>
-				</div>
-				<!-- 用户列表end -->
-				
-			</div>
+			</form>
 		</div>
 	</section>
 </body>

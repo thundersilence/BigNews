@@ -77,7 +77,7 @@ public class AddNewsServlet extends HttpServlet{
 		ND.insert(news);
 		AddRecord.print("添加新闻记录：" + id);
 	
-		response.sendRedirect("sources/index.html");
+		response.sendRedirect("secret");
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 

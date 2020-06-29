@@ -30,8 +30,12 @@ public class AdministratorServlet extends HttpServlet {
 		List<User> userList = null;
 		
 		//得到新闻排序关键字和用户排序关键字
-		String newskey = (String)session.getAttribute("newskey");
-		String userkey = (String)session.getAttribute("userkey");
+		/*
+		 * String newskey = (String)session.getAttribute("newskey"); String userkey =
+		 * (String)session.getAttribute("userkey");
+		 */
+		String newskey = request.getParameter("newskey");
+		String userkey = request.getParameter("userkey");
 		
 		if(newskey == null) {
 			newsList = newsdao.selectAll();
@@ -40,7 +44,7 @@ public class AdministratorServlet extends HttpServlet {
 			newsList = newsdao.selectAll();
 			System.out.println("新闻关键字为空或空格");
 		}else {
-			newsList = newsdao.search(newskey);
+			newsList = newsdao.search(newskey.trim());
 			System.out.println("已按新闻搜索关键字查找");
 		}
 		
