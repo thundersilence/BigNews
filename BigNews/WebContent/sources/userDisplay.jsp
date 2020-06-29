@@ -127,7 +127,22 @@
 				</div>
 			</div>
 		</section>
-
+		<section class="login first grey">
+			<div class="container">
+				<div class="box-wrapper">				
+					<div class="box box-border">
+						<div class="box-body">
+							
+							<form action="../FavouriteServlet" method="post">
+								<div class="form-group text-right">
+									<button class="btn btn-primary btn-block">查看收藏</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!-- JS -->
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery.migrate.js"></script>
