@@ -40,6 +40,12 @@ public void testSelectAll() {
 	show(n);
 }
 
+@Test
+public void testSearchUser() {
+	ArrayList<User> n=d.searchUser("name");
+	show(n);
+}
+
 public void show(ArrayList<User> user) {
 	for(int i=0;i<user.size();i++) {
 		System.out.println(user.get(i).getId());
