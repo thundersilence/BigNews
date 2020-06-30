@@ -12,9 +12,9 @@ public class StarDao extends NewsDBUtils{
 	public int insert(Star star) {//插入新的star到数据库，含两个参数
 		//给占位符赋予的值
 		Object params [] 
-				= {star.getStars_id(),star.getUser_id(),star.getNews_id()};
+				= {star.getUser_id(),star.getNews_id()};
 		//要执行的sql语句
-		String sql = "insert into star values(?,?)";  //star表：stars_id:主键;user_id:用户id;news_id
+		String sql = "insert into star(user_id,news_id) values(?,?)";  //star表：stars_id:主键;user_id:用户id;c
 		
 		//执行sql语句
 		int i = doUpdate(sql,params);
@@ -29,7 +29,7 @@ public class StarDao extends NewsDBUtils{
 		// 给占位符赋予的值
 		Object params[] = {star.getStars_id()};
 		// 要执行的sql语句
-		String sql = "delete from news where news_id=?";
+		String sql = "delete from star where news_id=?";
 
 		// 执行sql语句
 		int i = doUpdate(sql, params);
@@ -43,7 +43,7 @@ public class StarDao extends NewsDBUtils{
 		Object params [] 
 				= {star.getStars_id(),star.getUser_id(),star.getNews_id()};
 		// 要执行的sql语句
-		String sql = "update news set stars_id=?,user_id=? where news_id=?";
+		String sql = "update star set stars_id=?,user_id=? where news_id=?";
 		// 执行sql语句
 		
 		int i = doUpdate(sql, params);
@@ -76,21 +76,50 @@ public class StarDao extends NewsDBUtils{
 		getClose();
 		return list;
 	}
-	public boolean checkstar(int user_id, int news_id) {
-		
-			Object params[] = {user_id,news_id};
-			String sql = "select * from star where user_id=? AND news_id=?";
-			ResultSet rs = doQuery(sql, params);
-			try {
-				if (rs.next())
-				return true;
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+	public boolean checkID(int id) {
+		Object params[] = {id};
+		String sql = "select * from star where stars_id=?";
+		ResultSet rs = doQuery(sql, params);
+		try {
+			if (rs.next())
 			return false;
-			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
 		
 	}
 
+	
+	public int delete(int user_id,int news_id) { //删除数据库中news_id与news的id相同的纪录
+		// 给占位符赋予的值
+		Object params[] = {user_id,news_id};
+		// 要执行的sql语句
+		String sql = "delete from star where user_id=? AND news_id=?";
+
+		// 执行sql语句
+		int i = doUpdate(sql, params);
+
+		// 释放资源
+		getClose();
+		return i;
+	}
+	
+	public boolean checkstar(int user_id, int news_id) {
+		
+		Object params[] = {user_id,news_id};
+		String sql = "select * from star where user_id=? AND news_id=?";
+		ResultSet rs = doQuery(sql, params);
+		try {
+			if (rs.next())
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+		
+	
+}
 }
