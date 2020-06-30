@@ -41,8 +41,101 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/skins/all.css">
 <link rel="stylesheet" href="css/demo.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
 </head>
+<script type="text/javascript">
 
+	$(function(){
+		$.post("../StarServlet",{"action":"sel","user_id":${sessionScope.user.id},"news_id":${sessionScope.news.id}},function(data){
+			//alert(data.start);//true/false
+			if(data.start=="true"){
+				$("#loveimgid").attr("src","images/hx.jpg");
+				
+			}else{
+				$("#loveimgid").attr("src","images/hx2.jpg");
+			}
+			
+		},"json");
+		
+	});
+
+	//add
+	function addLove(){
+		$.post("../StarServlet",{"action":"add","user_id":${sessionScope.user.id},"news_id":${sessionScope.news.id}});
+		//用dom操作向标签中添加红心
+		$("#loveimgid").attr("src","images/hx.jpg");
+	}
+	//del
+	function delLove(){
+		$.post("../StarServlet",{"action":"del","user_id":${sessionScope.user.id},"news_id":${sessionScope.news.id}});
+		//用dom操作向标签中添加黑心
+		$("#loveimgid").attr("src","images/hx2.jpg");
+		
+	}
+	
+	//pageUserClick
+	function checkClick(){
+		var imgValue = $("#loveimgid").attr("src");
+		if(imgValue=="images/hx.jpg"){
+			delLove();
+		}else{
+			addLove();
+		}
+	}
+
+</script>
+<script type="text/javascript">
+	 /*
+	function star() {
+		//alert("进入js函数");
+		//alert(clist);
+		var news_id = ${sessionScope.news.id};
+		var user_id = ${sessionScope.user.id};
+		//var user_id = 120;
+		var status = ${sessionScope.status};
+		alert("收藏状态status为 "+status);
+		if(status==0){
+			alert("新闻id：" + news_id + " 用户id：" + user_id);
+			$.get("../StarServlet?caozuo=on", {
+				"news_id" : news_id,
+				"user_id" : user_id
+			});
+			alert("用户："+user_id+"成功添加收藏新闻："+nwes_id);
+		}
+		else if(status==1){
+			alert("新闻id：" + news_id + " 用户id：" + user_id);
+			$.get("../StarServlet?caozuo=off", {
+				"news_id" : news_id,
+				"user_id" : user_id
+			});
+			alert("用户："+user_id+"成功删除收藏新闻："+nwes_id);
+		}
+
+	}
+	
+	function cancelstar() {
+		alert("进入js函数")
+		var news_id = ${sessionScope.news.id};
+		var user_id = ${sessionScope.user.id};
+		//var user_id = 120;
+		alert("新闻id：" + news_id + " 用户id：" + user_id);
+		$.get("../StarServlet?caozuo=off", {
+			"news_id" : news_id,
+			"user_id" : user_id
+		});
+
+		alert("done");
+	}
+	
+	function showreply(comment_id,target_user_id,target_reply_id,type){
+		alert("comment_id:"+comment_id+"target_user_id:"+target_user_id+"target_reply_id:"+target_reply_id+"type:"+type);
+		//$.style.display = "none";
+		$.style.display = "block";
+		var user_id = ${sessionScope.user.id};
+		
+	}
+	*/
+</script>
 <body class="skin-orange">
 	<header class="primary">
 		<div class="firstbar">
@@ -146,11 +239,9 @@
 								escapeXml="false" />
 						</div>
 						<footer>
-							<!-- 
-								<div class="col" align="center">
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1220</div></a>
-								</div>
-								-->
+							<a href="javascript:;" onclick="checkClick()" class="love">
+								<img alt="" src="images/hx2.jpg" id="loveimgid">
+								<div>237</div></a>
 						</footer>
 					</article>
 					<div class="line thin"></div>
@@ -174,8 +265,21 @@
 											<h5 class="name">用户名: ${comment.user.name }</h5>
 											<div class="description">评论${comment.content }</div>
 											<footer>
-												<a href="#"<%-- --%>>回复</a>
+												<a href="javascript:;" onclick="showreply(${comment.id }, ${comment.user.id },0,0)">回复</a>
 											</footer>
+											<form action="../ReplyServlet" method="post"
+												class="replyform">
+												<div class="col-md-12">
+													<h3 class="title">回复：@${comment.user.name}</h3>
+												</div>
+												<div class="form-group col-md-12">
+													<textarea class="form-control" name="reply_message"
+														placeholder="书写回复..."></textarea>
+												</div>
+												<div class="form-group col-md-12">
+													<button class="btn btn-primary" type="submit">发送回复</button>
+												</div>
+											</form>
 										</div>
 									</div>
 									<div class="回复-list">
@@ -193,8 +297,21 @@
 															<div class="time">24 Hours:${reply0.time }</div>
 															<div class="description">评论的回复${reply0.content }</div>
 															<footer>
-																<a href="#">回复</a>
+																<a href="javascript:;" onclick="showreply(${comment.id }, ${reply0.user.id },${reply0.id },1)">回复</a>
 															</footer>
+															<form action="../ReplyServlet" method="post"
+																class="replyform">
+																<div class="col-md-12">
+																	<h3 class="title">回复：@${comment.user.name}</h3>
+																</div>
+																<div class="form-group col-md-12">
+																	<textarea class="form-control" name="reply_message"
+																		placeholder="书写回复..."></textarea>
+																</div>
+																<div class="form-group col-md-12">
+																	<button class="btn btn-primary" type="submit">发送回复</button>
+																</div>
+															</form>
 														</div>
 													</div>
 													<div class="回复-list">
@@ -214,8 +331,21 @@
 																				<div class="time">24 Hours:${reply1.time }</div>
 																				<div class="description">回复的回复${reply1.content }</div>
 																				<footer>
-																					<a href="#">回复</a>
+																					<a href="javascript:;" onclick="showreply(${comment.id }, ${reply1.user.id },${reply1.id },1)">回复</a>
 																				</footer>
+																				<form action="../ReplyServlet" method="post"
+																					class="replyform">
+																					<div class="col-md-12">
+																						<h3 class="title">回复：@${comment.user.name}</h3>
+																					</div>
+																					<div class="form-group col-md-12">
+																						<textarea class="form-control"
+																							name="reply_message" placeholder="书写回复..."></textarea>
+																					</div>
+																					<div class="form-group col-md-12">
+																						<button class="btn btn-primary" type="submit">发送回复</button>
+																					</div>
+																				</form>
 																			</div>
 																		</div>
 																	</div>
@@ -232,9 +362,10 @@
 								<%--单个评论结束 --%>
 							</c:forEach>
 						</div>
-						<!-- 用户登录时显示 -->
+						<!-- 用户登录时显示 /CommentServlet?news_id=${sessionScope.news.id }-->
 						<c:if test="true">
-							<form class="row" >
+							<form action="../CommentServlet?news_id=${sessionScope.news.id }"
+								method="post">
 								<div class="col-md-12">
 									<h3 class="title">留下你的评论</h3>
 								</div>
@@ -254,11 +385,11 @@
 							-->
 								<div class="form-group col-md-12">
 									<label for="message">评论 <span class="required"></span></label>
-									<textarea class="form-control" name="message"
+									<textarea class="form-control" name="comment_message"
 										placeholder="书写评论..."></textarea>
 								</div>
 								<div class="form-group col-md-12">
-									<button class="btn btn-primary">发送评论</button>
+									<button class="btn btn-primary" type="submit">发送评论</button>
 								</div>
 							</form>
 						</c:if>
@@ -286,7 +417,13 @@
 	<script src="scripts/easescroll/jquery.easeScroll.js"></script>
 	<script src="scripts/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="scripts/toast/jquery.toast.min.js"></script>
-	<script src="js/demo.js"></script>
 	<script src="js/e-magz.js"></script>
+	<script>
+	var list=$(".replyform");
+
+	for(var i=0;i<list.length;i++){
+		list[i].style.display = "none";
+	}
+	</script>
 </body>
 </html>
