@@ -1,13 +1,5 @@
 package com.dao;
 
-public class StarDao {
-
-<<<<<<< Updated upstream
-=======
-import com.entity.News;
-import com.entity.Star;
-import com.utils.NewsDBUtils;
-
 public class StarDao extends NewsDBUtils{
 	public int insert(Star star) {//插入新的star到数据库，含两个参数
 		//给占位符赋予的值
@@ -92,8 +84,5 @@ public class StarDao extends NewsDBUtils{
 			
 		
 	}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 }
