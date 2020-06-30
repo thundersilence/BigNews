@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("id", id);			//session 添加名称和id
 			request.getSession().setAttribute("image", image);
 			//response.sendRedirect("sources/index.html");
-			response.sendRedirect("sources/index.html");
+			response.sendRedirect("sources/index.jsp");
 		}else {
 			System.out.println("登陆失败");
 			response.sendRedirect("sources/login.jsp");

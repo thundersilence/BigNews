@@ -99,8 +99,16 @@
 						<ul class="nav-icons">
 							<li><a href="register.jsp"><i class="ion-person-add"></i>
 									<div>注册</div></a></li>
-							<li><a href="login.jsp"><i class="ion-person"></i>
-									<div>登录</div></a></li>
+							<c:if test="${sessionScope.user.name != null}">
+								<li><a href="userDisplay.jsp?in=yes"><i class="ion-person"></i>
+									<div>${sessionScope.user.name}</div></a>
+								</li>
+							</c:if>
+							<c:if test="${sessionScope.user.name == null}">
+								<li><a href="login.jsp"><i class="ion-person"></i>
+									<div>登录</div></a>
+								</li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -125,7 +133,7 @@
 				<!-- 修改tab栏 -->
 				<div id="menu-list">
 					<ul class="nav-list">
-						<li><a href="index.html">主页</a></li>
+						<li><a href="index.jsp">主页</a></li>
 						<li><a href="../ClassifiedServlet?category=science">Science</a></li>
 						<li><a href="../ClassifiedServlet?category=economics">Economics</a></li>
 						<li><a href="../ClassifiedServlet?category=politics">Politics</a></li>

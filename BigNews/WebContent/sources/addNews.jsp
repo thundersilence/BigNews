@@ -1,22 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import = "com.dao.NewsDao" %>
-<%@ page import = "com.entity.*" %>
-<%@ page import = "java.util.*" %>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ page language="java" import="java.util.*" import="com.entity.*"
+	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<base href="<%=request.getContextPath()%>/sources/">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="Magz is a HTML5 & CSS3 magazine template is based on Bootstrap 3.">
-
-	<title>编辑新闻</title>
+	
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires"  content="0">
+	
+	<title>添加新闻</title>
 
 	<title>Magz &mdash; Responsive HTML5 &amp; CSS3 Magazine Template</title>
 	<!-- Bootstrap -->
@@ -64,15 +62,15 @@
 						</div>						
 					</div>
 					<div class="col-md-6 col-sm-12">
-						<form class="search" autocomplete="off" action="../search" method="post">
-								<div class="form-group">
-									<div class="input-group">
-										<input type="text" name="key" class="form-control" placeholder="输入文字">									
-										<div class="input-group-btn">
-											<button class="btn btn-primary"><i class="ion-search"></i></button>
-										</div>
+						<form class="search" autocomplete="off">
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" name="q" class="form-control" placeholder="输入文字">									
+									<div class="input-group-btn">
+										<button class="btn btn-primary"><i class="ion-search"></i></button>
 									</div>
 								</div>
+							</div>
 							<div class="help-block">
 								<div>热点标签：</div>
 								<ul>
@@ -87,7 +85,7 @@
 					</div>
 					<div class="col-md-3 col-sm-12 text-right">
 						<ul class="nav-icons">
-							<li><a href="register.jsp"><i class="ion-person-add"></i><div>注册</div></a></li>
+							<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
 							<c:if test="${sessionScope.user.name != null}">
 								<li><a href="userDisplay.jsp?in=yes"><i class="ion-person"></i>
 									<div>${sessionScope.user.name}</div></a>
@@ -136,35 +134,33 @@
 	<!-- 主要展示部分 -->
 	<section class="login first grey">
 		<div class="container">
-			<h4>编辑新闻</h4>
-			<form action="../updateNews?id=${param.id}" method="post">
+			<h4>添加新闻</h4>
+			<form action="../AddNewsServlet" method="post">
 				<div class="box box-border">
 					<div class="box-body">
 						<h6>标题</h6>
-						<input type="text" name="title" class="form-control" value="${requestScope.news.name}">
+						<input type="text" name="title" class="form-control">
 						<h6>来源</h6>
-						<input type="text" name="source" class="form-control" value="${requestScope.news.source}">
+						<input type="text" name="source" class="form-control">
 						<h6>作者</h6>
-						<input type="text" name="author" class="form-control" value="${requestScope.news.author}">
+						<input type="text" name="author" class="form-control">
 						<h6>新闻类别</h6>
-						<span><input type="radio" name="category" value="science" checked>Science</span>
-						<span><input type="radio" name="category" value="economics">Economics</span>
-						<span><input type="radio" name="category" value="politics">Politics</span>
-						<span><input type="radio" name="category" value="sports">Sports</span>
+						<span><input type="radio" name="category" value="science" checked>科技</span>
+						<span><input type="radio" name="category" value="sports">体育</span>
+						<span><input type="radio" name="category" value="economics">财经</span>
+						<span><input type="radio" name="category" value="politics">时政</span>
 						<h6>缩略图(url)</h6>
-						<input type="text" name="newsimage" class="form-control" value="${requestScope.news.pictureURL}">
+						<input type="text" name="newsimage" class="form-control">
 						<h6>新闻简介</h6>
-						<textarea class="form-control" name="simple" style="resize:none">${requestScope.news.simple}</textarea>
+						<textarea class="form-control" name="simple" style="resize:none"></textarea>
 					</div>
 				</div>
 				
 				<div class="box-body">
 					<textarea id="content" name="content"></textarea>						
 					<script type="text/javascript">
-						var obj = CKEDITOR.replace('content',{height:460});
-						obj.setData("${requestScope.content}");
+						CKEDITOR.replace('content',{height:460});
 					</script>
-
 					<button class="btn btn-primary btn-block">上传</button>
 				</div>
 			</form>

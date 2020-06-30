@@ -104,7 +104,16 @@
 					<div class="col-md-3 col-sm-12 text-right">
 						<ul class="nav-icons">
 							<li><a href="register.jsp"><i class="ion-person-add"></i><div>注册</div></a></li>
-							<li><a href="login.jsp"><i class="ion-person"></i><div>登录</div></a></li>
+							<c:if test="${sessionScope.user.name != null}">
+								<li><a href="userDisplay.jsp?in=yes"><i class="ion-person"></i>
+									<div>${sessionScope.user.name}</div></a>
+								</li>
+							</c:if>
+							<c:if test="${sessionScope.user.name == null}">
+								<li><a href="login.jsp"><i class="ion-person"></i>
+									<div>登录</div></a>
+								</li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -127,7 +136,7 @@
 				</div>
 				<div id="menu-list">
 					<ul class="nav-list">
-						<li><a href="index.html">主页</a></li>
+						<li><a href="index.jsp">主页</a></li>
 						<li><a href="../ClassifiedServlet?category=science">Science</a></li>
 						<li><a href="../ClassifiedServlet?category=economics">Economics</a></li>
 						<li><a href="../ClassifiedServlet?category=politics">Politics</a></li>
@@ -148,7 +157,7 @@
 				<!-- 侧边栏start -->
 				<div class="col-md-3">
 					<aside>
-						<h1><a href="addNews.html" class="titlefont">>添加新闻</a></h1>
+						<h1><a href="addNews.jsp" class="titlefont">>添加新闻</a></h1>
 					</aside>
 					<aside>
 						<h1><a href="../record" class="titlefont">>查看日志</a></h1>
@@ -181,7 +190,7 @@
 						<article class="col-md-12 article-list">
 							<div class="inner">
 								<figure id="simplefigure">
-									<a href="single.html">
+									<a href="../NewsServlet?news_id=${news.id}">
 										<img src="${news.pictureURL}" class="simpleimage">
 									</a>
 								</figure>
@@ -314,7 +323,7 @@
 						<article class="col-md-12 article-list">
 							<div class="inner">
 								<div class="details" id="user">
-									<a href="single.html" id="leftdiv">
+									<a href="javascript:;" id="leftdiv">
 										<div id="titlefont">${user.name}</div>
 										<div id="titlefont">${user.id}</div>
 									</a>
