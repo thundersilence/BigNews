@@ -120,12 +120,12 @@ public class UserDao extends UserDBUtils{
 	}
 	
 	public ArrayList<User> searchUser(String name){
-		Object params[] = {name};
+		Object params[] = {"%" + name + "%"};
 		// 要执行的sql语句
-		String sql = "select * from user where user_name=?";
+		String sql = "select * from user where user_name LIKE ?";
 		// 执行sql语句
 		ResultSet rs = doQuery(sql, params);
-ArrayList<User> list = null;
+		ArrayList<User> list = null;
 		
 		try {
 			if (rs.next()) {//判断是否至少存在一条数据记录
