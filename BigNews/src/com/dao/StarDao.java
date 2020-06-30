@@ -1,5 +1,13 @@
 package com.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.entity.News;
+import com.entity.Star;
+import com.utils.NewsDBUtils;
+
 public class StarDao extends NewsDBUtils{
 	public int insert(Star star) {//插入新的star到数据库，含两个参数
 		//给占位符赋予的值
