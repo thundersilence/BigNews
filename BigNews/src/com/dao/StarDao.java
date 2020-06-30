@@ -1,9 +1,9 @@
 package com.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
+public class StarDao {
 
+<<<<<<< Updated upstream
+=======
 import com.entity.News;
 import com.entity.Star;
 import com.utils.NewsDBUtils;
@@ -76,4 +76,24 @@ public class StarDao extends NewsDBUtils{
 		getClose();
 		return list;
 	}
+	public boolean checkstar(int user_id, int news_id) {
+		
+			Object params[] = {user_id,news_id};
+			String sql = "select * from star where user_id=? AND news_id=?";
+			ResultSet rs = doQuery(sql, params);
+			try {
+				if (rs.next())
+				return true;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return false;
+			
+		
+	}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 }
