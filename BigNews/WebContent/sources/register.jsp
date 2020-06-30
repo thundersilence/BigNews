@@ -67,8 +67,8 @@
 						</div>
 						<div class="col-md-3 col-sm-12 text-right">
 							<ul class="nav-icons">
-								<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
-								<li><a href="login.html"><i class="ion-person"></i><div>登录</div></a></li>
+								<li><a href="register.jsp"><i class="ion-person-add"></i><div>注册</div></a></li>
+								<li><a href="login.jsp"><i class="ion-person"></i><div>登录</div></a></li>
 							</ul>
 						</div>
 					</div>
@@ -92,10 +92,10 @@
 					<div id="menu-list">
 						<ul class="nav-list">
 							<li><a href="index.html">主页</a></li>
-							<li><a href="category.html">分类1</a></li>
-							<li><a href="category.html">分类2</a></li>
-							<li><a href="category.html">分类3</a></li>
-							<li><a href="category.html">分类4</a></li>		
+							<li><a href="../ClassifiedServlet?category=science">Science</a></li>
+							<li><a href="../ClassifiedServlet?category=economics">Economics</a></li>
+							<li><a href="../ClassifiedServlet?category=politics">Politics</a></li>
+							<li><a href="../ClassifiedServlet?category=sports">Sports</a></li>		
 						</ul>
 					</div>
 				</div>

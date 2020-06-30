@@ -128,10 +128,10 @@
 				<div id="menu-list">
 					<ul class="nav-list">
 						<li><a href="index.html">主页</a></li>
-						<li><a href="category.html">分类1</a></li>
-						<li><a href="category.html">分类2</a></li>
-						<li><a href="category.html">分类3</a></li>
-						<li><a href="category.html">分类4</a></li>
+						<li><a href="../ClassifiedServlet?category=science">Science</a></li>
+						<li><a href="../ClassifiedServlet?category=economics">Economics</a></li>
+						<li><a href="../ClassifiedServlet?category=politics">Politics</a></li>
+						<li><a href="../ClassifiedServlet?category=sports">Sports</a></li>
 					</ul>
 				</div>
 			</div>
