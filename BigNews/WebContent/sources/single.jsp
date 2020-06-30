@@ -56,18 +56,15 @@
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-12">
-						<form class="search" autocomplete="off">
-							<div class="form-group">
-								<div class="input-group">
-									<input type="text" name="q" class="form-control"
-										placeholder="输入文字">
-									<div class="input-group-btn">
-										<button class="btn btn-primary">
-											<i class="ion-search"></i>
-										</button>
+						<form class="search" autocomplete="off" action="../search" method="post">
+								<div class="form-group">
+									<div class="input-group">
+										<input type="text" name="key" class="form-control" placeholder="输入文字">									
+										<div class="input-group-btn">
+											<button class="btn btn-primary"><i class="ion-search"></i></button>
+										</div>
 									</div>
 								</div>
-							</div>
 							<div class="help-block">
 								<div>热点标签：</div>
 								<ul>
@@ -82,9 +79,9 @@
 					</div>
 					<div class="col-md-3 col-sm-12 text-right">
 						<ul class="nav-icons">
-							<li><a href="register.html"><i class="ion-person-add"></i>
+							<li><a href="register.jsp"><i class="ion-person-add"></i>
 									<div>注册</div></a></li>
-							<li><a href="login.html"><i class="ion-person"></i>
+							<li><a href="login.jsp"><i class="ion-person"></i>
 									<div>登录</div></a></li>
 						</ul>
 					</div>

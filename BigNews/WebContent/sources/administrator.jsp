@@ -80,15 +80,15 @@
 						</div>						
 					</div>
 					<div class="col-md-6 col-sm-12">
-						<form class="search" autocomplete="off">
-							<div class="form-group">
-								<div class="input-group">
-									<input type="text" name="q" class="form-control" placeholder="输入文字">									
-									<div class="input-group-btn">
-										<button class="btn btn-primary"><i class="ion-search"></i></button>
+						<form class="search" autocomplete="off" action="../search" method="post">
+								<div class="form-group">
+									<div class="input-group">
+										<input type="text" name="key" class="form-control" placeholder="输入文字">									
+										<div class="input-group-btn">
+											<button class="btn btn-primary"><i class="ion-search"></i></button>
+										</div>
 									</div>
 								</div>
-							</div>
 							<div class="help-block">
 								<div>热点标签：</div>
 								<ul>
@@ -190,9 +190,9 @@
 										<a href="#">${news.type}</a>
 									</div>
 									<time>${news.time}</time>
-									<h1><a href="single.html">${news.name}</a></h1>
+									<h1><a href="../NewsServlet?news_id=${news.id}">${news.name}</a></h1>
 									<div id="bottom">
-										<a class="btn btn-primary more" href="single.html">
+										<a class="btn btn-primary more" href="../NewsServlet?news_id=${news.id}">
 											<div>查看</div>
 											<div><i class="ion-ios-arrow-thin-right"></i></div>
 										</a>

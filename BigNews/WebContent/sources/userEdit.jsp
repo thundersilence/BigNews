@@ -43,10 +43,10 @@
 							</div>						
 						</div>
 						<div class="col-md-6 col-sm-12">
-							<form class="search" autocomplete="off">
+							<form class="search" autocomplete="off" action="../search" method="post">
 								<div class="form-group">
 									<div class="input-group">
-										<input type="text" name="q" class="form-control" placeholder="输入文字">									
+										<input type="text" name="key" class="form-control" placeholder="输入文字">									
 										<div class="input-group-btn">
 											<button class="btn btn-primary"><i class="ion-search"></i></button>
 										</div>
@@ -66,8 +66,8 @@
 						</div>
 						<div class="col-md-3 col-sm-12 text-right">
 							<ul class="nav-icons">
-								<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
-								<li><a href="login.html"><i class="ion-person"></i><div>
+								<li><a href="register.jsp"><i class="ion-person-add"></i><div>注册</div></a></li>
+								<li><a href="login.jsp"><i class="ion-person"></i><div>
 								<c:out value="${sessionScope.user.name}" default="登录"></c:out>
 								</div></a></li>
 							</ul>
@@ -93,10 +93,10 @@
 					<div id="menu-list">
 						<ul class="nav-list">
 							<li><a href="index.html">主页</a></li>
-							<li><a href="category.html">分类1</a></li>
-							<li><a href="category.html">分类2</a></li>
-							<li><a href="category.html">分类3</a></li>
-							<li><a href="category.html">分类4</a></li>		
+							<li><a href="../ClassifiedServlet?category=science">Science</a></li>
+							<li><a href="../ClassifiedServlet?category=economics">Economics</a></li>
+							<li><a href="../ClassifiedServlet?category=politics">Politics</a></li>
+							<li><a href="../ClassifiedServlet?category=sports">Sports</a></li>	
 						</ul>
 					</div>
 				</div>

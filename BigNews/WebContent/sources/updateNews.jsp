@@ -64,15 +64,15 @@
 						</div>						
 					</div>
 					<div class="col-md-6 col-sm-12">
-						<form class="search" autocomplete="off">
-							<div class="form-group">
-								<div class="input-group">
-									<input type="text" name="q" class="form-control" placeholder="输入文字">									
-									<div class="input-group-btn">
-										<button class="btn btn-primary"><i class="ion-search"></i></button>
+						<form class="search" autocomplete="off" action="../search" method="post">
+								<div class="form-group">
+									<div class="input-group">
+										<input type="text" name="key" class="form-control" placeholder="输入文字">									
+										<div class="input-group-btn">
+											<button class="btn btn-primary"><i class="ion-search"></i></button>
+										</div>
 									</div>
 								</div>
-							</div>
 							<div class="help-block">
 								<div>热点标签：</div>
 								<ul>
@@ -87,8 +87,8 @@
 					</div>
 					<div class="col-md-3 col-sm-12 text-right">
 						<ul class="nav-icons">
-							<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
-							<li><a href="login.html"><i class="ion-person"></i><div>登录</div></a></li>
+							<li><a href="register.jsp"><i class="ion-person-add"></i><div>注册</div></a></li>
+							<li><a href="login.jsp"><i class="ion-person"></i><div>登录</div></a></li>
 						</ul>
 					</div>
 				</div>
@@ -138,9 +138,10 @@
 						<h6>作者</h6>
 						<input type="text" name="author" class="form-control" value="${requestScope.news.author}">
 						<h6>新闻类别</h6>
-						<span><input type="radio" name="category" value="科技" checked>科技</span>
-						<span><input type="radio" name="category" value="体育">体育</span>
-						<span><input type="radio" name="category" value="财经">财经</span>
+						<span><input type="radio" name="category" value="science" checked>Science</span>
+						<span><input type="radio" name="category" value="economics">Economics</span>
+						<span><input type="radio" name="category" value="politics">Politics</span>
+						<span><input type="radio" name="category" value="sports">Sports</span>
 						<h6>缩略图(url)</h6>
 						<input type="text" name="newsimage" class="form-control" value="${requestScope.news.pictureURL}">
 						<h6>新闻简介</h6>
