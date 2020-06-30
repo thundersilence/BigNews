@@ -179,7 +179,7 @@ public class NewsDao extends NewsDBUtils{
 	
 	public ArrayList<News> search(String keyWord) {  //输入需要搜索的词语，将简介和姓名中包含此词语的所有新闻以Arraylist<News>的形式返回
 		Object params[] = {"%"+keyWord+"%","%"+keyWord+"%"};
-		String sql = "select * from news where news_name LIKE ? OR news_simple LIKE ?";
+		String sql = "select * from news where news_name LIKE ? OR news_simple LIKE ? ORDER BY news_time DESC";
 		ResultSet rs = doQuery(sql, params);
 		ArrayList<News> list = null;
 		
