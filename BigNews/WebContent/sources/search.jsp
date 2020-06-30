@@ -78,7 +78,16 @@
 						<div class="col-md-3 col-sm-12 text-right">
 							<ul class="nav-icons">
 								<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
-								<li><a href="login.html"><i class="ion-person"></i><div>登录</div></a></li>
+								<c:if test="${sessionScope.user.name != null}">
+									<li><a href="userDisplay.jsp?in=yes"><i class="ion-person"></i>
+										<div>${sessionScope.user.name}</div></a>
+									</li>
+								</c:if>
+								<c:if test="${sessionScope.user.name == null}">
+									<li><a href="login.jsp"><i class="ion-person"></i>
+										<div>登录</div></a>
+									</li>
+								</c:if>
 							</ul>
 						</div>
 					</div>
@@ -102,11 +111,11 @@
 					<!-- 修改tab栏 -->
 					<div id="menu-list">
 						<ul class="nav-list">
-							<li><a href="index.html">主页</a></li>
-							<li><a href="category.html">分类1</a></li>
-							<li><a href="category.html">分类2</a></li>
-							<li><a href="category.html">分类3</a></li>
-							<li><a href="category.html">分类4</a></li>
+							<li><a href="index.jsp">主页</a></li>
+							<li><a href="../ClassifiedServlet?category=science">Science</a></li>
+							<li><a href="../ClassifiedServlet?category=economics">Economics</a></li>
+							<li><a href="../ClassifiedServlet?category=politics">Politics</a></li>
+							<li><a href="../ClassifiedServlet?category=sports">Sports</a></li>
 						</ul>
 					</div>
 				</div>
@@ -237,7 +246,7 @@
 											</div>
 											<time>${ news.time }</time>
 										</div>
-										<h1><a href="single.html">${ news.name }</a></h1>
+										<h1><a href="../NewsServlet?news_id=${news.id}">${ news.name }</a></h1>
 										<p>
 										${news.simple }
 										</p>

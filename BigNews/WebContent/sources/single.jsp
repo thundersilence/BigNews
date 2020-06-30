@@ -41,8 +41,128 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/skins/all.css">
 <link rel="stylesheet" href="css/demo.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
 </head>
+<script type="text/javascript">
 
+	$(function(){
+		$.post("../StarServlet",{"action":"sel","user_id":${sessionScope.user.id},"news_id":${sessionScope.news.id}},function(data){
+			//alert(data.start);//true/false
+			if(data.start=="true"){
+				$("#loveimgid").attr("src","images/hx.jpg");
+				
+			}else{
+				$("#loveimgid").attr("src","images/hx2.jpg");
+			}
+			
+		},"json");
+		
+	});
+	
+	$(function(){
+		var list1=$(".replyform1");
+		for(var i=0;i<list1.length;i++){
+			list1[i].style.display = "none";
+		}
+		var list2=$(".replyform2");
+		for(var i=0;i<list2.length;i++){
+			list2[i].style.display = "none";
+		}
+	});
+	
+
+	//add
+	function addLove(){
+		$.post("../StarServlet",{"action":"add","user_id":${sessionScope.user.id},"news_id":${sessionScope.news.id}});
+		//用dom操作向标签中添加红心
+		$("#loveimgid").attr("src","images/hx.jpg");
+	}
+	//del
+	function delLove(){
+		$.post("../StarServlet",{"action":"del","user_id":${sessionScope.user.id},"news_id":${sessionScope.news.id}});
+		//用dom操作向标签中添加黑心
+		$("#loveimgid").attr("src","images/hx2.jpg");
+		
+	}
+	
+	//pageUserClick
+	function checkClick(){
+		var imgValue = $("#loveimgid").attr("src");
+		if(imgValue=="images/hx.jpg"){
+			delLove();
+		}else{
+			addLove();
+		}
+	}
+
+</script>
+<script type="text/javascript">
+	 /*
+	function star() {
+		//alert("进入js函数");
+		//alert(clist);
+		var news_id = ${sessionScope.news.id};
+		var user_id = ${sessionScope.user.id};
+		//var user_id = 120;
+		var status = ${sessionScope.status};
+		alert("收藏状态status为 "+status);
+		if(status==0){
+			alert("新闻id：" + news_id + " 用户id：" + user_id);
+			$.get("../StarServlet?caozuo=on", {
+				"news_id" : news_id,
+				"user_id" : user_id
+			});
+			alert("用户："+user_id+"成功添加收藏新闻："+nwes_id);
+		}
+		else if(status==1){
+			alert("新闻id：" + news_id + " 用户id：" + user_id);
+			$.get("../StarServlet?caozuo=off", {
+				"news_id" : news_id,
+				"user_id" : user_id
+			});
+			alert("用户："+user_id+"成功删除收藏新闻："+nwes_id);
+		}
+
+	}
+	
+	function cancelstar() {
+		alert("进入js函数")
+		var news_id = ${sessionScope.news.id};
+		var user_id = ${sessionScope.user.id};
+		//var user_id = 120;
+		alert("新闻id：" + news_id + " 用户id：" + user_id);
+		$.get("../StarServlet?caozuo=off", {
+			"news_id" : news_id,
+			"user_id" : user_id
+		});
+
+		alert("done");
+	}
+	*/
+	function showreply1(index){
+		//alert("comment_id:"+comment_id+"target_user_id:"+target_user_id+"target_reply_id:"+target_reply_id+"type:"+type);
+		//console.log(user_id);
+		var list=$(".replyform1");
+		for(var i=0;i<list.length;i++){
+			list[i].style.display = "none";
+		}
+		var list=$(".replyform1");
+		list[index].style.display = "block";
+	}
+	function showreply2(index){
+		//alert("comment_id:"+comment_id+"target_user_id:"+target_user_id+"target_reply_id:"+target_reply_id+"type:"+type);
+		//console.log(user_id);
+		var list=$(".replyform2");
+		for(var i=0;i<list.length;i++){
+			list[i].style.display = "none";
+		}
+		var list=$(".replyform2");
+		list[index].style.display = "block";
+	}
+	
+	
+	
+</script>
 <body class="skin-orange">
 	<header class="primary">
 		<div class="firstbar">
@@ -149,11 +269,9 @@
 								escapeXml="false" />
 						</div>
 						<footer>
-							<!-- 
-								<div class="col" align="center">
-									<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1220</div></a>
-								</div>
-								-->
+							<a href="javascript:;" onclick="checkClick()" class="love">
+								<img alt="" src="images/hx2.jpg" id="loveimgid">
+								<div>237</div></a>
 						</footer>
 					</article>
 					<div class="line thin"></div>
@@ -164,8 +282,7 @@
 						</h2>
 						<!-- 评论列表-->
 						<div class="comment-list">
-							<!-- 单个评论 items="${sessionScope.commentList}"begin="1" end="3"-->
-							<c:forEach items="${sessionScope.commentList}" var="comment">
+							<c:forEach items="${sessionScope.commentList}" var="comment" varStatus="status1">
 								<%--单个评论开始 --%>
 								<div class="item">
 									<div class="user">
@@ -176,15 +293,25 @@
 										<div class="details">
 											<h5 class="name">用户名: ${comment.user.name }</h5>
 											<div class="description">评论${comment.content }</div>
-											<footer>
-												<a href="#"<%-- --%>>回复</a>
-											</footer>
+											<a href="javascript:;" onclick="showreply1(${status1.index})">回复</a>
+											<form action="../ReplyServlet?comment_id=${comment.id }&target_user_id=${comment.user.id }&target_reply_id=0&type=0" method="post"
+												class="replyform1">
+												<div class="col-md-12">
+													<h3 class="title">回复：@${comment.user.name}</h3>
+												</div>
+												<div class="form-group col-md-12">
+													<textarea class="form-control" name="reply_message"
+														placeholder="书写回复..."></textarea>
+												</div>
+												<div class="form-group col-md-12">
+													<button class="btn btn-primary" type="submit">发送回复</button>
+												</div>
+											</form>
 										</div>
 									</div>
 									<div class="回复-list">
 										<%--第一层回复，回复评论的 ,遍历replylist，判断元素reply中的type属性，为回复评论的则显示.begin="1" end="2"--%>
-										<c:forEach items="${comment.replyList}" var="reply0">
-											<c:if test="${reply0.type==0}">
+										<c:forEach items="${comment.replyList}" var="reply" varStatus="status2">
 												<div class="item">
 													<div class="user">
 														<figure>
@@ -192,42 +319,28 @@
 															<img src="images/img01.jpg">
 														</figure>
 														<div class="details">
-															<h5 class="name">用户名:${reply0.user.name }</h5>
-															<div class="time">24 Hours:${reply0.time }</div>
-															<div class="description">评论的回复${reply0.content }</div>
-															<footer>
-																<a href="#">回复</a>
-															</footer>
+															<h5 class="name">用户名:${reply.user.name }</h5>
+															<div class="time">${reply.time }<span style="color:#F00;"> @${reply.user.name }</span></div>
+															<div class="description">评论的回复${reply.content }</div>
+													<a href="javascript:;" onclick="showreply2(${status2.index})">回复</a>
+															<form action="../ReplyServlet?comment_id=${comment.id }&target_user_id=${reply.user.id }&target_reply_id=${reply.id }&type=1" method="post"
+																class="replyform2">
+																<div class="col-md-12">
+																	<h3 class="title">回复：@${comment.user.name}</h3>
+																</div>
+																<div class="form-group col-md-12">
+																	<textarea class="form-control" name="reply_message"
+																		placeholder="书写回复..."></textarea>
+																</div>
+																<div class="form-group col-md-12">
+																	<button class="btn btn-primary" type="submit">发送回复</button>
+																</div>
+															</form>
 														</div>
 													</div>
 													<div class="回复-list">
-														<%--第二层回复，回复回复的 --%>
-														<c:forEach items="${comment.replyList}" var="reply1">
-															<!-- 咋写在一个if标签中？ <c:if test="((${reply1.type}==1)&&(${reply1.target_reply_id}==${ reply0.id}))"> </c:if>-->
-															<c:if test="${reply1.type==1}">
-																<c:if test="${reply0.id==reply1.target_reply_id}">
-																	<div class="item">
-																		<div class="user">
-																			<figure>
-																				<%--根据user来找headimg ${reply1.user.img}--%>
-																				<img src="images/img01.jpg">
-																			</figure>
-																			<div class="details">
-																				<h5 class="name">用户名:${reply1.user.name }</h5>
-																				<div class="time">24 Hours:${reply1.time }</div>
-																				<div class="description">回复的回复${reply1.content }</div>
-																				<footer>
-																					<a href="#">回复</a>
-																				</footer>
-																			</div>
-																		</div>
-																	</div>
-																</c:if>
-															</c:if>
-														</c:forEach>
 													</div>
 												</div>
-											</c:if>
 										</c:forEach>
 									</div>
 
@@ -235,33 +348,20 @@
 								<%--单个评论结束 --%>
 							</c:forEach>
 						</div>
-						<!-- 用户登录时显示 -->
+						<!-- 用户登录时显示 /CommentServlet?news_id=${sessionScope.news.id }-->
 						<c:if test="true">
-							<form class="row" >
+							<form action="../CommentServlet?news_id=${sessionScope.news.id }"
+								method="post">
 								<div class="col-md-12">
 									<h3 class="title">留下你的评论</h3>
 								</div>
-								<!-- 							
-							<div class="form-group col-md-4">
-								<label for="name">姓名 <span class="required"></span></label> <input
-									type="text" id="name" name="" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label for="email">邮箱 <span class="required"></span></label> <input
-									type="email" id="email" name="" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label for="website">网站</label> <input type="url" id="website"
-									name="" class="form-control">
-							</div> 
-							-->
 								<div class="form-group col-md-12">
 									<label for="message">评论 <span class="required"></span></label>
-									<textarea class="form-control" name="message"
+									<textarea class="form-control" name="comment_message"
 										placeholder="书写评论..."></textarea>
 								</div>
 								<div class="form-group col-md-12">
-									<button class="btn btn-primary">发送评论</button>
+									<button class="btn btn-primary" type="submit">发送评论</button>
 								</div>
 							</form>
 						</c:if>
@@ -289,7 +389,15 @@
 	<script src="scripts/easescroll/jquery.easeScroll.js"></script>
 	<script src="scripts/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="scripts/toast/jquery.toast.min.js"></script>
-	<script src="js/demo.js"></script>
 	<script src="js/e-magz.js"></script>
+	<script>
+	/*
+	var list=$(".replyform");
+
+	for(var i=0;i<list.length;i++){
+		list[i].style.display = "none";
+	}
+	*/
+	</script>
 </body>
 </html>

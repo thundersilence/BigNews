@@ -99,7 +99,7 @@ public void TestcheckId() {
 
 @Test
 public void Testsearch() {
-	ArrayList<News> n=a.search("sdkfjslf");
+	ArrayList<News> n=a.search("name");
 	show(n);
 }
 }
