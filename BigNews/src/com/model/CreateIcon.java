@@ -55,7 +55,7 @@ public class CreateIcon {
         FileOutputStream fos = new FileOutputStream(url);
         ImageIO.write(bi,"JPG", fos);
         fos.close();
-        AddRecord.print("创建用户文件：" + url);
+     //   AddRecord.print("创建用户文件：" + url);
     }
 	
 	

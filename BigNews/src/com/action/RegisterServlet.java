@@ -1,5 +1,6 @@
 package com.action;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
@@ -20,7 +21,7 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		doGet(request, response);
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -44,8 +45,14 @@ public class RegisterServlet extends HttpServlet {
 		}//随机生成id
 		
 		String imagedir = "C://BigNews/imageStore/";
+		String realPath = getServletContext().getRealPath("sources/img");
+
+		
 		String imageurl = imagedir + id + ".jpg";
-		CreateIcon.create(imagedir, imageurl);//生成头像并保存
+		imageurl = "img"+id+".jpg";
+		System.out.println(realPath);
+		System.out.println(imageurl);
+		CreateIcon.create(realPath+"/",imageurl);//生成头像并保存
 		
 		user.setId(id);
 		user.setName(username);
@@ -54,7 +61,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		UD.insert(user);	
 		
-		AddRecord.print("添加用户记录：" + id);
+		//AddRecord.print("添加用户记录：" + id);
 		System.out.println("注册成功");
 		response.sendRedirect("sources/index.jsp");
 		request.getSession().setAttribute("user", user);
