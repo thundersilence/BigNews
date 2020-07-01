@@ -43,14 +43,22 @@ public class RegisterServlet extends HttpServlet {
 			if (UD.search(id).getId()==0)break;				//搜索不到已有id时返回一个id为0的user类
 		}//随机生成id
 		
-		String imagedir = "C://BigNews/imageStore/";
+		
+		//String imagedir=request.getRequestURI()+"/store/imageStore/";
+		String imagedir = getServletContext().getRealPath("sources/imageStore/");
 		String imageurl = imagedir + id + ".jpg";
+		String rltUrl = "imageStore/"+id + ".jpg";
+		
+		System.out.println("imagedir:"+ imagedir);
+		System.out.println("imageurl:"+imageurl);
+		
+		
 		CreateIcon.create(imagedir, imageurl);//生成头像并保存
 		
 		user.setId(id);
 		user.setName(username);
 		user.setPassword(password);
-		user.setImg(imageurl);
+		user.setImg(rltUrl);
 		
 		UD.insert(user);	
 		
