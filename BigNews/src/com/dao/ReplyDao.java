@@ -62,5 +62,21 @@ public class ReplyDao extends NewsDBUtils {
 		getClose();
 		return i;
 	}
+	
+	public boolean checkID(int id){ //验证id是否存在，存在返回false，不存在返回true
+		Object params[] = {id};
+		String sql = "select * from reply where reply_id=?";
+		ResultSet rs = doQuery(sql, params);
+		try {
+			if (rs.next())
+			return false;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
+		
+	}
+	
 
 }
