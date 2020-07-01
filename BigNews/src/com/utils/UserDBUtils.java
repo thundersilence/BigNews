@@ -3,11 +3,11 @@ package com.utils;
 import java.sql.*;
 
 public class UserDBUtils {
-	private String url = "jdbc:mysql://localhost:3306/bignews?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC";
+	private String url = "jdbc:mysql://47.105.39.7:3306/bignews?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC";
 	// 使用时修改为本地数据库位置
 	private String user = "root";
 	// 用户密码 你的数据库密码
-	private String password = "123";
+	private String password = "1234";
 	private Connection conn = null;
 
 	private PreparedStatement stmt = null;
