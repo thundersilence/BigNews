@@ -157,56 +157,15 @@
 								<article class="featured">
 									<div class="overlay"></div>
 									<figure>
-										<img src="images/news/img04.jpg" alt="Sample Article">
+										<img src="https://c2.hoopchina.com.cn/uploads/star/event/images/200701/077731eca4d49e724433c7e186a70fb68256713f.jpg?x-oss-process=image/resize,w_800/format,webp" alt="Sample Article">
 									</figure>
 									<div class="details">
-										<div class="category"><a href="category.html">标签</a></div>
-										<h1><a href="single.html">新闻标题</a></h1>
-										<div class="time">时间</div>
-									</div>
-								</article>
-							</div>
-							<div class="item">
-								<article class="featured">
-									<div class="overlay"></div>
-									<figure>
-										<img src="images/news/img14.jpg" alt="Sample Article">
-									</figure>
-									<div class="details">
-										<div class="category"><a href="category.html">Travel</a></div>
-										<h1><a href="single.html">Class aptent taciti sociosqu ad litora torquent per conubia nostra</a></h1>
-										<div class="time">December 10, 2016</div>
-									</div>
-								</article>
-							</div>
-							<div class="item">
-								<article class="featured">
-									<div class="overlay"></div>
-									<figure>
-										<img src="images/news/img13.jpg" alt="Sample Article">
-									</figure>
-									<div class="details">
-										<div class="category"><a href="category.html">International</a></div>
-										<h1><a href="single.html">Maecenas accumsan tortor ut velit pharetra mollis</a></h1>
-										<div class="time">October 12, 2016</div>
-									</div>
-								</article>
-							</div>
-							<div class="item">
-								<article class="featured">
-									<div class="overlay"></div>
-									<figure>
-										<img src="images/news/img05.jpg" alt="Sample Article">
-									</figure>
-									<div class="details">
-										<div class="category"><a href="category.html">Lifestyle</a></div>
-										<h1><a href="single.html">Mauris elementum libero at pharetra auctor Fusce ullamcorper elit</a></h1>
-										<div class="time">November 27, 2016</div>
+										<h1><a href="../NewsServlet?news_id=156857941">丹尼-格林：我期待迎接挑战，成为球队中主要的防守者</a></h1>
+										<div class="time">2020-07-01 12:04:08</div>
 									</div>
 								</article>
 							</div>
 						</div>
-						<div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 						<div class="line">
 							<div>Latest News</div>
 						</div>
@@ -217,20 +176,19 @@
 									<article class="article col-md-12">
 										<div class="inner">
 											<figure>
-												<a href="single.html">
+												<a href="../NewsServlet?news_id=128814007">
 													<img src="images/news/img10.jpg" alt="Sample Article">
 												</a>
 											</figure>
 											<div class="padding">
 												<div class="detail">
-													<div class="time">December 10, 2016</div>
-													<div class="category"><a href="category.html">Healthy</a></div>
+													<div class="time">2020-07-01 15:00:49</div>
+													<div class="category"><a href="#">science</a></div>
 												</div>
-												<h2><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate</a></h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+												<h2><a href="../NewsServlet?news_id=128814007">人工智能AI可帮助人类发挥“群体智慧”</a></h2>
+												<p>伍莱说：“我们可以让一些非常聪明的人单独研究问题的不同方面，但是如果我们不协力合作，没有集思广益，就很难取得任何进展。我认为，关键之处是要让人工智能帮助这些单打独斗的工作实现集群化，这样才能解决需要全球集体行动以面对的问题。”</p>
 												<footer>
-													<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1263</div></a>
-													<a class="btn btn-primary more" href="single.html">
+													<a class="btn btn-primary more" href="../NewsServlet?news_id=128814007">
 														<div>More</div>
 														<div><i class="ion-ios-arrow-thin-right"></i></div>
 													</a>
@@ -241,20 +199,20 @@
 									<article class="article col-md-12">
 										<div class="inner">
 											<figure>
-												<a href="single.html">
-													<img src="images/news/img06.jpg" alt="Sample Article">
+												<a href="../NewsServlet?news_id=26779609">
+													<img src="http://img3.chinadaily.com.cn/images/202006/28/5ef7d34ea310a85979129523.jpeg" alt="Sample Article">
 												</a>
 											</figure>
 											<div class="padding">
 												<div class="detail">
-													<div class="time">December 22, 2016</div>
-													<div class="category"><a href="category.html">Healthy</a></div>
+													<div class="time">2020-07-01 15:31:21</div>
+													<div class="category"><a href="#">Healthy</a></div>
 												</div>
-												<h2><a href="single.html">Exercitation ullamco laboris nisi ut aliquip</a></h2>
-												<p>Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat sollicitudin ut est. In fringilla dui dui.</p>
+												<h2><a href="../NewsServlet?news_id=26779609">所有高考生需做核酸检测吗？北京市教委权威解答来了</a></h2>
+												<p>中新网7月1日电 据北京市教育委员会官方微博消息，在6月29日举行的北京市新冠肺炎疫情防控工作新闻发布会上，北京市委教育工委副书记、市教委新闻发言人李奕针对广大师生家长们关心的高考疫情防控工作相关问题进行了逐一解答。</p>
 												<footer>
 													<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>327</div></a>
-													<a class="btn btn-primary more" href="single.html">
+													<a class="btn btn-primary more" href="../NewsServlet?news_id=26779609">
 														<div>More</div>
 														<div><i class="ion-ios-arrow-thin-right"></i></div>
 													</a>
@@ -269,20 +227,19 @@
 									<article class="article col-md-12">
 										<div class="inner">
 											<figure>                                
-												<a href="single.html">
-													<img src="images/news/img05.jpg" alt="Sample Article">
+												<a href="../NewsServlet?news_id=184241534">
+													<img src="https://static01.nyt.com/images/2020/06/15/business/15ALTJPchina-reliance1-print/merlin_172059801_3c4fd5de-da7d-4baf-910e-874f248ed4e4-master1050.jpg" alt="Sample Article">
 												</a>
 											</figure>
 											<div class="padding">
 												<div class="detail">
-													<div class="time">December 09, 2016</div>
-													<div class="category"><a href="category.html">Lifestyle</a></div>
+													<div class="time">2020-07-01 15:20:11</div>
+													<div class="category"><a href="#">economics</a></div>
 												</div>
-												<h2><a href="single.html">Mauris elementum libero at pharetra auctor</a></h2>
-												<p>Vivamus in efficitur mi. Nullam semper justo ut elit lacinia lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+												<h2><a href="../NewsServlet?news_id=184241534">世界与北京“脱钩”不易，全球经济戒中国之瘾恐代价高昂</a></h2>
+												<p>中国市场目前也很重要：国际货币基金组织的报告说，中国将是少数几个在2020年实现经济增长的国家之一，而美国经济预计今年将收缩约6%，欧元区将收缩7.5%。高盛(Goldman Sachs)驻东京的首席日本股票策略师凯希·松井(Kathy Matsui)说，在经济面临巨大压力的时候，即便是那些反对中国政治的人也感到，他们需要中国经济来维持繁荣</p>
 												<footer>
-													<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1083</div></a>
-													<a class="btn btn-primary more" href="single.html">
+													<a class="btn btn-primary more" href="../NewsServlet?news_id=184241534">
 														<div>More</div>
 														<div><i class="ion-ios-arrow-thin-right"></i></div>
 													</a>
@@ -293,20 +250,19 @@
 									<article class="article col-md-12">
 										<div class="inner">
 											<figure>
-												<a href="single.html">
-													<img src="images/news/img07.jpg" alt="Sample Article">
+												<a href="../NewsServlet?news_id=248109765">
+													<img src="http://img3.chinadaily.com.cn/images/202006/23/5ef14a5ba310a859791256fc.jpeg" alt="Sample Article">
 												</a>
 											</figure>
 											<div class="padding">
 												<div class="detail">
-													<div class="time">December 21, 2016</div>
-													<div class="category"><a href="category.html">Sport</a></div>
+													<div class="time">2020-07-01 15:35:10</div>
+													<div class="category"><a href="#">politics</a></div>
 												</div>
-												<h2><a href="single.html">Sed do eiusmod tempor incididunt ut labore</a></h2>
-												<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris elementum libero at pharetra auctor.</p>
+												<h2><a href="../NewsServlet?news_id=248109765">我国北斗三号全球卫星导航系统最后一颗组网卫星发射窗口重新确定</a></h2>
+												<p>我国北斗三号全球卫星导航系统最后一颗组网卫星发射任务推迟后，发射窗口重新确定为6月23日9时43分。</p>
 												<footer>
-													<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>980</div></a>
-													<a class="btn btn-primary more" href="single.html">
+													<a class="btn btn-primary more" href="../NewsServlet?news_id=248109765">
 														<div>More</div>
 														<div><i class="ion-ios-arrow-thin-right"></i></div>
 													</a>
@@ -317,157 +273,10 @@
 								</div>
 							</div>
 						</div>
-						<!--
-						<div class="banner">
-						
-							<a href="#">
-								<img src="images/ads.png" alt="Sample Article">
-							</a>
-						
-						</div>
-						
-						<div class="line transparent little"></div>
-						-->
 						<div class="row">
-
-						<!--
-							<div class="col-md-6 col-sm-6 trending-tags">
-								<h1 class="title-col">Trending Tags</h1>
-								<div class="body-col">
-									<ol class="tags-list">
-										<li><a href="#">HTML5</a></li>
-										<li><a href="#">CSS3</a></li>
-										<li><a href="#">JavaScript</a></li>
-										<li><a href="#">jQuery</a></li>
-										<li><a href="#">Bootstrap</a></li>
-										<li><a href="#">Responsive</a></li>
-										<li><a href="#">AuteIrure</a></li>
-										<li><a href="#">Voluptate</a></li>
-										<li><a href="#">Veit</a></li>
-										<li><a href="#">Reprehenderit</a></li>
-									</ol>
-								</div>
-							</div>
-					-->	
-
-					
 							<div class="col-md-6 col-sm-6">
-							<!--
-								<h1 class="title-col">
-									Hot News
-									<div class="carousel-nav" id="hot-news-nav">
-										<div class="prev">
-											<i class="ion-ios-arrow-left"></i>
-										</div>
-										<div class="next">
-											<i class="ion-ios-arrow-right"></i>
-										</div>
-									</div>
-								</h1>
-							-->
-
 								<div class="body-col vertical-slider" data-max="4" data-nav="#hot-news-nav" data-item="article">
-
-								<!--
-									<article class="article-mini">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img09.jpg" alt="Sample Article">
-												</a>
-											</figure>
-											<div class="padding">
-												<h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
-												<div class="detail">
-													<div class="category"><a href="category.html">Lifestyle</a></div>
-													<div class="time">December 22, 2016</div>
-												</div>
-											</div>
-										</div>
-									</article>
-									<article class="article-mini">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img01.jpg" alt="Sample Article">
-												</a>
-											</figure>
-											<div class="padding">
-												<h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
-												<div class="detail">
-													<div class="category"><a href="category.html">Lifestyle</a></div>
-													<div class="time">December 22, 2016</div>
-												</div>
-											</div>
-										</div>
-									</article>
-									<article class="article-mini">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img05.jpg" alt="Sample Article">
-												</a>
-											</figure>
-											<div class="padding">
-												<h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
-												<div class="detail">
-													<div class="category"><a href="category.html">Lifestyle</a></div>
-													<div class="time">December 22, 2016</div>
-												</div>
-											</div>
-										</div>
-									</article>
-									<article class="article-mini">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img02.jpg" alt="Sample Article">
-												</a>
-											</figure>
-											<div class="padding">
-												<h1><a href="single.html">Fusce ullamcorper elit at felis cursus suscipit</a></h1>
-												<div class="detail">
-													<div class="category"><a href="category.html">Travel</a></div>
-													<div class="time">December 21, 2016</div>
-												</div>
-											</div>
-										</div>
-									</article>
-									<article class="article-mini">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img13.jpg" alt="Sample Article">
-												</a>
-											</figure>
-											<div class="padding">
-												<h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
-												<div class="detail">
-													<div class="category"><a href="category.html">International</a></div>
-													<div class="time">December 20, 2016</div>
-												</div>
-											</div>
-										</div>
-									</article>
-									<article class="article-mini">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img08.jpg" alt="Sample Article">
-												</a>
-											</figure>
-											<div class="padding">
-												<h1><a href="single.html">Aliquam et metus convallis tincidunt velit ut rhoncus dolor</a></h1>
-												<div class="detail">
-													<div class="category"><a href="category.html">Computer</a></div>
-													<div class="time">December 19, 2016</div>
-												</div>
-											</div>
-										</div>
-									</article>
-								-->
 								</div>
-							
 							</div>
 						</div>
 
@@ -478,55 +287,22 @@
 							<article class="col-md-12 article-list">
 								<div class="inner">
 									<figure>
-										<a href="single.html">
-											<img src="images/news/img11.jpg" alt="Sample Article">
+										<a href="../NewsServlet?news_id=723588684">
+											<img src="https://n.sinaimg.cn/sports/transform/662/w650h812/20200701/a9ae-ivrxcex8766709.jpg" alt="Sample Article">
 										</a>
 									</figure>
 									<div class="details">
 										<div class="detail">
 											<div class="category">
-												<a href="#">Film</a>
+												<a href="#">sports</a>
 											</div>
-											<div class="time">December 19, 2016</div>
+											<div class="time">2020-07-01 15:41:59</div>
 										</div>
-										<h1><a href="single.html">Donec consequat arcu at ultrices sodales quam erat aliquet diam</a></h1>
-										<p>
-										Donec consequat, arcu at ultrices sodales, quam erat aliquet diam, sit amet interdum libero nunc accumsan nisi.
+										<h1><a href="../NewsServlet?news_id=723588684">双骄！现役仅梅罗2人达此恐怖成就 梅西效率稍高</a></h1>
+										<p>在现役球员中，他是第二位实现这一成就的球员，第一位是C罗。2019年10月，C罗在葡萄牙对阵乌克兰的欧洲杯预选赛中率先达到了700球里程碑
 										</p>
 										<footer>
-											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>273</div></a>
-											<a class="btn btn-primary more" href="single.html">
-												<div>More</div>
-												<div><i class="ion-ios-arrow-thin-right"></i></div>
-											</a>
-										</footer>
-									</div>
-								</div>
-							</article>
-							<article class="col-md-12 article-list">
-								<div class="inner">
-									<div class="badge">
-										Sponsored
-									</div>
-									<figure>
-										<a href="single.html">
-											<img src="images/news/img02.jpg" alt="Sample Article">
-										</a>
-									</figure>
-									<div class="details">
-										<div class="detail">
-											<div class="category">
-												<a href="#">Travel</a>
-											</div>
-											<div class="time">December 18, 2016</div>
-										</div>
-										<h1><a href="single.html">Maecenas accumsan tortor ut velit pharetra mollis</a></h1>
-										<p>
-											Maecenas accumsan tortor ut velit pharetra mollis. Proin eu nisl et arcu iaculis placerat sollicitudin ut est. In fringilla dui.
-										</p>
-										<footer>
-											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>4209</div></a>
-											<a class="btn btn-primary more" href="single.html">
+											<a class="btn btn-primary more" href="../NewsServlet?news_id=723588684">
 												<div>More</div>
 												<div><i class="ion-ios-arrow-thin-right"></i></div>
 											</a>
@@ -537,24 +313,23 @@
 							<article class="col-md-12 article-list">
 								<div class="inner">
 									<figure>
-										<a href="single.html">
-											<img src="images/news/img03.jpg" alt="Sample Article">
+										<a href="../NewsServlet?news_id=828732369">
+											<img src="https://n.sinaimg.cn/sports/transform/283/w650h433/20200630/04e0-ivrxcex8120720.jpg" alt="Sample Article">
 										</a>
 									</figure>
 									<div class="details">
 										<div class="detail">
 											<div class="category">
-											<a href="#">Travel</a>
+												<a href="#">sports</a>
 											</div>
-											<div class="time">December 16, 2016</div>
+											<div class="time">2020-07-01 16:10:02</div>
 										</div>
-										<h1><a href="single.html">Nulla facilisis odio quis gravida vestibulum Proin venenatis pellentesque arcu</a></h1>
+										<h1><a href="../NewsServlet?news_id=828732369">郭艾伦31+9+7乔杨空砍60分 辽篮大胜同曦2连胜</a></h1>
 										<p>
-											Nulla facilisis odio quis gravida vestibulum. Proin venenatis pellentesque arcu, ut mattis nulla placerat et.
+											6月30日，复赛后的CBA常规赛进入到第36轮的较量，同曦迎战辽宁队。此役，辽宁打的顺风顺水，节节领先，郭艾伦、梅奥合砍61分，帮助辽宁队120-107击败同曦，夺得换帅后的两连胜。
 										</p>
 										<footer>
-											<a href="#" class="love active"><i class="ion-android-favorite"></i> <div>302</div></a>
-											<a class="btn btn-primary more" href="single.html">
+											<a class="btn btn-primary more" href="../NewsServlet?news_id=828732369">
 												<div>More</div>
 												<div><i class="ion-ios-arrow-thin-right"></i></div>
 											</a>
@@ -565,24 +340,50 @@
 							<article class="col-md-12 article-list">
 								<div class="inner">
 									<figure>
-										<a href="single.html">
-											<img src="images/news/img09.jpg" alt="Sample Article">
+										<a href="../NewsServlet?news_id=895470107">
+											<img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/D999/production/_113050755_53155657.jpg" alt="Sample Article">
 										</a>
 									</figure>
 									<div class="details">
 										<div class="detail">
 											<div class="category">
-												<a href="#">Healthy</a>
+											<a href="#">science</a>
 											</div>
-											<div class="time">December 16, 2016</div>
+											<div class="time">2020-07-01 15:03:05</div>
 										</div>
-										<h1><a href="single.html">Maecenas blandit ultricies lorem id tempor enim pulvinar at</a></h1>
+										<h1><a href="../NewsServlet?news_id=895470107">环保知识：绿化并非都好 造林不当“有害”</a></h1>
 										<p>
-											Maecenas blandit ultricies lorem, id tempor enim pulvinar at. Curabitur sit amet tortor eu ipsum lacinia malesuada.
+											美国两项最新环保科研结果称，大规模植树造林如果实施不当，不但不能保护环境，反而会带来更多害处。研究项目中包括有中国北部沙漠地带植树工程。
 										</p>
 										<footer>
-											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>783</div></a>
-											<a class="btn btn-primary more" href="single.html">
+											<a class="btn btn-primary more" href="../NewsServlet?news_id=895470107">
+												<div>More</div>
+												<div><i class="ion-ios-arrow-thin-right"></i></div>
+											</a>
+										</footer>
+									</div>
+								</div>
+							</article>
+							<article class="col-md-12 article-list">
+								<div class="inner">
+									<figure>
+										<a href="../NewsServlet?news_id=980891735">
+											<img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/1400E/production/_113043918_5ecfdaf6-0791-48bc-ad1b-b9ceb95f8e78.png" alt="Sample Article">
+										</a>
+									</figure>
+									<div class="details">
+										<div class="detail">
+											<div class="category">
+												<a href="#">economics</a>
+											</div>
+											<div class="time">2020-07-01 15:15:59</div>
+										</div>
+										<h1><a href="../NewsServlet?news_id=980891735">苹果换“芯”：自制芯片全面取代英特尔处理器会带来什么变化</a></h1>
+										<p>
+											苹果（Apple）公司确认，它的Mac笔记本以及台式个人电脑将会改用苹果自家的ARM架构处理器
+										</p>
+										<footer>
+											<a class="btn btn-primary more" href="../NewsServlet?news_id=980891735">
 												<div>More</div>
 												<div><i class="ion-ios-arrow-thin-right"></i></div>
 											</a>
@@ -593,505 +394,87 @@
 						</div>
 					</div>
 					<div class="col-xs-6 col-md-4 sidebar" id="sidebar">
-						<!--
-						<div class="sidebar-title for-tablet">Sidebar</div>
-						
-						<aside>
-							<div class="aside-body">
-								<div class="featured-author">
-
-									<div class="featured-author-inner">
-
-
-										
-										<div class="featured-author-cover" style="background-image: url('images/news/img15.jpg');">
-											<div class="badges">
-												<div class="badge-item"><i class="ion-star"></i> Featured</div>
-											</div>
-											<div class="featured-author-center">
-												<figure class="featured-author-picture">
-													<img src="images/img01.jpg" alt="Sample Article">
-												</figure>
-												<div class="featured-author-info">
-													<h2 class="name">John Doe</h2>
-													<div class="desc">@JohnDoe</div>
-												</div>
-											</div>
-										</div>
-										-->
-
-
-										<!--
-										<div class="featured-author-body">
-
-											
-											<div class="featured-author-count">
-												<div class="item">
-													<a href="#">
-														<div class="name">Posts</div>
-														<div class="value">208</div>														
-													</a>
-												</div>
-												<div class="item">
-													<a href="#">
-														<div class="name">Stars</div>
-														<div class="value">3,729</div>														
-													</a>
-												</div>
-												<div class="item">
-													<a href="#">
-														<div class="icon">
-															<div>More</div>
-															<i class="ion-chevron-right"></i>
-														</div>														
-													</a>
-												</div>
-											</div>
-											
-
-											<div class="featured-author-quote">
-												"Eur costrict mobsa undivani krusvuw blos andugus pu aklosah"
-											</div>
-
-											
-											<div class="block">
-												<h2 class="block-title">Photos</h2>
-												<div class="block-body">
-													<ul class="item-list-round" data-magnific="gallery">
-														<li><a href="images/news/img06.jpg" style="background-image: url('images/news/img06.jpg');"></a></li>
-														<li><a href="images/news/img07.jpg" style="background-image: url('images/news/img07.jpg');"></a></li>
-														<li><a href="images/news/img08.jpg" style="background-image: url('images/news/img08.jpg');"></a></li>
-														<li><a href="images/news/img09.jpg" style="background-image: url('images/news/img09.jpg');"></a></li>
-														<li><a href="images/news/img10.jpg" style="background-image: url('images/news/img10.jpg');"></a></li>
-														<li><a href="images/news/img11.jpg" style="background-image: url('images/news/img11.jpg');"></a></li>
-														<li><a href="images/news/img12.jpg" style="background-image: url('images/news/img12.jpg');"><div class="more">+2</div></a></li>
-														<li class="hidden"><a href="images/news/img13.jpg" style="background-image: url('images/news/img13.jpg');"></a></li>
-														<li class="hidden"><a href="images/news/img14.jpg" style="background-image: url('images/news/img14.jpg');"></a></li>
-													</ul>
-												</div>
-											</div>
-											
-											<div class="featured-author-footer">
-												<a href="#">See All Authors</a>
-											</div>
-											
-										</div>
-										
-									</div>
-								</div>
-							</div>
-						</aside>
-						-->
 						<aside>
 							<h1 class="aside-title">热点</h1>
 							<div class="aside-body">
 								<article class="article-mini">
 									<div class="inner">
 										<figure>
-											<a href="single.html">
-												<img src="images/news/img07.jpg" alt="Sample Article">
+											<a href="../NewsServlet?news_id=1021336708">
+												<img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/15B00/production/_113123888_463d65fc-2b41-4d17-98aa-cf437c130076.jpg" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
-											<h1><a href="single.html">此处输入文字</a></h1>
+											<h1><a href="../NewsServlet?news_id=1021336708">两情相悦心理学：揭开性吸引的五个秘密</a></h1>
 										</div>
 									</div>
 								</article>
 								<article class="article-mini">
 									<div class="inner">
 										<figure>
-											<a href="single.html">
-												<img src="images/news/img14.jpg" alt="Sample Article">
+											<a href="../NewsServlet?news_id=1049627970">
+												<img src="https://n.sinaimg.cn/sports/transform/252/w650h402/20200701/e7c5-ivrxcex8685194.jpg" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
-											<h1><a href="single.html">此处输入文字</a></h1>
+											<h1><a href="../NewsServlet?news_id=1049627970">西甲-梅西700球 萨乌尔2球 巴萨2度领先2-2平马竞</a></h1>
 										</div>
 									</div>
 								</article>
 								<article class="article-mini">
 									<div class="inner">
 										<figure>
-											<a href="single.html">
-												<img src="images/news/img09.jpg" alt="Sample Article">
+											<a href="../NewsServlet?news_id=1115322582">
+												<img src="https://static01.nyt.com/images/2020/06/18/business/18china-dna-sub/18china-dna-sub-master1050.jpg" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
-											<h1><a href="single.html">Aliquam et metus convallis tincidunt velit ut rhoncus dolor</a></h1>
+											<h1><a href="../NewsServlet?news_id=1115322582">中国广泛采集男性DNA用于监控</a></h1>
 										</div>
 									</div>
 								</article>
 								<article class="article-mini">
 									<div class="inner">
 										<figure>
-											<a href="single.html">
-												<img src="images/news/img11.jpg" alt="Sample Article">
+											<a href="../NewsServlet?news_id=1356863636">
+												<img src="https://static01.nyt.com/images/2020/06/29/world/29india-chinese-apps/29india-chinese-apps-master1050-v2.jpg" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
-											<h1><a href="single.html">dui augue facilisis lacus fringilla pulvinar massa felis quis velit</a></h1>
+											<h1><a href="../NewsServlet?news_id=1356863636">印度封禁TikTok等近60款中国应用程序</a></h1>
 										</div>
 									</div>
 								</article>
 								<article class="article-mini">
 									<div class="inner">
 										<figure>
-											<a href="single.html">
-												<img src="images/news/img06.jpg" alt="Sample Article">
+											<a href="../NewsServlet?news_id=1389512440">
+												<img src="https://ichef.bbci.co.uk/news/320/cpsprodpb/D0E2/production/_113047435_hi062027247.jpg" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
-											<h1><a href="single.html">neque est semper nulla, ac elementum risus quam a enim</a></h1>
+											<h1><a href="../NewsServlet?news_id=1389512440">中印流血冲突会不会在印度引发抵制中国商品浪潮</a></h1>
 										</div>
 									</div>
 								</article>
 								<article class="article-mini">
 									<div class="inner">
 										<figure>
-											<a href="single.html">
-												<img src="images/news/img03.jpg" alt="Sample Article">
+											<a href="../NewsServlet?news_id=1547349140">
+												<img src="https://img3.chinadaily.com.cn/images/202007/01/5efbce2da310a8597912cd00.jpeg" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
-											<h1><a href="single.html">Morbi vitae nisl ac mi luctus aliquet a vitae libero</a></h1>
+											<h1><a href="../NewsServlet?news_id=1547349140">《习近平谈治国理政》第三卷中英文版出版发行</a></h1>
 										</div>
 									</div>
 								</article>
 							</div>
 						</aside>
-						<!--
-						<aside>
-							<div class="aside-body">
-								<form class="newsletter">
-									<div class="icon">
-										<i class="ion-ios-email-outline"></i>
-										<h1>Newsletter</h1>
-									</div>
-									<div class="input-group">
-										<input type="email" class="form-control email" placeholder="Your mail">
-										<div class="input-group-btn">
-											<button class="btn btn-primary"><i class="ion-paper-airplane"></i></button>
-										</div>
-									</div>
-									<p>By subscribing you will receive new articles in your email.</p>
-								</form>
-							</div>
-						</aside>
-						<aside>
-							
-							<ul class="nav nav-tabs nav-justified" role="tablist">
-								<li class="active">
-									<a href="#recomended" aria-controls="recomended" role="tab" data-toggle="tab">
-										<i class="ion-android-star-outline"></i> Recomended
-									</a>
-								</li>
-								<li>
-									<a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">
-										<i class="ion-ios-chatboxes-outline"></i> Comments
-									</a>
-								</li>
-							</ul>
-							
-							<div class="tab-content">
-								
-								<div class="tab-pane active" id="recomended">
-									
-									<article class="article-fw">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img16.jpg" alt="Sample Article">
-												</a>
-											</figure>
-
-											
-											<div class="details">
-												<div class="detail">
-													<div class="time">December 31, 2016</div>
-													<div class="category"><a href="category.html">Sport</a></div>
-												</div>
-
-												
-												<h1><a href="single.html">Donec congue turpis vitae mauris</a></h1>
-												<p>
-													Donec congue turpis vitae mauris condimentum luctus. Ut dictum neque at egestas convallis. 
-												</p>
-
-												
-											</div>
-											
-										</div>
-									</article>
-									
-									<div class="line"></div>
-									<article class="article-mini">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img05.jpg" alt="Sample Article">
-												</a>
-											</figure>
-											<div class="padding">
-												<h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
-												<div class="detail">
-													<div class="category"><a href="category.html">Lifestyle</a></div>
-													<div class="time">December 22, 2016</div>
-												</div>
-											</div>
-										</div>
-									</article>
-									<article class="article-mini">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img02.jpg" alt="Sample Article">
-												</a>
-											</figure>
-											<div class="padding">
-												<h1><a href="single.html">Fusce ullamcorper elit at felis cursus suscipit</a></h1>
-												<div class="detail">
-													<div class="category"><a href="category.html">Travel</a></div>
-													<div class="time">December 21, 2016</div>
-												</div>
-											</div>
-										</div>
-									</article>
-									<article class="article-mini">
-										<div class="inner">
-											<figure>
-												<a href="single.html">
-													<img src="images/news/img10.jpg" alt="Sample Article">
-												</a>
-											</figure>
-											<div class="padding">
-												<h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
-												<div class="detail">
-													<div class="category"><a href="category.html">Healthy</a></div>
-													<div class="time">December 20, 2016</div>
-												</div>
-											</div>
-										</div>
-									</article>
-									
-								</div>
-						====
-								<div class="tab-pane comments" id="comments">
-									<div class="comment-list sm">
-										<div class="item">
-											<div class="user">                                
-												<figure>
-													<img src="images/img01.jpg" alt="User Picture">
-												</figure>
-												<div class="details">
-													<h5 class="name">Mark Otto</h5>
-													<div class="time">24 Hours</div>
-													<div class="description">
-														Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="item">
-											<div class="user">                                
-												<figure>
-													<img src="images/img01.jpg" alt="User Picture">
-												</figure>
-												<div class="details">
-													<h5 class="name">Mark Otto</h5>
-													<div class="time">24 Hours</div>
-													<div class="description">
-														Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="item">
-											<div class="user">                                
-												<figure>
-													<img src="images/img01.jpg" alt="User Picture">
-												</figure>
-												<div class="details">
-													<h5 class="name">Mark Otto</h5>
-													<div class="time">24 Hours</div>
-													<div class="description">
-														Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-						</aside>
-						<aside>
-							<h1 class="aside-title">Videos
-								<div class="carousel-nav" id="video-list-nav">
-									<div class="prev"><i class="ion-ios-arrow-left"></i></div>
-									<div class="next"><i class="ion-ios-arrow-right"></i></div>
-								</div>
-							</h1>
-							<div class="aside-body">
-								<ul class="video-list" data-youtube='"carousel":true, "nav": "#video-list-nav"'>
-									<li><a data-youtube-id="SBjQ9tuuTJQ" data-action="magnific"></a></li>
-									<li><a data-youtube-id="9cVJr3eQfXc" data-action="magnific"></a></li>
-									<li><a data-youtube-id="DnGdoEa1tPg" data-action="magnific"></a></li>
-								</ul>
-							</div>
-						</aside>
-						
-						<aside id="sponsored">
-							<h1 class="aside-title">Sponsored</h1>
-							<div class="aside-body">
-								<ul class="sponsored">
-									<li>
-										<a href="#">
-											<img src="images/sponsored.png" alt="Sponsored">
-										</a>
-									</li> 
-									<li>
-										<a href="#">
-											<img src="images/sponsored.png" alt="Sponsored">
-										</a>
-									</li> 
-									<li>
-										<a href="#">
-											<img src="images/sponsored.png" alt="Sponsored">
-										</a>
-									</li> 
-									<li>
-										<a href="#">
-											<img src="images/sponsored.png" alt="Sponsored">
-										</a>
-									</li> 
-								</ul>
-							</div>
-						</aside>
-						-->
 					</div>
 				</div>
 			</div>
 		</section>
-		<!--
-		<section class="best-of-the-week">
-			<div class="container">
-				<h1><div class="text">Best Of The Week</div>
-					<div class="carousel-nav" id="best-of-the-week-nav">
-						<div class="prev">
-							<i class="ion-ios-arrow-left"></i>
-						</div>
-						<div class="next">
-							<i class="ion-ios-arrow-right"></i>
-						</div>
-					</div>
-				</h1>
-				<div class="owl-carousel owl-theme carousel-1">
-					<article class="article">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img03.jpg" alt="Sample Article">
-								</a>
-							</figure>
-							<div class="padding">
-								<div class="detail">
-										<div class="time">December 11, 2016</div>
-										<div class="category"><a href="category.html">Travel</a></div>
-								</div>
-								<h2><a href="single.html">tempor interdum Praesent tincidunt</a></h2>
-								<p>Praesent tincidunt, leo vitae congue molestie.</p>
-							</div>
-						</div>
-					</article>
-					<article class="article">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img16.jpg" alt="Sample Article">
-								</a>
-							</figure>
-							<div class="padding">
-								<div class="detail">
-									<div class="time">December 09, 2016</div>
-									<div class="category"><a href="category.html">Sport</a></div>
-								</div>
-								<h2><a href="single.html">Maecenas porttitor sit amet turpis a semper</a></h2>
-								<p> Proin vulputate, urna id porttitor luctus, dui augue facilisis lacus.</p>
-							</div>
-						</div>
-					</article>
-					<article class="article">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img15.jpg" alt="Sample Article">
-								</a>
-							</figure>
-							<div class="padding">
-								<div class="detail">
-									<div class="time">December 26, 2016</div>
-									<div class="category"><a href="category.html">Lifestyle</a></div>
-								</div>
-								<h2><a href="single.html">Fusce ac odio eu ex volutpat pellentesque</a></h2>
-								<p>Vestibulum ante ipsum primis in faucibus orci luctus</p>
-							</div>
-						</div>
-					</article>
-					<article class="article">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img14.jpg" alt="Sample Article">
-								</a>
-							</figure>
-							<div class="padding">
-								<div class="detail">
-									<div class="time">December 26, 2016</div>
-									<div class="category"><a href="category.html">Travel</a></div>
-								</div>
-								<h2><a href="single.html">Nulla facilisis odio quis gravida vestibulum</a></h2>
-								<p>Proin venenatis pellentesque arcu, ut mattis nulla placerat et.</p>
-							</div>
-						</div>
-					</article>
-					<article class="article">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img01.jpg" alt="Sample Article">
-								</a>
-							</figure>
-							<div class="padding">
-								<div class="detail">
-									<div class="time">December 26, 2016</div>
-									<div class="category"><a href="category.html">Travel</a></div>
-								</div>
-								<h2><a href="single.html">Fusce Ullamcorper Elit At Felis Cursus Suscipit</a></h2>
-								<p>Proin venenatis pellentesque arcu, ut mattis nulla placerat et.</p>
-							</div>
-						</div>
-					</article>
-					<article class="article">
-						<div class="inner">
-							<figure>
-								<a href="single.html">
-									<img src="images/news/img11.jpg" alt="Sample Article">
-								</a>
-							</figure>
-							<div class="padding">
-								<div class="detail">
-									<div class="time">December 26, 2016</div>
-									<div class="category"><a href="category.html">Travel</a></div>
-								</div>
-								<h2><a href="single.html">Donec consequat arcu at ultrices sodales</a></h2>
-								<p>Proin venenatis pellentesque arcu, ut mattis nulla placerat et.</p>
-							</div>
-						</div>
-					</article>
-				</div>
-			</div>
-		</section>
-	-->
 
 		<!-- JS -->
 		<script src="js/jquery.js"></script>
