@@ -19,7 +19,7 @@ public class PrintRecordServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		String record = filein("D://BigNews/record.txt");
+		String record = filein("C://BigNews/record.txt");
 		request.setAttribute("record", record);
 		request.getRequestDispatcher("sources/record.jsp").forward(request, response);
 
