@@ -209,11 +209,9 @@
 									<div>${sessionScope.user.name}</div></a>
 								</li>
 							</c:if>
-							<c:if test="${sessionScope.user.name == null}">
 								<li><a href="login.jsp"><i class="ion-person"></i>
 									<div>登录</div></a>
 								</li>
-							</c:if>
 						</ul>
 					</div>
 				</div>
