@@ -238,7 +238,7 @@
 				<!-- 修改tab栏 -->
 				<div id="menu-list">
 					<ul class="nav-list">
-						<li><a href="index.html">主页</a></li>
+						<li><a href="index.jsp">主页</a></li>
 						<!-- 新闻类别的参数category 	..为上一级目录		-->
 						<li><a href="../ClassifiedServlet?category=science">Science</a></li>
 						<li><a href="../ClassifiedServlet?category=economics">Economics</a></li>
