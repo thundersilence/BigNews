@@ -43,7 +43,7 @@ public class RegisterServlet extends HttpServlet {
 			if (UD.search(id).getId()==0)break;				//搜索不到已有id时返回一个id为0的user类
 		}//随机生成id
 		
-		String imagedir = "D://BigNews/imageStore/";
+		String imagedir = "C://BigNews/imageStore/";
 		String imageurl = imagedir + id + ".jpg";
 		CreateIcon.create(imagedir, imageurl);//生成头像并保存
 		
@@ -52,10 +52,14 @@ public class RegisterServlet extends HttpServlet {
 		user.setPassword(password);
 		user.setImg(imageurl);
 		
-		UD.insert(user);
+		UD.insert(user);	
 		
 		AddRecord.print("添加用户记录：" + id);
 		System.out.println("注册成功");
-		response.sendRedirect("sources/index.html");
+		response.sendRedirect("sources/index.jsp");
+		request.getSession().setAttribute("user", user);
+		request.getSession().setAttribute("id", id);			//session 添加名称和id
+		request.getSession().setAttribute("image", imageurl);
+
 	}
 }
