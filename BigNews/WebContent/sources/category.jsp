@@ -197,7 +197,7 @@
 										<footer>
 											<a href="#" class="love"><i
 												class="ion-android-favorite-outline"></i>
-												<div>237</div></a>
+												</a>
 											<!-- 更多按钮跳转至具体新闻页面，链接要带news的id属性 ../NewsServlet?news_id=${news.id} -->
 											<a class="btn btn-primary more"
 												href="../NewsServlet?news_id=${news.id}">

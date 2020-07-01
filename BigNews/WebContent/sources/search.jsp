@@ -251,7 +251,7 @@
 										${news.simple }
 										</p>
 										<footer>
-											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>${ news.stars }</div></a>
+											<a href="#" class="love"><i class="ion-android-favorite-outline"></i> </a>
 											<a class="btn btn-primary more" href="single.html">
 												<div>更多</div>
 												<div><i class="ion-ios-arrow-thin-right"></i></div>
