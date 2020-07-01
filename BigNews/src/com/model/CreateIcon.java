@@ -33,7 +33,7 @@ public class CreateIcon {
     /** 基色阶数极限 */
     private final static int COLOR_LIMIT = 256;
     /** 保存路径 */
-    private final static String DIR = "C://headImg/";
+    private final static String DIR = "store/imageStore/";
     
     
     

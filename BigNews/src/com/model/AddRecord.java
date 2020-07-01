@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class AddRecord {
-	private static final String URL = "C://BigNews/record.txt";
+	private static final String URL = "store/record.txt";
 	
 	public static void print(String record) throws IOException {
 		LocalDateTime dateTime = LocalDateTime.now();
