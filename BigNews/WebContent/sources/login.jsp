@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="<%=request.getContextPath()%>/sources/">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,6 +30,15 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/skins/all.css">
 		<link rel="stylesheet" href="css/demo.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				if(${requestScope.success != null}){
+					alert("登录失败");
+				}
+			})
+		</script>
+		
 	</head>
 
 	<body>

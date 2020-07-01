@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="<%=request.getContextPath()%>/sources/">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -34,7 +35,15 @@
 				document.getElementById("noticeBar").style.display="none";
 			}
 		}
-	</script>
+		</script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				if(${requestScope.success != null}){
+					alert("注册成功！\n账号："+${sessionScope.user.id});
+				}
+			})
+		</script>
 	</head>
 
 	<body class="skin-orange">

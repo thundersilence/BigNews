@@ -39,7 +39,9 @@ public class LoginServlet extends HttpServlet {
 			System.out.println(user.getName());
 			if(user.getPassword()==null) {
 				System.out.println("无此账号");
-				response.sendRedirect("sources/login.jsp");
+				/* response.sendRedirect("sources/login.jsp"); */
+				request.setAttribute("success", "S");
+				request.getRequestDispatcher("sources/login.jsp").forward(request, response);
 			}else if((user.getPassword()).equals(password)){
 				System.out.println("登陆成功");
 				request.getSession().setAttribute("user", user);
@@ -49,11 +51,16 @@ public class LoginServlet extends HttpServlet {
 				response.sendRedirect("sources/index.jsp");
 			}else {
 				System.out.println("登陆失败");
-				response.sendRedirect("sources/login.jsp");
+				request.setAttribute("success", "S");
+				/* response.sendRedirect("sources/login.jsp"); */
+				request.getRequestDispatcher("sources/login.jsp").forward(request, response);
+				
 			}
 		}else{
 			System.out.println("登陆失败");
-			response.sendRedirect("sources/login.jsp");
+			request.setAttribute("success", "S");
+			/* response.sendRedirect("sources/login.jsp"); */
+			request.getRequestDispatcher("sources/login.jsp").forward(request, response);
 		}
 			
 	}
