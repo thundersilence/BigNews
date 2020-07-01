@@ -23,26 +23,29 @@ public class CommentDao extends NewsDBUtils {
 
 		ArrayList<Comment> list = new ArrayList<Comment>();
 
-		try {
-			if (rs.next()) {// 判断是否至少存在一条数据记录
-				rs.beforeFirst();// 将光标移动到第一行数据之前
-				while (rs.next()) {
-
-					Comment comment = new Comment();
-					comment.setId(rs.getInt(1));
-					comment.setNews_id(rs.getInt(2));
-					comment.setUser_id(rs.getInt(3));
-					comment.setTime(rs.getString(4));
-					comment.setContent(rs.getString(5));
-
-					list.add(comment);
+		if(rs != null) {
+			try {
+				if (rs.next()) {// 判断是否至少存在一条数据记录
+					rs.beforeFirst();// 将光标移动到第一行数据之前
+					while (rs.next()) {
+	
+						Comment comment = new Comment();
+						comment.setId(rs.getInt(1));
+						comment.setNews_id(rs.getInt(2));
+						comment.setUser_id(rs.getInt(3));
+						comment.setTime(rs.getString(4));
+						comment.setContent(rs.getString(5));
+	
+						list.add(comment);
+					}
 				}
+	
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
+		
 		// 释放资源
 		getClose();
 		return list;

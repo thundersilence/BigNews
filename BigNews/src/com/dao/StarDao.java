@@ -58,20 +58,23 @@ public class StarDao extends NewsDBUtils{
 		ResultSet rs = doQuery(sql, params);
 		ArrayList<News> list = null;
 		NewsDao ND=new NewsDao();
-		try {
-			if (rs.next()) {//判断是否至少存在一条数据记录
-				rs.beforeFirst();//将光标移动到第一行数据之前
-				list = new ArrayList<News>();
-				while (rs.next()) {
-					News news=ND.searchNews(rs.getInt(3));
-					list.add(news);
+		if(rs !=null) {
+			try {
+				if (rs.next()) {//判断是否至少存在一条数据记录
+					rs.beforeFirst();//将光标移动到第一行数据之前
+					list = new ArrayList<News>();
+					while (rs.next()) {
+						News news=ND.searchNews(rs.getInt(3));
+						list.add(news);
+					}
 				}
+				 
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			 
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
+		
 		// 释放资源
 		getClose();
 		return list;

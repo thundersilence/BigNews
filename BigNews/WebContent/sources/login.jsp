@@ -38,16 +38,16 @@
 					<div class="row">
 						<div class="col-md-3 col-sm-12">
 							<div class="brand">
-								<a href="index.html">
+								<a href="index.jsp">
 									<img src="images/logo.png" alt="Magz Logo">
 								</a>
 							</div>						
 						</div>
 						<div class="col-md-6 col-sm-12">
-							<form class="search" autocomplete="off">
+							<form class="search" autocomplete="off" action="../search" method="post">
 								<div class="form-group">
 									<div class="input-group">
-										<input type="text" name="q" class="form-control" placeholder="输入文字">									
+										<input type="text" name="key" class="form-control" placeholder="输入文字">									
 										<div class="input-group-btn">
 											<button class="btn btn-primary"><i class="ion-search"></i></button>
 										</div>

@@ -74,7 +74,7 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-12">
 						<div class="brand">
-							<a href="index.html">
+							<a href="index.jsp">
 								<img src="images/logo.png" alt="Magz Logo">
 							</a>
 						</div>						
@@ -237,7 +237,7 @@
 								</c:if>
 	
 								<!-- 当前页 -->
-								<c:if test="${requestScope.newsTotal <= 9}">
+								<c:if test="${requestScope.newsTotal <= 9 && requestScope.newsTotal>0}">
 									<c:forEach var="x" begin="1" end="${requestScope.newsTotal-1}">
 										<li><a href="../secret?newspage=${x}">${x}</a></li>
 									</c:forEach>

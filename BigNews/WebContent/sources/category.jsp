@@ -68,7 +68,7 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-12">
 						<div class="brand">
-							<a href="index.html"> <img src="images/logo.png"
+							<a href="index.jsp"> <img src="images/logo.png"
 								alt="Magz Logo">
 							</a>
 						</div>

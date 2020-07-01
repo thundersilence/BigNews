@@ -48,7 +48,7 @@
 					<div class="row">
 						<div class="col-md-3 col-sm-12">
 							<div class="brand">
-								<a href="index.html">
+								<a href="index.jsp">
 									<img src="images/logo.png" alt="Magz Logo">
 								</a>
 							</div>						
@@ -77,7 +77,7 @@
 						</div>
 						<div class="col-md-3 col-sm-12 text-right">
 							<ul class="nav-icons">
-								<li><a href="register.html"><i class="ion-person-add"></i><div>注册</div></a></li>
+								<li><a href="register.jsp"><i class="ion-person-add"></i><div>注册</div></a></li>
 								<c:if test="${sessionScope.user.name != null}">
 									<li><a href="userDisplay.jsp?in=yes"><i class="ion-person"></i>
 										<div>${sessionScope.user.name}</div></a>
