@@ -31,25 +31,30 @@ public class LoginServlet extends HttpServlet {
 		//读取用户id和密码
 		User user=new User();
 		UserDao UD=new UserDao();
-		
-		int id = Integer.parseInt(userid);
-		user=UD.search(id);
-		String image=user.getImg();
-		//以id搜索唯一用户
-		System.out.println(user.getName());
-		if(user.getPassword()==null) {
-			System.out.println("无此账号");
-			response.sendRedirect("sources/index.html");
-		}else if((user.getPassword()).equals(password)){
-			System.out.println("登陆成功");
-			request.getSession().setAttribute("user", user);
-			request.getSession().setAttribute("id", id);			//session 添加名称和id
-			request.getSession().setAttribute("image", image);
-			//response.sendRedirect("sources/index.html");
-			response.sendRedirect("sources/index.jsp");
-		}else {
+		if(!(userid.equals(null)||userid.equals(""))) {
+			int id = Integer.parseInt(userid);
+			user=UD.search(id);
+			String image=user.getImg();
+			//以id搜索唯一用户
+			System.out.println(user.getName());
+			if(user.getPassword()==null) {
+				System.out.println("无此账号");
+				response.sendRedirect("sources/login.jsp");
+			}else if((user.getPassword()).equals(password)){
+				System.out.println("登陆成功");
+				request.getSession().setAttribute("user", user);
+				request.getSession().setAttribute("id", id);			//session 添加名称和id
+				request.getSession().setAttribute("image", image);
+				//response.sendRedirect("sources/index.html");
+				response.sendRedirect("sources/index.jsp");
+			}else {
+				System.out.println("登陆失败");
+				response.sendRedirect("sources/login.jsp");
+			}
+		}else{
 			System.out.println("登陆失败");
 			response.sendRedirect("sources/login.jsp");
 		}
+			
 	}
 }

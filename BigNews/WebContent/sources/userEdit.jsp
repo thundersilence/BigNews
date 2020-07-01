@@ -119,19 +119,22 @@
 					<div class="box box-border">
 						<div class="box-body">
 							<h4>个人信息</h4>
-							<form action="../UserServlet" method="post" enctype="multipart/form-data">
-								<img alt="用户头像" src="${sessionScope.user.img}" style="width:100px;height:100px;">
-								<input type="file" id="headimg" name="headimg">
-								<label for="headimg">上传图片</label>
+							<form action="../UserServlet" method="post">
 								<div class="form-group">
 									<label>用户名</label>
-									<input type="text" name="username" class="form-control" placeholder="${sessionScope.user.name}">
-									
+									<input type="text" name="username" id="username" class="form-control" placeholder="${sessionScope.user.name}">
 								</div>
 								<div class="form-group text-right">
 									<button class="btn btn-primary btn-block">修改个人信息</button>
 								</div>
-								
+							</form>
+							<form action="../FileServlet" method="post" enctype="multipart/form-data">
+								<img alt="用户头像" src="${sessionScope.user.img}" style="width:100px;height:100px;">
+								<input type="file" id="headimg" name="headimg">
+								<label for="headimg">上传图片</label>
+								<div class="form-group text-right">
+									<button class="btn btn-primary btn-block">修改图片</button>
+								</div>
 							</form>
 							<a class="form-group text-right" href="userDisplay.jsp">
 									<button class="btn btn-primary btn-block">返回</button>

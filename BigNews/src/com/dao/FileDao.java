@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -61,14 +62,19 @@ public class FileDao {
 				filename=item.getName();
 				System.out.println("filename为"+filename);
 			}
-			
-			
+			Random rand=new Random();
+			int rand_id=rand.nextInt(2147483640);
+			String rand_id_str = Integer.toString(rand_id);
+			if(filename.equals("")||filename.equals(null))return ("");
 			String imagedir = "D://BigNews/imageStore/";
 			
 			String[] splitList=filename.split("\\\\");
 			String fileName = splitList[splitList.length-1];
-			if(fileName.equals("")||fileName.equals(null))return filename;
-			imageurl = imagedir +fileName;
+			if(fileName.equals("")||fileName.equals(null))return ("");
+			imageurl = imagedir+rand_id_str+fileName;
+			
+			
+			
 			File image=new File(imageurl);
 			System.out.println("image地址为"+imageurl);
 			item.write(image);
@@ -78,7 +84,7 @@ public class FileDao {
 			e2.printStackTrace();
 
 		}catch(FileExistsException e2) {
-			return filename;
+			return imageurl;
 		}
 		System.out.println("============getRequestFileItems方法try后测试=============");
 		return imageurl;
