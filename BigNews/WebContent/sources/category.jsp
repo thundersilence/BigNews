@@ -18,7 +18,9 @@
 		if(totalnum>=pagesize){
 			for(int i=0;i<pagesize;i++){
 				int index =(currentpage-1)*pagesize+i;
+				if(index<=totalnum-1){
 				currentlist.add(newsList.get(index));
+				}
 			}
 		}
 		else{
