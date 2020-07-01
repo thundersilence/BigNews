@@ -279,7 +279,7 @@
 						<footer>
 							<a href="javascript:;" onclick="checkClick()" class="love">
 								<img alt="" src="images/hx2.jpg" id="loveimgid">
-								<div>237</div></a>
+								</a>
 						</footer>
 					</article>
 					<div class="line thin"></div>
