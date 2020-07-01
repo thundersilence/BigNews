@@ -66,7 +66,7 @@ public class AddNewsServlet extends HttpServlet{
 		String filename=new String();
 		
 		//得到tomcat项目根文件绝对路径
-		filename=request.getRequestURI()+"/store/contentStore/"+id;
+		filename="C://BigNews/contentStore/"+id;
 		System.out.println("filename:"+filename);
 		
 		fileout(content,filename);
