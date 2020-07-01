@@ -22,27 +22,26 @@ public class CommentDao extends NewsDBUtils {
 		ResultSet rs = doQuery(sql, params);
 
 		ArrayList<Comment> list = new ArrayList<Comment>();
-		if(rs != null) {
-			try {
-				if (rs.next()) {// 判断是否至少存在一条数据记录
-					rs.beforeFirst();// 将光标移动到第一行数据之前
-					while (rs.next()) {
-	
-						Comment comment = new Comment();
-						comment.setId(rs.getInt(1));
-						comment.setNews_id(rs.getInt(2));
-						comment.setUser_id(rs.getInt(3));
-						comment.setTime(rs.getString(4));
-						comment.setContent(rs.getString(5));
-	
-						list.add(comment);
-					}
+
+		try {
+			if (rs.next()) {// 判断是否至少存在一条数据记录
+				rs.beforeFirst();// 将光标移动到第一行数据之前
+				while (rs.next()) {
+
+					Comment comment = new Comment();
+					comment.setId(rs.getInt(1));
+					comment.setNews_id(rs.getInt(2));
+					comment.setUser_id(rs.getInt(3));
+					comment.setTime(rs.getString(4));
+					comment.setContent(rs.getString(5));
+
+					list.add(comment);
 				}
-	
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		// 释放资源
 		getClose();
@@ -63,6 +62,37 @@ public class CommentDao extends NewsDBUtils {
 		getClose();
 		return i;
 	}
+	
+	public int delete(int commentid) { //删除数据库中news_id与news的id相同的纪录
+		// 给占位符赋予的值
+		Object params[] = {commentid};
+		// 要执行的sql语句
+		String sql = "delete from comment where comment_id=?";
+
+		// 执行sql语句
+		int i = doUpdate(sql, params);
+
+		// 释放资源
+		getClose();
+		return i;
+	}
+	
+	public boolean checkID(int id){ //验证id是否存在，存在返回false，不存在返回true
+		Object params[] = {id};
+		String sql = "select * from comment where comment_id=?";
+		ResultSet rs = doQuery(sql, params);
+		try {
+			if (rs.next())
+			return false;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
+		
+	}
 
 }
+
+
 
