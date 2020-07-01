@@ -296,7 +296,7 @@
 									<div class="user">
 										<figure>
 											<%--根据user来找headimg ${comment.user.img}--%>
-											<img src="images/img01.jpg">
+											<img src="${comment.user.img}">
 										</figure>
 										<div class="details">
 											<h5 class="name">用户名: ${comment.user.name }</h5>
@@ -324,7 +324,7 @@
 													<div class="user">
 														<figure>
 															<%--根据user来找headimg ${reply0.user.img}--%>
-															<img src="images/img01.jpg">
+															<img src="${reply.user.img}">
 														</figure>
 														<div class="details">
 															<h5 class="name">用户名:${reply.user.name }</h5>
