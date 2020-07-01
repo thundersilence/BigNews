@@ -183,19 +183,19 @@
 									<article class="article col-md-12">
 										<div class="inner">
 											<figure>
-												<a href="../NewsServlet?news_id=128814007">
-													<img src="images/news/img10.jpg" alt="Sample Article">
+												<a href="../NewsServlet?news_id=1544328755">
+													<img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB16bRbU.img?h=746&w=1119&m=6&q=60&o=f&l=f" alt="Sample Article">
 												</a>
 											</figure>
 											<div class="padding">
 												<div class="detail">
 													<div class="time">2020-07-01 15:00:49</div>
-													<div class="category"><a href="#">science</a></div>
+													<div class="category"><a href="#">politics</a></div>
 												</div>
-												<h2><a href="../NewsServlet?news_id=128814007">人工智能AI可帮助人类发挥“群体智慧”</a></h2>
-												<p>伍莱说：“我们可以让一些非常聪明的人单独研究问题的不同方面，但是如果我们不协力合作，没有集思广益，就很难取得任何进展。我认为，关键之处是要让人工智能帮助这些单打独斗的工作实现集群化，这样才能解决需要全球集体行动以面对的问题。”</p>
+												<h2><a href="../NewsServlet?news_id=1544328755">新冠初期的人类困惑</a></h2>
+												<p>据Worldometer世界实时统计数据显示，截至北京时间7月1日6时，全球累计确诊已达1055万例，累计死亡超51.2万例。针对当前全球疫情的发展态势，当地时间6月28日，《纽约时报》报道指出，科学家们一直在努力发现证据并提出警示，但西方各国的卫生官员却一再继续推行存在误导和矛盾的政策，这导致新冠病毒在全球迅速且持续的蔓延。他们对于新证据的抗拒，致使多国在抗击新冠疫情的反应上有些迟缓。</p>
 												<footer>
-													<a class="btn btn-primary more" href="../NewsServlet?news_id=128814007">
+													<a class="btn btn-primary more" href="../NewsServlet?news_id=1544328755">
 														<div>More</div>
 														<div><i class="ion-ios-arrow-thin-right"></i></div>
 													</a>
@@ -206,20 +206,20 @@
 									<article class="article col-md-12">
 										<div class="inner">
 											<figure>
-												<a href="../NewsServlet?news_id=26779609">
-													<img src="http://img3.chinadaily.com.cn/images/202006/28/5ef7d34ea310a85979129523.jpeg" alt="Sample Article">
+												<a href="../NewsServlet?news_id=1965539502">
+													<img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB16bLZp.img?h=546&w=874&m=6&q=60&o=f&l=f&x=1999&y=318" alt="Sample Article">
 												</a>
 											</figure>
 											<div class="padding">
 												<div class="detail">
 													<div class="time">2020-07-01 15:31:21</div>
-													<div class="category"><a href="#">Healthy</a></div>
+													<div class="category"><a href="#">sports</a></div>
 												</div>
-												<h2><a href="../NewsServlet?news_id=26779609">所有高考生需做核酸检测吗？北京市教委权威解答来了</a></h2>
-												<p>中新网7月1日电 据北京市教育委员会官方微博消息，在6月29日举行的北京市新冠肺炎疫情防控工作新闻发布会上，北京市委教育工委副书记、市教委新闻发言人李奕针对广大师生家长们关心的高考疫情防控工作相关问题进行了逐一解答。</p>
+												<h2><a href="../NewsServlet?news_id=1965539502">2020中超联赛将于7月25日开赛</a></h2>
+												<p>新华社北京7月1日电（记者公兵、蔡拥军、王恒志）中国足协官网1日发布消息称，2020中国平安中超联赛将于7月25日开赛。</p>
 												<footer>
-													<a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>327</div></a>
-													<a class="btn btn-primary more" href="../NewsServlet?news_id=26779609">
+													<a href="#" class="love"><i class="ion-android-favorite-outline"></i></a>
+													<a class="btn btn-primary more" href="../NewsServlet?news_id=1965539502">
 														<div>More</div>
 														<div><i class="ion-ios-arrow-thin-right"></i></div>
 													</a>
@@ -320,23 +320,23 @@
 							<article class="col-md-12 article-list">
 								<div class="inner">
 									<figure>
-										<a href="../NewsServlet?news_id=828732369">
-											<img src="https://n.sinaimg.cn/sports/transform/283/w650h433/20200630/04e0-ivrxcex8120720.jpg" alt="Sample Article">
+										<a href="../NewsServlet?news_id=1989369336">
+											<img src="http://www.cnr.cn/newscenter/native/gd/20200131/W020200131538980817495.jpg" alt="Sample Article">
 										</a>
 									</figure>
 									<div class="details">
 										<div class="detail">
 											<div class="category">
-												<a href="#">sports</a>
+												<a href="#">politics</a>
 											</div>
 											<div class="time">2020-07-01 16:10:02</div>
 										</div>
-										<h1><a href="../NewsServlet?news_id=828732369">郭艾伦31+9+7乔杨空砍60分 辽篮大胜同曦2连胜</a></h1>
+										<h1><a href="../NewsServlet?news_id=1989369336">【央视快评】必须全面落实联防联控措施</a></h1>
 										<p>
-											6月30日，复赛后的CBA常规赛进入到第36轮的较量，同曦迎战辽宁队。此役，辽宁打的顺风顺水，节节领先，郭艾伦、梅奥合砍61分，帮助辽宁队120-107击败同曦，夺得换帅后的两连胜。
+											“基层党组织和广大党员要发挥战斗堡垒作用和先锋模范作用，广泛动员群众、组织群众、凝聚群众，全面落实联防联控措施，构筑群防群治的严密防线。”习近平总书记日前作出的重要指示，对做好疫情防控工作再次提出明确要求，为我们坚定信心、群策群力打赢疫情防控阻击战指明了方向和路径。
 										</p>
 										<footer>
-											<a class="btn btn-primary more" href="../NewsServlet?news_id=828732369">
+											<a class="btn btn-primary more" href="../NewsServlet?news_id=1989369336">
 												<div>More</div>
 												<div><i class="ion-ios-arrow-thin-right"></i></div>
 											</a>
