@@ -64,13 +64,16 @@ public class RegisterServlet extends HttpServlet {
 		
 		AddRecord.print("添加用户记录：" + id);
 		System.out.println("注册成功");
-		request.setAttribute("success", "S");
 		
-		request.getSession().setAttribute("user", user);
-		request.getSession().setAttribute("id", id);			//session 添加名称和id
-		request.getSession().setAttribute("image", imageurl);
+		 request.setAttribute("regesterSuccess", "S");
+		 request.getSession().setAttribute("id", id); //session 添加名称和id
+		/*
+		 * request.getSession().setAttribute("user", user);
+		 * 
+		 * request.getSession().setAttribute("image", imageurl);
+		 */
 		/* response.sendRedirect("sources/index.jsp"); */
-		request.getRequestDispatcher("sources/index.jsp").forward(request, response);
+		request.getRequestDispatcher("sources/login.jsp").forward(request, response);
 
 	}
 }

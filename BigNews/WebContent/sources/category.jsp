@@ -61,6 +61,16 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/skins/all.css">
 <link rel="stylesheet" href="css/demo.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+		function leave(){
+			$.get("../leave");
+			$("#regester").append("<li><a href=\"login.jsp\" id=\"login\"><i class=\"ion-person\"></i><div>登录</div></a></li>");
+			$("#leave").remove();
+			$("#seeuser").remove();
+			alert("再见！");
+		}
+		</script>
 </head>
 
 <body class="skin-orange" onload="showcurrent()">
@@ -89,17 +99,21 @@
 					</div>
 					<div class="col-md-3 col-sm-12 text-right">
 						<ul class="nav-icons">
-							<li><a href="register.jsp"><i class="ion-person-add"></i>
-									<div>注册</div></a></li>
-							<c:if test="${sessionScope.user.name != null}">
-								<li><a href="userDisplay.jsp?in=yes"><i class="ion-person"></i>
-									<div>${sessionScope.user.name}</div></a>
-								</li>
-							</c:if>
-								<li><a href="login.jsp"><i class="ion-person"></i>
-									<div>登录</div></a>
-								</li>
-						</ul>
+								<li><a href="register.jsp" id="regester"><i class="ion-person-add"></i><div>注册</div></a></li>
+								<c:if test="${sessionScope.user.name != null}">
+									<li><a href="userDisplay.jsp?in=yes" id="seeuser"><i class="ion-person"></i>
+										<div>${sessionScope.user.name}</div></a>
+									</li>
+									<li><a href="javascript:;" onclick="leave()" id="leave"><i class="ion-person"></i>
+										<div>注销</div></a>
+									</li>
+								</c:if>
+								<c:if test="${sessionScope.user.name == null}">
+									<li><a href="login.jsp"><i class="ion-person"></i>
+										<div>登录</div></a>
+									</li>
+								</c:if>
+							</ul>
 					</div>
 				</div>
 			</div>
