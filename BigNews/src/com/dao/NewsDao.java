@@ -58,7 +58,7 @@ public class NewsDao extends NewsDBUtils{
 		// 给占位符赋予的值
 		Object params[] = null;
 		// 要执行的sql语句
-		String sql = "select * from news";
+		String sql = "select * from news ORDER BY news_time DESC";
 		// 执行sql语句
 		ResultSet rs = doQuery(sql, null);
 
