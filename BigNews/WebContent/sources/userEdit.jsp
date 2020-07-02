@@ -132,10 +132,8 @@
 							</form>
 							<form action="../FileServlet" method="post" enctype="multipart/form-data">
 								<img alt="用户头像" src="${sessionScope.user.img}" style="width:100px;height:100px;">
-								<input type="file" id="headimg" name="headimg">
-								<label for="headimg">上传图片</label>
 								<div class="form-group text-right">
-									<button class="btn btn-primary btn-block">修改图片</button>
+									<button class="btn btn-primary btn-block">碰碰手气（换头像）</button>
 								</div>
 							</form>
 							<a class="form-group text-right" href="userDisplay.jsp">

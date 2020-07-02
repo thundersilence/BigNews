@@ -153,7 +153,7 @@
 
 		
 	<!-- 主要展示部分 -->
-	<section class="search">
+	<section class="search" style="padding-top: 238px;">
 		<div class="container">
 			<div class="row">
 			

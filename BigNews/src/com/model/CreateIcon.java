@@ -48,14 +48,27 @@ public class CreateIcon {
         List<Point> pointList = getRandomPointList(RADIO);
         fillGraph(g2, pointList, mainColor);
 
-        File file = new File(dir);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        FileOutputStream fos = new FileOutputStream(url);
-        ImageIO.write(bi,"JPG", fos);
-        fos.close();
+        filein.put(dir, url, bi);
+		/*
+		 * File file = new File(dir); if (!file.exists()) { file.mkdirs(); }
+		 * FileOutputStream fos = new FileOutputStream(url); ImageIO.write(bi,"JPG",
+		 * fos); fos.close();
+		 */
      //   AddRecord.print("创建用户文件：" + url);
+    }
+	
+	public static BufferedImage getIcom() 
+			throws FileNotFoundException, IOException {
+        BufferedImage bi = new BufferedImage
+                (IMG_WIDTH, IMG_HEIGHT, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2 = (Graphics2D) bi.getGraphics();
+        g2.setColor(BACK_GROUND_COLOR);
+        g2.fillRect(0, 0, IMG_WIDTH, IMG_HEIGHT);
+        Color mainColor = getRandomColor();
+        List<Point> pointList = getRandomPointList(RADIO);
+        fillGraph(g2, pointList, mainColor);
+
+        return bi;
     }
 	
 	
