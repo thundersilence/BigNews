@@ -98,7 +98,7 @@ public class NewsDao extends NewsDBUtils{
 	
 	public ArrayList<News> classified(String type) {  //返回分类新闻对象，输入为String,返回类型为该字符串的新闻对象
 		Object params[] = {type};
-		String sql = "select * from news where news_type=?";
+		String sql = "select * from news where news_type=? ORDER BY news_time DESC";
 		ResultSet rs = doQuery(sql, params);
 
 		ArrayList<News> list = new ArrayList<News>();
