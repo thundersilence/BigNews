@@ -142,7 +142,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<ol class="breadcrumb">
-								<li><a href="index.html">主页</a></li>
+								<li><a href="index.jsp">主页</a></li>
 								<li class="active">${sessionScope.category}</li>
 							</ol>
 							<h1 class="page-title">分类: ${sessionScope.category}</h1>
@@ -183,9 +183,6 @@
 										<p>${news.simple}</p>
 										<!-- 收藏按钮之后实现，可以保持用户点击收藏变色，并存入数据库，登录时若收藏有则显示收藏的状态 -->
 										<footer>
-											<a href="#" class="love"><i
-												class="ion-android-favorite-outline"></i>
-												</a>
 											<!-- 更多按钮跳转至具体新闻页面，链接要带news的id属性 ../NewsServlet?news_id=${news.id} -->
 											<a class="btn btn-primary more"
 												href="../NewsServlet?news_id=${news.id}">
