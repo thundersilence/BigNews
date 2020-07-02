@@ -429,12 +429,12 @@
 								<article class="article-mini">
 									<div class="inner">
 										<figure>
-											<a href="../NewsServlet?news_id=1115322582">
-												<img src="https://static01.nyt.com/images/2020/06/18/business/18china-dna-sub/18china-dna-sub-master1050.jpg" alt="Sample Article">
+											<a href="../NewsServlet?news_id=895470107">
+												<img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/D999/production/_113050755_53155657.jpg" alt="Sample Article">
 											</a>
 										</figure>
 										<div class="padding">
-											<h1><a href="../NewsServlet?news_id=1115322582">中国广泛采集男性DNA用于监控</a></h1>
+											<h1><a href="../NewsServlet?news_id=895470107">美国两项最新环保科研结果称，大规模植树造林如果实施不当，不但不能保护环境，反而会带来更多害处。</a></h1>
 										</div>
 									</div>
 								</article>
