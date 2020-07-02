@@ -44,7 +44,6 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 </head>
 <script type="text/javascript">
-
 	$(function(){
 		$.post("../StarServlet",{"action":"sel","user_id":${sessionScope.user.id},"news_id":${sessionScope.news.id}},function(data){
 			//alert(data.start);//true/false
@@ -70,7 +69,6 @@
 		}
 	});
 	
-
 	//add
 	function addLove(){
 		$.post("../StarServlet",{"action":"add","user_id":${sessionScope.user.id},"news_id":${sessionScope.news.id}});
@@ -94,7 +92,6 @@
 			addLove();
 		}
 	}
-
 </script>
 <script type="text/javascript">
 	 /*
@@ -122,7 +119,6 @@
 			});
 			alert("用户："+user_id+"成功删除收藏新闻："+nwes_id);
 		}
-
 	}
 	
 	function cancelstar() {
@@ -135,7 +131,6 @@
 			"news_id" : news_id,
 			"user_id" : user_id
 		});
-
 		alert("done");
 	}
 	*/
@@ -212,7 +207,7 @@
 		<nav class="menu">
 			<div class="container">
 				<div class="brand">
-					<a href="#"> <img src="images/logo.png" alt="Magz Logo">
+					<a> <img src="images/logo.png" alt="Magz Logo">
 					</a>
 				</div>
 				<div class="mobile-toggle">
@@ -256,7 +251,7 @@
 							<ul class="details">
 								<li>发表于 ${sessionScope.news.time}</li>
 								<li><a>${sessionScope.news.type}</a></li>
-								<li>作者 <a href="#">${sessionScope.news.author}</a></li>
+								<li>作者 <a>${sessionScope.news.author}</a></li>
 							</ul>
 						</header>
 						<!-- 新闻文本开始，来源为本地的txt文件，输出为html格式 -->
@@ -274,7 +269,7 @@
 					<!-- 评论开始-->
 					<div class="comments">
 						<h2 class="title">
-							${sessionScope.commentList.size()} 评论 <a href="#">书写评论</a>
+							${sessionScope.commentList.size()} 评论 <a>书写评论</a>
 						</h2>
 						<!-- 评论列表-->
 						<div class="comment-list">
@@ -289,6 +284,7 @@
 										<div class="details">
 											<h5 class="name">用户名: ${comment.user.name }</h5>
 											<div class="description">评论${comment.content }</div>
+											<c:if test="${sessionScope.user.name != null }">
 											<a href="javascript:;" onclick="showreply1(${status1.index})">回复</a>
 											<form action="../ReplyServlet?comment_id=${comment.id }&target_user_id=${comment.user.id }&target_reply_id=0&type=0" method="post"
 												class="replyform1">
@@ -303,6 +299,7 @@
 													<button class="btn btn-primary" type="submit">发送回复</button>
 												</div>
 											</form>
+											</c:if>
 										</div>
 									</div>
 									<div class="回复-list">
@@ -318,6 +315,7 @@
 															<h5 class="name">用户名:${reply.user.name }</h5>
 															<div class="time">${reply.time }<span style="color:#F00;"> @${reply.user.name }</span></div>
 															<div class="description">评论的回复${reply.content }</div>
+															<c:if test="${sessionScope.user.name != null }">
 													<a href="javascript:;" onclick="showreply2(${status2.index})">回复</a>
 															<form action="../ReplyServlet?comment_id=${comment.id }&target_user_id=${reply.user.id }&target_reply_id=${reply.id }&type=1" method="post"
 																class="replyform2">
@@ -332,6 +330,7 @@
 																	<button class="btn btn-primary" type="submit">发送回复</button>
 																</div>
 															</form>
+															</c:if>
 														</div>
 													</div>
 													<div class="回复-list">
@@ -345,7 +344,7 @@
 							</c:forEach>
 						</div>
 						<!-- 用户登录时显示 /CommentServlet?news_id=${sessionScope.news.id }-->
-						<c:if test="true">
+						<c:if test="${sessionScope.user.name != null }">
 							<form action="../CommentServlet?news_id=${sessionScope.news.id }"
 								method="post">
 								<div class="col-md-12">
@@ -389,7 +388,6 @@
 	<script>
 	/*
 	var list=$(".replyform");
-
 	for(var i=0;i<list.length;i++){
 		list[i].style.display = "none";
 	}
