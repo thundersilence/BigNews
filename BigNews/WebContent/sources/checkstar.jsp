@@ -138,12 +138,12 @@
 						<div class="col-md-12">
 							<ol class="breadcrumb">
 								<!-- 跳回主页，登录状态会用session属性 -->
-								<li><a href="index.html">主页</a></li>
+								<li><a href="index.jsp">主页</a></li>
 								<!-- 分类名，news属性填充 -->
-								<li class="active">${sessionScope.category}</li>
+								<li class="active"></li>
 							</ol>
 							<!-- 分类名，news属性填充 -->
-							<h1 class="page-title">个人收藏: ${sessionScope.category}</h1>
+							<h1 class="page-title">个人收藏:</h1>
 							<p class="page-subtitle">
 								展示所有 <i>该用户</i> 收藏的新闻
 							</p>
