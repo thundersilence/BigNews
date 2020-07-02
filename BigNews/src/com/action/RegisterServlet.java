@@ -39,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
 		Random rand=new Random();
 		int id;
 		while(true) {
-			id=rand.nextInt(2147483640);
+			id=rand.nextInt(999);
 			if (UD.search(id).getId()==0)break;				//搜索不到已有id时返回一个id为0的user类
 		}//随机生成id
 		
