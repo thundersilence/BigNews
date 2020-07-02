@@ -58,6 +58,7 @@ public class AdministratorPagesServlet extends HttpServlet {
 		
 		int totalnum = list.size();
 		int totalpage = totalnum % pagesize == 0 ?(totalnum/pagesize):(totalnum/pagesize+1);
+		System.out.println("totalPage:"+ totalpage);
 		return totalpage;
 	}
 
@@ -68,11 +69,14 @@ public class AdministratorPagesServlet extends HttpServlet {
 		
 		int totalnum = list.size();
 		List currentlist = new ArrayList();
-
+		
 		if(totalnum>=pagesize){
 			for(int i=0;i<pagesize;i++){
 				int index =(currentpage-1)*pagesize+i;
-				currentlist.add(list.get(index));
+				if(index<totalnum) {
+					currentlist.add(list.get(index));
+				}
+				
 			}
 		}else{
 			currentlist = list;
