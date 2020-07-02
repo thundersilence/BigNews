@@ -29,12 +29,14 @@ public class DeleteUserServlet extends HttpServlet {
 		if(userdao.delete(id) != 0) {
 			System.out.println("======已删除id为" + id + "的用户");
 			AddRecord.print("删除用户记录：" + id);
-			if(id == (int)request.getSession().getAttribute("id")) {
-				request.getSession().removeAttribute("user");
-				request.getSession().removeAttribute("id");
-				request.getSession().removeAttribute("image");
-			}
 			
+			if(request.getSession().getAttribute("id")!=null) {
+				if(id == (int)request.getSession().getAttribute("id")) {
+					request.getSession().removeAttribute("user");
+					request.getSession().removeAttribute("id");
+					request.getSession().removeAttribute("image");
+				}
+			}
 		}
 
 		response.sendRedirect("secret");
