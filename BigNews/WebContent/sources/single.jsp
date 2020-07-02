@@ -246,7 +246,7 @@
 				<div class="col-md-8">
 					<ol class="breadcrumb">
 						<!--  -->
-						<li><a href="index.html">主页</a></li>
+						<li><a href="index.jsp">主页</a></li>
 						<!-- 新闻分类名 -->
 						<li class="active">${sessionScope.news.type}</li>
 					</ol>
