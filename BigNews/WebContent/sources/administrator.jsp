@@ -89,16 +89,6 @@
 										</div>
 									</div>
 								</div>
-							<div class="help-block">
-								<div>热点标签：</div>
-								<ul>
-									<li><a href="#">标签1</a></li>
-									<li><a href="#">标签2</a></li>
-									<li><a href="#">标签3</a></li>
-									<li><a href="#">标签4</a></li>
-									<li><a href="#">标签5</a></li>
-								</ul>
-							</div>
 						</form>								
 					</div>
 					<div class="col-md-3 col-sm-12 text-right">
